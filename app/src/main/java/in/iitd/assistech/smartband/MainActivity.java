@@ -107,12 +107,26 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
     private static boolean[] startNotifListState;
     private static boolean[] startSoundListState;
+
+    /*
+    * Check if this activity is running
+    * */
+    private static boolean isActive = false;
+
+    /*
+    * Bluetooth Variables
+    * */
+    private BluetoothAdapter mBluetoothAdapter;
+    private static final int REQUEST_ENABLE_BT = 1;
+
     /*
     public AlertDialog.Builder warnDB;
     public AlertDialog warnDialog;
     */
 
-
+    public static boolean isRunning(){
+        return isActive;
+    }
 
     static Handler uiHandler = new Handler(){
         @Override
@@ -154,6 +168,8 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 //        editor.putBoolean("FlashLight", notifState[2]);
 //        editor.putBoolean("FlashScreen", notifState[3]);
 //        editor.commit();
+
+        isActive = false;
     }
 
     @Override
@@ -172,6 +188,8 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
         startNotifListState = notifState;
         startSoundListState = soundState;
+
+        isActive = true;
     }
 
     @Override
@@ -194,11 +212,63 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             }
             editor.commit();
         }
+
+        isActive = false;
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        isActive = true;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        isActive = false;
+    }
+
+    /*
+    * Switch the bluetooth on
+    * */
+    private void switchBluetoothOn(){
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        // Check if the device supports bluetooth
+        if (mBluetoothAdapter == null) {
+            // Device doesn't support Bluetooth
+            throw new RuntimeException("Device doesn't support Bluetooth");
+        }
+
+        // Check if bluetooth is enabled
+        if (!mBluetoothAdapter.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+        }
+    }
+
+    /*
+    * Start or Resume the bluetooth service
+    * */
+    private void startBluetoothService(){
+
+        // Check if an instance of the bluetooth service is already running
+        if(!BluetoothService.isInstanceCreated()) {
+            // start service
+            Intent intent = new Intent(this, BluetoothService.class);
+            startService(intent);
+        }
+
+        BluetoothService.getInstance().startCommunicationWithDevice();
+    }
+
+    /*
+    * Stop the bluetooth service
+    * */
+    private void stopBluetoothService(){
+        if(BluetoothService.getInstance()!=null) {
+            BluetoothService.getInstance().stopCommunicationWithDevice();
+        }
     }
 
     @Override
