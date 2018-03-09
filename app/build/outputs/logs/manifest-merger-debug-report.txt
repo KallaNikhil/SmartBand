@@ -1,0 +1,390 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-84:12
+	package
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:3:5-42
+		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:4:5-51
+	xmlns:android
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ASEC_CREATE
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:6:5-70
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:6:22-67
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:7:22-68
+uses-permission#android.permission.INTERNET
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:8:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:9:5-79
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:9:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:10:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:11:22-77
+uses-permission#android.permission.VIBRATE
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:12:5-66
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:12:22-63
+uses-permission#android.permission.BLUETOOTH
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:13:5-68
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:13:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:14:5-74
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:14:22-71
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:15:22-78
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:18:5-71
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:18:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:19:5-71
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:19:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:20:5-72
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:20:22-69
+uses-sdk
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:21:5-22:5
+MERGED from [com.android.support:design:25.3.1] /home/nikhil/.android/build-cache/160a8172ddb84b82ab5786574f1771a3600082db/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/nikhil/.android/build-cache/cfbe060442dc793b3d7794db20a3d027c8ce7061/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.android/build-cache/19f2b54d0bd67b000165439fb28b843d902bdf86/output/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:11.0.1] /home/nikhil/.android/build-cache/86eef9ef911a1a3961dd4047388c7ad884af6094/output/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-auth:11.0.1] /home/nikhil/.android/build-cache/7d463fea5577e55b2d0adda4f017cfdfd24b32f7/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nikhil/.android/build-cache/39f4fab3af6c08381e17bf3d1c1784784e82ad35/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.android/build-cache/84676a404320a57e70372b0dd27a0d9ccb6741a6/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/05eaa41f52c3be78b2eb35ce83271ef52c10f943/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/fec9b85a601c99e178f1702582c1ad6754cc9977/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.android/build-cache/bf3746f1d4b2cba1d331a321dbccb8f35e80b2bc/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.android/build-cache/0a89c10b2c7b6a159941ef2d55f568f707fb9067/output/AndroidManifest.xml:20:5-44
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/nikhil/.android/build-cache/8448181ea9bdfce7db7db4683e59cb3612867621/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-core:11.0.1] /home/nikhil/.android/build-cache/bee336eefea8de2f7622dc9685ca5d459c166af1/output/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/nikhil/.android/build-cache/d825ae774b0a0185aa3aa2248868af08fe69d955/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.android/build-cache/eadb12eae61670a337152a40129d70f0d6a476db/output/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.android/build-cache/7d83d287bfa37d0d6b66eeaf88b375079c4c8fa3/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.android/build-cache/9f62f684979d9e2293f5916a577fc13b3ed313fb/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.android/build-cache/6073dd8cce3214304bc3dd58476fd4e62012f852/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.android/build-cache/71b3a71839ceea9483ebc9d1cd5c922ecc411d09/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.android/build-cache/fa33d642d65fdd4d1fc40b8b506d7625e795b1f3/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.android/build-cache/24afd5dbc58df6baa6792145af5b10b77926ce92/output/AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:21:5-22:5
+	android:targetSdkVersion
+		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+permission#android.permission.FLASHLIGHT
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:24:5-27:44
+	android:protectionLevel
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:27:9-41
+	android:permissionGroup
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:26:9-77
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:25:9-53
+application
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:31:5-82:19
+MERGED from [com.android.support:design:25.3.1] /home/nikhil/.android/build-cache/160a8172ddb84b82ab5786574f1771a3600082db/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.android/build-cache/19f2b54d0bd67b000165439fb28b843d902bdf86/output/AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.firebase:firebase-auth:11.0.1] /home/nikhil/.android/build-cache/7d463fea5577e55b2d0adda4f017cfdfd24b32f7/output/AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:18:5-20:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nikhil/.android/build-cache/39f4fab3af6c08381e17bf3d1c1784784e82ad35/output/AndroidManifest.xml:9:5-20
+MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:28:5-48:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.android/build-cache/84676a404320a57e70372b0dd27a0d9ccb6741a6/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/05eaa41f52c3be78b2eb35ce83271ef52c10f943/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/fec9b85a601c99e178f1702582c1ad6754cc9977/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.android/build-cache/bf3746f1d4b2cba1d331a321dbccb8f35e80b2bc/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.android/build-cache/0a89c10b2c7b6a159941ef2d55f568f707fb9067/output/AndroidManifest.xml:26:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/nikhil/.android/build-cache/8448181ea9bdfce7db7db4683e59cb3612867621/output/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-core:11.0.1] /home/nikhil/.android/build-cache/bee336eefea8de2f7622dc9685ca5d459c166af1/output/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/nikhil/.android/build-cache/d825ae774b0a0185aa3aa2248868af08fe69d955/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.android/build-cache/eadb12eae61670a337152a40129d70f0d6a476db/output/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.android/build-cache/7d83d287bfa37d0d6b66eeaf88b375079c4c8fa3/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.android/build-cache/9f62f684979d9e2293f5916a577fc13b3ed313fb/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.android/build-cache/6073dd8cce3214304bc3dd58476fd4e62012f852/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.android/build-cache/71b3a71839ceea9483ebc9d1cd5c922ecc411d09/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.android/build-cache/fa33d642d65fdd4d1fc40b8b506d7625e795b1f3/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.android/build-cache/24afd5dbc58df6baa6792145af5b10b77926ce92/output/AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:36:9-41
+	android:supportsRtl
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:38:9-35
+	android:excludeFromRecents
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:33:9-43
+	android:noHistory
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:37:9-34
+	android:allowBackup
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:32:9-35
+	android:icon
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:35:9-43
+	android:largeHeap
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:34:9-33
+	android:theme
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:39:9-49
+meta-data#com.facebook.sdk.ApplicationId
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:40:9-42:55
+	android:value
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:42:13-52
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:41:13-58
+activity#in.iitd.assistech.smartband.MainActivity
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:44:9-53:20
+	android:label
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:46:13-45
+	android:theme
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:47:13-53
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:45:13-41
+activity#in.iitd.assistech.smartband.SignInActivity
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:54:9-66:20
+	android:label
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:56:13-45
+	android:theme
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:57:13-44
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:55:13-43
+activity#in.iitd.assistech.smartband.Splash
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:68:9-77:20
+	android:screenOrientation
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:70:13-49
+	android:label
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:69:13-45
+	android:theme
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:71:13-44
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:68:19-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:72:13-76:29
+action#android.intent.action.MAIN
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:73:17-69
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:73:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:75:17-77
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:75:27-74
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:25.3.1] /home/nikhil/.android/build-cache/160a8172ddb84b82ab5786574f1771a3600082db/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/nikhil/.android/build-cache/cfbe060442dc793b3d7794db20a3d027c8ce7061/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.android/build-cache/19f2b54d0bd67b000165439fb28b843d902bdf86/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.android/build-cache/84676a404320a57e70372b0dd27a0d9ccb6741a6/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/05eaa41f52c3be78b2eb35ce83271ef52c10f943/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/fec9b85a601c99e178f1702582c1ad6754cc9977/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.android/build-cache/bf3746f1d4b2cba1d331a321dbccb8f35e80b2bc/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.android/build-cache/0a89c10b2c7b6a159941ef2d55f568f707fb9067/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.android/build-cache/7d83d287bfa37d0d6b66eeaf88b375079c4c8fa3/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.android/build-cache/9f62f684979d9e2293f5916a577fc13b3ed313fb/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.android/build-cache/6073dd8cce3214304bc3dd58476fd4e62012f852/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.android/build-cache/71b3a71839ceea9483ebc9d1cd5c922ecc411d09/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.android/build-cache/fa33d642d65fdd4d1fc40b8b506d7625e795b1f3/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.android/build-cache/24afd5dbc58df6baa6792145af5b10b77926ce92/output/AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:design:25.3.1] /home/nikhil/.android/build-cache/160a8172ddb84b82ab5786574f1771a3600082db/output/AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:design:25.3.1] /home/nikhil/.android/build-cache/160a8172ddb84b82ab5786574f1771a3600082db/output/AndroidManifest.xml:26:9-47
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:20:9-189
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:20:129-162
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:20:163-187
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:20:69-128
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:20:19-68
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:24:9-184
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:24:64-87
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:24:88-182
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:24:18-63
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:19:19-85
+activity#com.facebook.FacebookActivity
+ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:29:9-32:66
+	android:configChanges
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:31:13-96
+	android:theme
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:32:13-63
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:30:13-57
+activity#com.facebook.CustomTabMainActivity
+ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:33:9-71
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:33:19-68
+provider#com.facebook.internal.FacebookInitProvider
+ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:44:9-47:40
+	android:authorities
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:46:13-72
+	android:exported
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:45:13-70
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:22:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:25:7-26:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:25:90-112
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:25:113-137
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:25:17-89
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:27:7-31:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:27:162-184
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:27:185-208
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:27:105-161
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:27:17-104
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:28:11-30:27
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:29:15-76
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:29:23-74
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:27:7-137
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:32:88-110
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:32:111-135
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:32:16-87
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:33:7-197
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:33:148-170
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:33:171-195
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:33:91-147
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:33:16-90
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:22:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:24:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:26:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:30:9-35:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:30:85-108
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:30:109-169
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:30:19-84
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:31:13-34:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:32:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:32:25-78
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:33:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:33:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:39:9-119
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:39:93-117
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:39:19-92
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:43:9-47:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:43:83-106
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:43:18-82
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:44:13-46:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:44:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:45:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:45:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:6:9-194
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:6:19-78
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:6:144-168
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:6:169-192
+	android:name
+		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:6:79-143
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.android/build-cache/eadb12eae61670a337152a40129d70f0d6a476db/output/AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.android/build-cache/eadb12eae61670a337152a40129d70f0d6a476db/output/AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.android/build-cache/eadb12eae61670a337152a40129d70f0d6a476db/output/AndroidManifest.xml:20:20-65
