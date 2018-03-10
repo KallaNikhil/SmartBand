@@ -308,4 +308,29 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         return soundSwitchState;
     }
 
+
+    /*
+    * Start or Resume the bluetooth service
+    * */
+    private boolean startBluetoothService(){
+        if(BluetoothService.getInstance()!=null) {
+            return BluetoothService.getInstance().startCommunicationWithDevice();
+        }else{
+            Log.d(TAG, "could not start Bluetooth service, as instance is null");
+        }
+        return false;
+    }
+
+    /*
+    * Stop the bluetooth service
+    * */
+    private boolean stopBluetoothService(){
+        if(BluetoothService.getInstance()!=null) {
+            return BluetoothService.getInstance().stopCommunicationWithDevice();
+        }else{
+            Log.d(TAG, "could not stop Bluetooth service, as instance is null");
+        }
+        return false;
+    }
+
 }

@@ -247,30 +247,6 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         }
     }
 
-    /*
-    * Start or Resume the bluetooth service
-    * */
-    private void startBluetoothService(){
-
-        // Check if an instance of the bluetooth service is already running
-        if(!BluetoothService.isInstanceCreated()) {
-            // start service
-            Intent intent = new Intent(this, BluetoothService.class);
-            startService(intent);
-        }
-
-        BluetoothService.getInstance().startCommunicationWithDevice();
-    }
-
-    /*
-    * Stop the bluetooth service
-    * */
-    private void stopBluetoothService(){
-        if(BluetoothService.getInstance()!=null) {
-            BluetoothService.getInstance().stopCommunicationWithDevice();
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -350,6 +326,16 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 (RECORDER_SAMPLERATE,RECORDER_CHANNELS,RECORDER_AUDIO_ENCODING)*3;
 
         //TODO: @Link https://github.com/OmarAflak/Bluetooth-Library
+
+        // Start bluetooth services
+        switchBluetoothOn();
+
+        // Check if an instance of the bluetooth service is already running
+        if(!BluetoothService.isInstanceCreated()) {
+            // start service
+            Intent intent = new Intent(this, BluetoothService.class);
+            startService(intent);
+        }
 
     }
 

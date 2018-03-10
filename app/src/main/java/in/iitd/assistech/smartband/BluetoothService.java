@@ -1,17 +1,13 @@
 package in.iitd.assistech.smartband;
 
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
@@ -76,6 +72,9 @@ public class BluetoothService extends Service {
             // Check if device is null
             if(bluetoothDevice == null){
                 Log.d(DEBUG_TAG, "Bluetooth is off");
+            }else{
+                // Default: start connecting with device when the service is created
+                startCommunicationWithDevice();
             }
         }
         return Service.START_STICKY;
@@ -151,7 +150,6 @@ public class BluetoothService extends Service {
 
     // Call this from the main activity to send data to the remote device.
     public boolean write(int soundLabel) {
-
         try {
             mmOutStream.write(soundLabel);
             Log.d(DEBUG_TAG, "Data written to the bluetooth device");
@@ -162,7 +160,7 @@ public class BluetoothService extends Service {
         return true;
     }
 
-    public void startCommunicationWithDevice(){
+    public boolean startCommunicationWithDevice(){
         if(connectThread!=null && connectThread.getState()== Thread.State.RUNNABLE){
             Log.d(DEBUG_TAG, "Attempting to start bluetooth service thread already running");
         }
@@ -170,10 +168,13 @@ public class BluetoothService extends Service {
         // create the connection thread
         connectThread = new ConnectThread(bluetoothDevice);
         connectThread.start();
+
+        return true;
     }
 
-    public void stopCommunicationWithDevice(){
+    public boolean stopCommunicationWithDevice(){
         connectThread.interrupt();
+        return true;
     }
 
     /*
@@ -182,7 +183,7 @@ public class BluetoothService extends Service {
     * */
     private class ConnectThread extends Thread {
 
-        private int DelayIndetectionOfDevice = 100;
+        private int DelayDetectionOfDevice = 100;
         private UUID MY_UUID;
 
         public ConnectThread(BluetoothDevice device) {
@@ -226,7 +227,7 @@ public class BluetoothService extends Service {
 
                     //  sleep for sometime if you could not connect to the bluetooth device
                     try {
-                        sleep(DelayIndetectionOfDevice);
+                        sleep(DelayDetectionOfDevice);
                     }catch (Exception ex){
                         Log.d(DEBUG_TAG, "could not sleep");
                     }
