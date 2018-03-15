@@ -1,7 +1,10 @@
 package in.iitd.assistech.smartband;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,8 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.List;
+
+import static java.lang.Thread.sleep;
 
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
@@ -27,6 +32,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     LayoutInflater inflter;
     String value;
     boolean[] switchState;
+    final static String TAG="Debug";
 
 //    public ExpandableListAdapter(Context context, List<String> listDataHeader,
 //                                 HashMap<String, List<String>> listChildData) {
@@ -40,7 +46,6 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         this.names = names;
         this.header = header;
         inflter = (LayoutInflater.from(context));
-        this.switchState = switchState;
         this.switchState = switchState;
     }
 
@@ -67,17 +72,51 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (notifSwitch.isChecked()) {
                     switchState[childPosition] = notifSwitch.isChecked();
-                    value = "Checked";
+                    value = "checked";
+                    if(header.equals("Service Types")) {
+                        startBluetoothService();
+                        value = "Blutooth Service Started";
+                    }
                     Toast.makeText(context, value, Toast.LENGTH_SHORT).show();
                 } else {
                     switchState[childPosition] = notifSwitch.isChecked();
-                    value = "un-Checked";
+                    value = "un-checked";
+                    if(header.equals("Service Types")) {
+                        stopBluetoothService();
+                        value = "Bluetooth Service Stopped";
+                    }
                     Toast.makeText(context, value, Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
         return view;
+    }
+
+
+    /*
+    * Start or Resume the bluetooth service
+    * */
+    private boolean startBluetoothService(){
+
+        if(BluetoothService.getInstance()!=null) {
+            return BluetoothService.getInstance().startCommunicationWithDevice();
+        }else{
+            Log.d(TAG, "could not start Bluetooth service, as instance is null");
+        }
+        return false;
+    }
+
+    /*
+    * Stop the bluetooth service
+    * */
+    private boolean stopBluetoothService(){
+        if(BluetoothService.getInstance()!=null) {
+            return BluetoothService.getInstance().stopCommunicationWithDevice();
+        }else{
+            Log.d(TAG, "could not stop Bluetooth service, as instance is null");
+        }
+        return false;
     }
 
     @Override

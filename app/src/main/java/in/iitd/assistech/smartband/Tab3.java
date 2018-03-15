@@ -45,13 +45,19 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     public View view;
     private static final String TAG = "Tab3";
 
-
-    private ExpandableListAdapter notifListAdapter;
-    private ExpandableListAdapter soundListAdapter;
-    private ExpandableListView notifListView;
-    private ExpandableListView soundListView;
+    /*
+    * In List the order is as follows
+    * 0 - Notifications
+    * 1 - Sound types
+    * 2 - Services
+    * */
+    private ExpandableListAdapter[] listAdapters;
+    private ExpandableListView[] listViews;
+    private static final int ListSize = 3;
     static final String[] notificationListItems = {"Vibration", "Sound", "Flashlight", "Flash Screen"};
     static final String[] soundListItems = {"Vehicle Horn", "Dog Bark"};
+    static final String[] servicesListItems = {"BluetoothService"};
+    static final int[] cummListItemSizes = {4, 6, 7};
 
     private CircleImageView userProfileImage;
     private TextView userName;
@@ -70,22 +76,26 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        int state = notificationListItems.length+soundListItems.length;
-        boolean[] notifSwitchState = new boolean[state];
-//        boolean[] soundSwitchState = new boolean[soundListItems.length];
+        int state = notificationListItems.length + soundListItems.length + servicesListItems.length;
+        boolean[] switchState = new boolean[state];
 
-        Log.e(TAG, "FUCK YOU!!!!!!!!!!!!!!!!!!!!!!");
-        for (int i=0; i<notificationListItems.length; i++){
-            notifSwitchState[i] = notifListAdapter.getCheckedState(i);
-        }
-        for (int i=notificationListItems.length; i<state; i++){
-            notifSwitchState[i] = soundListAdapter.getCheckedState(i-notificationListItems.length);
-//            soundSwitchState[i] = soundListAdapter.getCheckedState(i);
+        int groupIndex = 0;
+        int childIndex = 0;
+        for(int i=0; i<state; i++){
+            if((groupIndex == 0 && childIndex == notificationListItems.length) ||
+                    (groupIndex == 1 && childIndex == soundListItems.length) ||
+                    (groupIndex == 2 && childIndex == servicesListItems.length)){
+
+                groupIndex++;
+                childIndex = 0;
+            }
+            switchState[i] = listAdapters[groupIndex].getCheckedState(childIndex);
+            childIndex++;
         }
 
 //        Log.e(TAG, "SoundStare 0 and 1 " + soundSwitchState[0] + ", " + soundSwitchState[1]);
 
-        outState.putBooleanArray("notifState", notifSwitchState);
+        outState.putBooleanArray("notifState", switchState);
 //        outState.putBooleanArray("soundState", soundSwitchState);
     }
 
@@ -140,24 +150,33 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         updateUI();
 
         /**--------------------------------**/
-        notifListView = (ExpandableListView) view.findViewById(R.id.notificationListView);
-        soundListView = (ExpandableListView) view.findViewById(R.id.soundListView);
+        listViews = new ExpandableListView[ListSize];
+        listAdapters = new ExpandableListAdapter[ListSize];
+
+        listViews[0] = (ExpandableListView) view.findViewById(R.id.notificationListView);
+        listViews[1] = (ExpandableListView) view.findViewById(R.id.soundListView);
+        listViews[2] = (ExpandableListView) view.findViewById(R.id.serviceListView);
+
         if(savedInstanceState != null){
             boolean[] switchState = savedInstanceState.getBooleanArray("notifState");
-            boolean[] notifSwitchState = Arrays.copyOf(switchState, notificationListItems.length);
-            boolean[] soundSwitchState = new boolean[soundListItems.length];
-            for (int i=0; i<soundListItems.length; i++){
-                soundSwitchState[i] = switchState[notificationListItems.length+i];
-            }
+
+            boolean[] notifSwitchState = Arrays.copyOfRange(switchState,0, cummListItemSizes[0]);
+            boolean[] soundSwitchState = Arrays.copyOfRange(switchState, cummListItemSizes[0], cummListItemSizes[1]);
+            boolean[] serviceSwitchState = Arrays.copyOfRange(switchState, cummListItemSizes[1], cummListItemSizes[2]);
+
 //            boolean[] soundSwitchState = savedInstanceState.getBooleanArray("soundState");
             try{
 //                notifListAdapter = new NotifListAdapter(getContext(), notificationListItems, notifSwitchState);
-                notifListAdapter = new ExpandableListAdapter(getContext(), notificationListItems, "Notification", notifSwitchState);
 //                ListView notifListView = (ListView) view.findViewById(R.id.notificationListView);
-                notifListView.setAdapter(notifListAdapter);
 
-                soundListAdapter = new ExpandableListAdapter(getContext(), soundListItems, "Sound Types", soundSwitchState);
-                soundListView.setAdapter(soundListAdapter);
+                listAdapters[0] = new ExpandableListAdapter(getContext(), notificationListItems, "Notification", notifSwitchState);
+                listAdapters[1] = new ExpandableListAdapter(getContext(), soundListItems, "Sound Types", soundSwitchState);
+                listAdapters[2] = new ExpandableListAdapter(getContext(), servicesListItems, "Service Types", serviceSwitchState);
+
+                for(int i=0; i<ListSize; i++){
+                    listViews[i].setAdapter(listAdapters[i]);
+                }
+
             }catch(Exception e){
                 Log.e(TAG, e.toString());
                 Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
@@ -165,15 +184,19 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         } else{
             boolean[] startNotifState = MainActivity.getStartNotifListState();
             boolean[] startSoundState = MainActivity.getStartSoundListState();
-            notifListAdapter = new ExpandableListAdapter(getContext(), notificationListItems, "Notification", startNotifState);
-            notifListView.setAdapter(notifListAdapter);
+            boolean[] startServiceState = MainActivity.getStartServiceListState();
 
-            soundListAdapter = new ExpandableListAdapter(getContext(), soundListItems, "Sound Types", startSoundState);
-            soundListView.setAdapter(soundListAdapter);
+            listAdapters[0] = new ExpandableListAdapter(getContext(), notificationListItems, "Notification", startNotifState);
+            listAdapters[1] = new ExpandableListAdapter(getContext(), soundListItems, "Sound Types", startSoundState);
+            listAdapters[2] = new ExpandableListAdapter(getContext(), servicesListItems, "Service Types", startServiceState);
+
+            for(int i=0; i<ListSize; i++){
+                listViews[i].setAdapter(listAdapters[i]);
+            }
         }
         /**----------------------------------------------**/
 
-        notifListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+        listViews[0].setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
             @Override
             public void onGroupExpand(int groupPosition) {
@@ -295,7 +318,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     public boolean[] getFinalNotifState(){
         boolean[] notifSwitchState = new boolean[notificationListItems.length];
         for (int i=0; i<notificationListItems.length; i++){
-            notifSwitchState[i] = notifListAdapter.getCheckedState(i);
+            notifSwitchState[i] = listAdapters[0].getCheckedState(i);
         }
         return notifSwitchState;
     }
@@ -303,34 +326,17 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     public boolean[] getFinalSoundState(){
         boolean[] soundSwitchState = new boolean[soundListItems.length];
         for (int i=0; i<soundListItems.length; i++){
-            soundSwitchState[i] = notifListAdapter.getCheckedState(i);
+            soundSwitchState[i] = listAdapters[1].getCheckedState(i);
         }
         return soundSwitchState;
     }
 
-
-    /*
-    * Start or Resume the bluetooth service
-    * */
-    private boolean startBluetoothService(){
-        if(BluetoothService.getInstance()!=null) {
-            return BluetoothService.getInstance().startCommunicationWithDevice();
-        }else{
-            Log.d(TAG, "could not start Bluetooth service, as instance is null");
+    public boolean[] getFinalServiceState(){
+        boolean[] serviceSwitchState = new boolean[servicesListItems.length];
+        for (int i=0; i<servicesListItems.length; i++){
+            serviceSwitchState[i] = listAdapters[2].getCheckedState(i);
         }
-        return false;
-    }
-
-    /*
-    * Stop the bluetooth service
-    * */
-    private boolean stopBluetoothService(){
-        if(BluetoothService.getInstance()!=null) {
-            return BluetoothService.getInstance().stopCommunicationWithDevice();
-        }else{
-            Log.d(TAG, "could not stop Bluetooth service, as instance is null");
-        }
-        return false;
+        return serviceSwitchState;
     }
 
 }

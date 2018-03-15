@@ -319,5 +319,13 @@ public class Tab2 extends Fragment implements View.OnClickListener{
         }
     }
 
+    public void simulateSoundRecordClick(){
 
+        MainActivity.getInstance().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                startButton.performClick();
+            }
+        });
+    }
 }

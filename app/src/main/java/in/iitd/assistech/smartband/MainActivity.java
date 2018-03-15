@@ -57,6 +57,7 @@ import static com.sounds.ClassifySound.numOutput;
 import static in.iitd.assistech.smartband.HelperFunctions.getClassifyProb;
 import static in.iitd.assistech.smartband.HelperFunctions.getDecibel;
 import static in.iitd.assistech.smartband.Tab3.notificationListItems;
+import static in.iitd.assistech.smartband.Tab3.servicesListItems;
 import static in.iitd.assistech.smartband.Tab3.soundListItems;
 
 public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener,
@@ -107,11 +108,13 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
     private static boolean[] startNotifListState;
     private static boolean[] startSoundListState;
+    private static boolean[] startServiceListState;
 
     /*
     * Check if this activity is running
     * */
     private static boolean isActive = false;
+    private static MainActivity instance;
 
     /*
     * Bluetooth Variables
@@ -124,8 +127,14 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     public AlertDialog warnDialog;
     */
 
+    public static boolean soundDetected = false;
+
     public static boolean isRunning(){
         return isActive;
+    }
+
+    public static MainActivity getInstance(){
+        return instance;
     }
 
     static Handler uiHandler = new Handler(){
@@ -147,6 +156,11 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         if((1.0-outProb[2])>0.6){
             int idx = 1;
             if(outProb[1]<outProb[0]) idx = 0;
+
+            // send sound label to bluetooth device
+            BluetoothService.getInstance().sendSoundLabelToDevice(idx);
+
+            // display sound detection results
             showDialog(MainActivity.this, idx, outProb);
         }
     }
@@ -168,8 +182,6 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 //        editor.putBoolean("FlashLight", notifState[2]);
 //        editor.putBoolean("FlashScreen", notifState[3]);
 //        editor.commit();
-
-        isActive = false;
     }
 
     @Override
@@ -186,10 +198,32 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             soundState[i] = app_preferences.getBoolean(soundListItems[i], true);
         }
 
+        boolean[] serviceState =  new boolean[servicesListItems.length];
+        for (int i=0; i<servicesListItems.length; i++){
+            serviceState[i] = app_preferences.getBoolean(servicesListItems[i], true);
+        }
+
         startNotifListState = notifState;
         startSoundListState = soundState;
+        startServiceListState = serviceState;
 
         isActive = true;
+
+        // check if the Bluetooth service is switched on
+        if(serviceState[0]) {
+            // Start bluetooth services
+            switchBluetoothOn();
+
+            // Check if an instance of the bluetooth service is already running
+            if (!BluetoothService.isInstanceCreated()) {
+                // start service
+                Log.d(TAG, "starting Bluetooth service");
+                Intent intent = new Intent(this, BluetoothService.class);
+                startService(intent);
+            }
+        }
+
+        detectSound();
     }
 
     @Override
@@ -213,19 +247,27 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             editor.commit();
         }
 
+        if(adapter.getInitialServiceListState() != null){
+            boolean[] serviceState = adapter.getInitialServiceListState();
+            for (int i=0; i<servicesListItems.length; i++){
+                editor.putBoolean(servicesListItems[i], serviceState[i]);
+            }
+            editor.commit();
+        }
+
         isActive = false;
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        isActive = true;
+        instance = this;
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        isActive = false;
+        instance = null;
     }
 
     /*
@@ -247,9 +289,33 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         }
     }
 
+    public void detectSound(){
+        if(!soundDetected)
+            return;
+
+        soundDetected = false;
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                // set Tab2 as current tab
+                if(viewPager.getCurrentItem() != 1) {
+                    viewPager.setCurrentItem(1);
+                }
+
+                // simulate the sound record click
+                adapter.simulateSoundRecordClickTab2();
+            }
+        });
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        instance = this;
+
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
@@ -278,7 +344,8 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         tabLayout.setupWithViewPager(viewPager);
 
         //Adding the tabs using addTab() method
-        tabLayout.addTab(tabLayout.newTab());        tabLayout.addTab(tabLayout.newTab());
+        tabLayout.addTab(tabLayout.newTab());
+        tabLayout.addTab(tabLayout.newTab());
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         //Creating our pager adapter
@@ -326,16 +393,6 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 (RECORDER_SAMPLERATE,RECORDER_CHANNELS,RECORDER_AUDIO_ENCODING)*3;
 
         //TODO: @Link https://github.com/OmarAflak/Bluetooth-Library
-
-        // Start bluetooth services
-        switchBluetoothOn();
-
-        // Check if an instance of the bluetooth service is already running
-        if(!BluetoothService.isInstanceCreated()) {
-            // start service
-            Intent intent = new Intent(this, BluetoothService.class);
-            startService(intent);
-        }
 
     }
 
@@ -735,6 +792,10 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
     static boolean[] getStartSoundListState(){
         return startSoundListState;
+    }
+
+    static boolean[] getStartServiceListState(){
+        return startServiceListState;
     }
 
 }
