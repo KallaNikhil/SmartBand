@@ -1,5 +1,6 @@
 package in.iitd.assistech.smartband;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -33,6 +34,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     String value;
     boolean[] switchState;
     final static String TAG="Debug";
+    Intent bluetoothServiceIntent;
 
 //    public ExpandableListAdapter(Context context, List<String> listDataHeader,
 //                                 HashMap<String, List<String>> listChildData) {
@@ -70,53 +72,60 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         notifSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                Boolean setBack = false;
+
+                switchState[childPosition] = notifSwitch.isChecked();
+
                 if (notifSwitch.isChecked()) {
-                    switchState[childPosition] = notifSwitch.isChecked();
                     value = "checked";
                     if(header.equals("Service Types")) {
-                        startBluetoothService();
-                        value = "Blutooth Service Started";
+                        if(BluetoothService.bluetoothDevice == null) {
+                            if(MainActivity.getInstance().isBluetoothOn()){
+                                BluetoothService.bluetoothDevice = BluetoothService.searchDevice();
+                                if(BluetoothService.bluetoothDevice == null){
+                                    setBack = true;
+                                    value = "Could not find Bluetooth Device";
+                                }
+                            }else{
+                                MainActivity.getInstance().switchBluetoothOn(true);
+                                setBack = true;
+                                value = "Switch On Bluetooth and then Click Again";
+                            }
+                        }
+                        if(!setBack){
+                            bluetoothServiceIntent = new Intent(MainActivity.getInstance(), BluetoothService.class);
+                            MainActivity.getInstance().startService(bluetoothServiceIntent);
+                            value = "Blutooth Service Started";
+                        }
                     }
-                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show();
                 } else {
-                    switchState[childPosition] = notifSwitch.isChecked();
                     value = "un-checked";
                     if(header.equals("Service Types")) {
-                        stopBluetoothService();
-                        value = "Bluetooth Service Stopped";
+                        if(BluetoothService.getInstance() != null &&
+                                BluetoothService.getInstance().stopBluetoothService()){
+                            value = "Bluetooth Service Stopped";
+                        }else {
+                            // if stop did not work as expected
+                            setBack = true;
+                            value = "Error value not changed";
+                        }
+
                     }
-                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show();
                 }
+
+                // If operation is not successful
+                if(setBack) {
+                    switchState[childPosition] = !notifSwitch.isChecked();
+                    notifSwitch.setOnCheckedChangeListener(null);
+                    notifSwitch.setChecked(!notifSwitch.isChecked());
+                    notifSwitch.setOnCheckedChangeListener(this);
+                }
+
+                Toast.makeText(context, value, Toast.LENGTH_SHORT).show();
             }
         });
 
         return view;
-    }
-
-
-    /*
-    * Start or Resume the bluetooth service
-    * */
-    private boolean startBluetoothService(){
-
-        if(BluetoothService.getInstance()!=null) {
-            return BluetoothService.getInstance().startCommunicationWithDevice();
-        }else{
-            Log.d(TAG, "could not start Bluetooth service, as instance is null");
-        }
-        return false;
-    }
-
-    /*
-    * Stop the bluetooth service
-    * */
-    private boolean stopBluetoothService(){
-        if(BluetoothService.getInstance()!=null) {
-            return BluetoothService.getInstance().stopCommunicationWithDevice();
-        }else{
-            Log.d(TAG, "could not stop Bluetooth service, as instance is null");
-        }
-        return false;
     }
 
     @Override

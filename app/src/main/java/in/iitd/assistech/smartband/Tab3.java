@@ -1,5 +1,6 @@
 package in.iitd.assistech.smartband;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -44,7 +45,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
 
     public View view;
     private static final String TAG = "Tab3";
-
+    private static Tab3 instance;
     /*
     * In List the order is as follows
     * 0 - Notifications
@@ -99,11 +100,14 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
 //        outState.putBooleanArray("soundState", soundSwitchState);
     }
 
-//    @Override
-//    public void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//    }
+    public static Tab3 getInstance(){
+        return instance;
+    }
 
+    // TODO:
+    public void switchBluetoothServiceOn(){
+//        listAdapters[2].no
+    }
 
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
@@ -224,9 +228,15 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     @Override
     public void onPause() {
         super.onPause();
-
+        instance = null;
         mGoogleApiClient.stopAutoManage(getActivity());
         mGoogleApiClient.disconnect();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        instance = this;
     }
 
     private void signOut() {
@@ -338,5 +348,6 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         }
         return serviceSwitchState;
     }
+
 
 }
