@@ -81,10 +81,9 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                     if(header.equals("Service Types")) {
                         if(BluetoothService.bluetoothDevice == null) {
                             if(MainActivity.getInstance().isBluetoothOn()){
-                                BluetoothService.bluetoothDevice = BluetoothService.searchDevice();
-                                if(BluetoothService.bluetoothDevice == null){
+                                if(BluetoothService.searchDevice() == null){
                                     setBack = true;
-                                    value = "Could not find Bluetooth Device";
+                                    value = "Could not find Bluetooth device\nPair the Bluetooth Device first";
                                 }
                             }else{
                                 MainActivity.getInstance().switchBluetoothOn(true);

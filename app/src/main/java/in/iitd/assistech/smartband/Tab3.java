@@ -104,9 +104,9 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         return instance;
     }
 
-    // TODO:
     public void switchBluetoothServiceOn(){
-//        listAdapters[2].no
+        // set start services switch to true
+        ((Switch) view.findViewById(R.id.notif_row_switch)).setChecked(true);
     }
 
     @Override
@@ -228,15 +228,20 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     @Override
     public void onPause() {
         super.onPause();
-        instance = null;
         mGoogleApiClient.stopAutoManage(getActivity());
         mGoogleApiClient.disconnect();
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         instance = this;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        instance = null;
     }
 
     private void signOut() {

@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     * */
     private BluetoothAdapter mBluetoothAdapter;
     public static final int REQUEST_ENABLE_BT = 1;
-    public static final int REQUEST_ENABLE_BT_PressSwitch = 1;
+    public static final int REQUEST_ENABLE_BT_PressSwitch = 2;
 
     /*
     public AlertDialog.Builder warnDB;
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         if (requestCode == REQUEST_ENABLE_BT_PressSwitch) {
             // Make sure the request was successful
             if (resultCode == RESULT_OK) {
-//                Tab3.getInstance().
+                Tab3.getInstance().switchBluetoothServiceOn();
             }
         }
     }
@@ -248,6 +248,11 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     protected void onStart() {
         super.onStart();
         instance = this;
+
+        // check if the Bluetooth service is switched on
+        if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean(servicesListItems[0], false)) {
+            switchBluetoothOn(false);
+        }
     }
 
     @Override
@@ -274,11 +279,6 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         startServiceListState = serviceState;
 
         isActive = true;
-
-        // check if the Bluetooth service is switched on
-        if(serviceState[0]) {
-            switchBluetoothOn(false);
-        }
     }
 
     @Override
@@ -327,7 +327,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             case "MicReadButton":
                 t = new Thread(){
                     public void run(){
-                        BluetoothService.getInstance().startRecording(1, false);
+                        SoundProcessing.startRecording(1, false);
                     }
                 };
                 t.start();
@@ -335,7 +335,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             case "StopRecordButton":
                 t = new Thread(){
                     public void run(){
-                        BluetoothService.getInstance().stopRecording();
+                        SoundProcessing.stopRecording();
                     }
                 };
                 t.start();
@@ -351,15 +351,15 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 break;
             case "StartTargetFingerPrint":
                 //TODO
-                BluetoothService.getInstance().startRecording(2, false);
+                SoundProcessing.startRecording(2, false);
                 break;
             case "StopTargetFingerPrint":
                 //TODO
                 t = new Thread(){
                     public void run(){
-                        BluetoothService.getInstance().stopRecording();
-                        BluetoothService.getInstance().copyWaveFile(BluetoothService.getInstance().getTempFilename(),BluetoothService.getInstance().getFilename());
-                        BluetoothService.getInstance().deleteTempFile();
+                        SoundProcessing.stopRecording();
+                        SoundProcessing.copyWaveFile(SoundProcessing.getTempFilename(),SoundProcessing.getFilename());
+                        SoundProcessing.deleteTempFile();
                     }
                 };
                 t.start();
