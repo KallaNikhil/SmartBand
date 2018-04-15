@@ -46,6 +46,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     public View view;
     private static final String TAG = "Tab3";
     private static Tab3 instance;
+
     /*
     * In List the order is as follows
     * 0 - Notifications

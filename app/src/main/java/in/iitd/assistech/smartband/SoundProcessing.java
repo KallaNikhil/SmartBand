@@ -7,6 +7,7 @@ import android.media.MediaRecorder;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
@@ -58,7 +59,7 @@ public class SoundProcessing {
     static int hist_count = 0;
     private static double[][] history_prob = new double[num_history][numOutput];
 
-    private static int MaxAudioRecordTime = 5;
+    private static int MaxAudioRecordTime = 5000;
     private static String TAG = "Sound Processing";
     private static BluetoothAdapter mBluetoothAdapter;
 
@@ -68,8 +69,12 @@ public class SoundProcessing {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
-    private static synchronized void checkIfRecodringOn(boolean requestFromService){
+    private static synchronized void checkIfRecordingOn(boolean requestFromService){
         if(isServiceRecordingSound || isActivityRecordingSound){
+            // if request from main activity and service is recording sound then stop recording
+            if(!requestFromService && isServiceRecordingSound){
+                stopRecording();
+            }
             Log.d(TAG, "already sound recoding in progress");
             return;
         }
@@ -82,13 +87,13 @@ public class SoundProcessing {
 
     public static void startRecording(int indicator, final boolean requestFromService) {
 
-        checkIfRecodringOn(requestFromService);
-
-        if((requestFromService && !isServiceRecordingSound) || (!requestFromService && !isActivityRecordingSound)){
-            return;
+        if(indicator == 1) {
+            checkIfRecordingOn(requestFromService);
+            if ((requestFromService && isActivityRecordingSound) || (!requestFromService && isServiceRecordingSound)) {
+                return;
+            }
+            Log.d(TAG, "Sound Recording started");
         }
-
-        Log.d(TAG, "Sound Recording started");
 
         int bufferSizeinBytes = 0;
         int BytesPerElement = 2; // 2 bytes in 16bit format
@@ -115,6 +120,8 @@ public class SoundProcessing {
             }, "AudioRecorder Thread");
 
             recordingThread.start();
+
+            //If request from service then stop sound fingerprinting after some time
             if(requestFromService){
                 stopRecordingThread();
             }
@@ -134,6 +141,7 @@ public class SoundProcessing {
     }
 
     private static void stopRecordingThread(){
+
         Thread stopThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -143,6 +151,12 @@ public class SoundProcessing {
                 }catch (Exception ex){
                     Log.d(TAG, "could not sleep");
                 }
+
+                // remove loud sound detection Notification
+                if(BluetoothService.getInstance() != null) {
+                    BluetoothService.getInstance().removeSoundDetectionNotification();
+                }
+
                 stopRecording();
             }
         }, "AudioRecorder Stop Thread");
@@ -202,9 +216,18 @@ public class SoundProcessing {
                 message.sendToTarget();
             }
         }
+
+        // if both are true then request from main activity to record sound has come but has not executed as service was recoding sound
+        if(isServiceRecordingSound && isActivityRecordingSound){
+            startRecording(1, false);
+        }
+
+        // reset variables to mark end of recording
+        isServiceRecordingSound = false;
+        isActivityRecordingSound =false;
     }
 
-    static Handler uiHandler = new Handler(){
+    static Handler uiHandler = new Handler(Looper.getMainLooper()){
         @Override
         public void handleMessage(Message msg) {
             double[] prob_sound = (double[]) msg.obj;
@@ -229,7 +252,11 @@ public class SoundProcessing {
             // send sound label to bluetooth device
             BluetoothService.getInstance().sendSoundLabelToDevice(idx);
 
+            // stop recording as we got result if the request is from service
             if(requestFromService){
+                if(BluetoothService.getInstance() != null) {
+                    BluetoothService.getInstance().removeSoundDetectionNotification();
+                }
                 stopRecording();
             }
 
@@ -241,9 +268,6 @@ public class SoundProcessing {
                 BluetoothService.getInstance().showSoundResultNotification(idx);
             }
 
-            // reset variables to mark end of recording
-            isServiceRecordingSound = false;
-            isActivityRecordingSound =false;
         }
     }
 

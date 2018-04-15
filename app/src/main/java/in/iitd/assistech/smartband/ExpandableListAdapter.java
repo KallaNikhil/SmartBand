@@ -88,7 +88,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                             }else{
                                 MainActivity.getInstance().switchBluetoothOn(true);
                                 setBack = true;
-                                value = "Switch On Bluetooth and then Click Again";
+                                value = "Switch On Bluetooth to start the service";
                             }
                         }
                         if(!setBack){

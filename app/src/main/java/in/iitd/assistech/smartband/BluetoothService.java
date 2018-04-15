@@ -1,57 +1,27 @@
 package in.iitd.assistech.smartband;
 
-import android.annotation.TargetApi;
-import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
-import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.media.AudioFormat;
-import android.media.AudioRecord;
-import android.media.MediaRecorder;
 import android.media.RingtoneManager;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.HandlerThread;
 import android.os.IBinder;
-import android.os.Message;
-import android.preference.PreferenceManager;
-import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
-import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.sounds.ClassifySound;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Set;
 import java.util.UUID;
-
-import static android.app.ProgressDialog.show;
-import static com.sounds.ClassifySound.M;
-import static com.sounds.ClassifySound.numOutput;
-import static in.iitd.assistech.smartband.HelperFunctions.getClassifyProb;
-import static in.iitd.assistech.smartband.MainActivity.adapter;
-import static java.lang.Thread.sleep;
 
 /**
  * Created by nikhil on 20/2/18.
@@ -67,7 +37,7 @@ public class BluetoothService extends Service {
     private static final String TAG = "BluetoothService";
     private static final String DeviceName = "HC-05";
     private static final int NOTIFICATION_ID_START = 1;
-    private static final int NOTIFICATION_ID_RESULT = 1;
+    private static final int NOTIFICATION_ID_RESULT = 2;
 
     /*
     * Variables to maintain time difference between successive detection of loud sounds
@@ -85,6 +55,8 @@ public class BluetoothService extends Service {
     private byte[] mmBuffer; // mmBuffer store for the stream
 
     ProgressDialog dialogDetectThreadEnd, dialogDetectThreadStart;
+
+    private NotificationManagerCompat notificationManager;
 
     /*
     * Check if the instance of this bluetooth service is already created
@@ -155,6 +127,8 @@ public class BluetoothService extends Service {
             showNotificationMsg("Could not find Bluetooth device, Please Pair the device and the restart the Bluetooth service");
             return Service.START_STICKY;
         }
+
+        notificationManager = NotificationManagerCompat.from(this);
 
         // create the connection thread
         connectThread = new ConnectThread(bluetoothDevice);
@@ -276,6 +250,12 @@ public class BluetoothService extends Service {
         notificationManager.notify(NOTIFICATION_ID_RESULT, mBuilder.build());
     }
 
+    public void removeSoundDetectionNotification(){
+        if(notificationManager != null) {
+            notificationManager.cancel(NOTIFICATION_ID_START);
+        }
+    }
+
     public void showSoundDetectionStartNotification(){
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.notif_icon)
@@ -283,8 +263,6 @@ public class BluetoothService extends Service {
                 .setContentText("Bluetooth Service - Started Detecting Sound")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true);
-
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
         // notificationId is a unique int for each notification that you must define
         notificationManager.notify(NOTIFICATION_ID_START, mBuilder.build());
@@ -297,8 +275,6 @@ public class BluetoothService extends Service {
                 .setContentText(msg)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true);
-
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
         // notificationId is a unique int for each notification that you must define
         notificationManager.notify(NOTIFICATION_ID_START, mBuilder.build());
