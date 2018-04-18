@@ -94,7 +94,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                         if(!setBack){
                             bluetoothServiceIntent = new Intent(MainActivity.getInstance(), BluetoothService.class);
                             MainActivity.getInstance().startService(bluetoothServiceIntent);
-                            value = "Blutooth Service Started";
+                            value = "Bluetooth Service Started";
                         }
                     }
                 } else {

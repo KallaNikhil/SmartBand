@@ -18,7 +18,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        multiDexEnabled true
     }
     repositories {
         maven { url 'http://repo1.maven.org/maven2' }
@@ -40,6 +40,11 @@ android {
             path '../libsamplerate-android/android/jni/Android.mk'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+    }
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {

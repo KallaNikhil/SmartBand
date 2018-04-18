@@ -105,6 +105,7 @@
     <color name="accent">#FF5252</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
+    <color name="action_bar">#1f2649</color>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
@@ -116,6 +117,7 @@
     <color name="bright_foreground_inverse_material_light">@color/bright_foreground_material_dark</color>
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
+    <color name="btn_bg">#277bec</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="cardview_dark_background">#FF424242</color>
@@ -216,6 +218,9 @@
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
+    <color name="txt_font">#4e5572</color>
+    <color name="view_background">#e8ecfa</color>
+    <color name="white">#ffffff</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode">
             
             <enum name="normal" value="0"/>
@@ -783,6 +788,7 @@
     <string name="app_name">Smart Band</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
+    <string name="btnUploadToServer">Upload to Server</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
@@ -858,6 +864,7 @@
     <string name="prompt_password">Password (optional)</string>
     <string name="refresh_token">Get Fresh Token</string>
     <string name="search_menu_title">Search</string>
+    <string name="service_end">Bluetooth service ended</string>
     <string name="sign_out">Sign Out</string>
     <string name="signed_in">Signed in</string>
     <string name="signed_in_err">"Error: please check logs."</string>
@@ -868,6 +875,7 @@
     <string name="title_activity_login">Sign in</string>
     <string name="title_activity_notification">NotificationActivity</string>
     <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="title_activity_upload">UploadActivity</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

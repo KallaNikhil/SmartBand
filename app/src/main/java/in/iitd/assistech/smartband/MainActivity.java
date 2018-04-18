@@ -418,7 +418,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 Log.e(TAG, "TIMER Running");
                 timer2.cancel(); //this will cancel the timer of the system
             }
-        }, 15000); // the timer will count 5 seconds....
+        }, 15000); // the timer will count 15 seconds....
     }
 
 

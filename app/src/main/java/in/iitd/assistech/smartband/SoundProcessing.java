@@ -218,13 +218,15 @@ public class SoundProcessing {
         }
 
         // if both are true then request from main activity to record sound has come but has not executed as service was recoding sound
-        if(isServiceRecordingSound && isActivityRecordingSound){
-            startRecording(1, false);
-        }
+        boolean check = isServiceRecordingSound && isActivityRecordingSound;
 
         // reset variables to mark end of recording
         isServiceRecordingSound = false;
         isActivityRecordingSound =false;
+
+        if(check){
+            startRecording(1, false);
+        }
     }
 
     static Handler uiHandler = new Handler(Looper.getMainLooper()){
