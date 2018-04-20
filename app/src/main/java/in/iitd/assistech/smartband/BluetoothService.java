@@ -66,26 +66,27 @@ public class BluetoothService extends Service {
     }
 
     //Now the receiver which will receive this Intent
+    public class ActionReceiverWrong extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // start main activity
+            Intent myIntent = new Intent(context, MainActivity.class);
+            myIntent.putExtra("incorrectDetection", true); //Optional parameters
+            startActivity(myIntent);
+
+            //This is used to close the notification tray
+            removeNotification(NOTIFICATION_ID_RESULT);
+        }
+    }
+
+    //Now the receiver which will receive this Intent
     public class ActionReceiver extends BroadcastReceiver {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-
-            String action=intent.getStringExtra("action");
-
-            Toast.makeText(context,action,Toast.LENGTH_SHORT).show();
-
-            if(action.equals("Correct Detection")){
-                // TODO: send data to server
-
-            }
-            else if(action.equals("Wrong Detection")){
-                // TODO: send data to server and fingerprinting
-                Intent myIntent = new Intent(context, MainActivity.class);
-                myIntent.putExtra("incorrectDetection", true); //Optional parameters
-                startActivity(myIntent);
-
-            }
+            //TODO: Send data to server
+            Log.d(TAG, "received Msg from notification");
             //This is used to close the notification tray
             removeNotification(NOTIFICATION_ID_RESULT);
         }
@@ -135,6 +136,9 @@ public class BluetoothService extends Service {
         // create the connection thread
         connectThread = new ConnectThread(bluetoothDevice);
         connectThread.start();
+
+        //Debug
+        showSoundResultNotification("kk");
 
         return Service.START_STICKY;
     }
@@ -231,9 +235,13 @@ public class BluetoothService extends Service {
 
         //This is the intent of PendingIntent
         Intent intentAction = new Intent(this,ActionReceiver.class);
-        intentAction.putExtra("action","wrong");
-        intentAction.putExtra("action","correct");
-        PendingIntent pendingIntentAction = PendingIntent.getBroadcast(this,1,intentAction,PendingIntent.FLAG_UPDATE_CURRENT);;
+        intentAction.putExtra("action", "correct");
+        PendingIntent pendingIntentActionCorrect = PendingIntent.getBroadcast(this,1,intentAction,PendingIntent.FLAG_UPDATE_CURRENT);
+
+        //This is the intent of PendingIntent
+        intentAction = new Intent(this,ActionReceiver.class);
+        intentAction.putExtra("action", "wrong");
+        PendingIntent pendingIntentActionWrong = PendingIntent.getBroadcast(this,1,intentAction,PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.notif_icon)
@@ -241,8 +249,8 @@ public class BluetoothService extends Service {
                 .setContentText("Sound Detected - " + resultSoundCategory)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setContentIntent(pendingIntent)
-                .addAction(R.drawable.cross_icon, "Wrong Detection", pendingIntentAction)
-                .addAction(R.drawable.common_google_signin_btn_icon_light, "Correct Detection", pendingIntentAction)
+                .addAction(R.drawable.cross_icon, "Wrong Detection", pendingIntentActionWrong)
+                .addAction(R.drawable.common_google_signin_btn_icon_light, "Correct Detection", pendingIntentActionCorrect)
                 .setAutoCancel(true)
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setVibrate(new long[] { 1000, 1000});

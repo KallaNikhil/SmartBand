@@ -19,24 +19,6 @@ import static com.sounds.ClassifySound.numOutput;
 
 public class HelperFunctions {
 
-    public static ArrayList<String> getSoundListItems(){
-
-        ArrayList<String> soundListItems = new ArrayList<>(Arrays.asList("Vehicle Horn", "Dog Bark"));
-
-        String filepath = Environment.getExternalStorageDirectory().getPath();
-        File directory = new File(filepath,"SmartBand");
-        if (directory.exists()) {
-            File[] files = directory.listFiles();
-            if(files != null) {
-                for (int i = 0; i < files.length; i++) {
-                    soundListItems.add(files[i].getName());
-                }
-            }
-        }
-
-        return soundListItems;
-    }
-
     public static double getDecibel(short[] sound){
         double decibel;
         long sum = 0;

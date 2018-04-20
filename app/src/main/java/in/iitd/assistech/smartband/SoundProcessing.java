@@ -19,6 +19,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 
 import static com.sounds.ClassifySound.numOutput;
 import static in.iitd.assistech.smartband.HelperFunctions.getClassifyProb;
@@ -119,9 +120,10 @@ public class SoundProcessing {
                 RECORDER_AUDIO_ENCODING,
                 bufferSizeinBytes);//TODO Uncomment this for processing
         int i = recorder.getState();
-        if (i == 1)
+        if (i == 1) {
+            Log.e("Recorder state::::::::", "Recording");
             recorder.startRecording();
-
+        }
         isRecording = true;
         if (indicator == 1) {
             recordingThread = new Thread(new Runnable() {
@@ -179,7 +181,7 @@ public class SoundProcessing {
 
     private static void readAudioAndProcess(final boolean requestFromService) {
 
-        byte audioData[] = new byte[bufferSize];
+        byte audioData[];
         String filename = getTempFilename();
         FileOutputStream os = null;
 
@@ -190,6 +192,7 @@ public class SoundProcessing {
         }
 
         short[] data = new short[BufferElements2Rec];
+
 
         //@link https://stackoverflow.com/questions/40459490/processing-in-audiorecord-thread
         HandlerThread myHandlerThread = new HandlerThread("my-handler-thread");
@@ -236,7 +239,8 @@ public class SoundProcessing {
             }
             if (AudioRecord.ERROR_INVALID_OPERATION != read) {
                 long currentTimeDiff = System.currentTimeMillis() - recordingStartTime;
-                if (currentTimeDiff > 5000) {
+                if (currentTimeDiff > 5000 && fingerPrintChecking) {
+
                     try {
                         os.close();
                     } catch (IOException e) {
@@ -270,19 +274,33 @@ public class SoundProcessing {
                             }
                             Log.e("Similarity with "+Integer.toString(i)+"::: ", Float.toString(similarity.getSimilarity()));
                         }
+                        Wave waveRecording = new Wave(recording);
+                        FingerprintSimilarity similarity = waveRecording.getFingerprintSimilarity(waveRecording);
                         File tempFile = new File(recording);
                         tempFile.delete();
                         fingerPrintChecking = false;
-                        if (max > 0.7) {
+                        try {
+                            os.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        if (max > 0) {
                             //TODO: Display answer
-//                            Toast.makeText(MainActivity.getInstance(), files[maxi].getName(),Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(MainActivity.getInstance(), files[maxi].getName()+max,Toast.LENGTH_SHORT).show();
                             resultSoundCategory = files[maxi].getName();
                             gotSoundCategory(resultSoundCategory);
                             break;
                         }
                     }
 
-                } else {
+                } else if (fingerPrintChecking) {
+                    ByteBuffer byteBuf = ByteBuffer.allocate(2*data.length);
+                    int i = 0;
+                    while (data.length > i) {
+                        byteBuf.putShort(data[i]);
+                        i++;
+                    }
+                    audioData = byteBuf.array();
                     try {
                         os.write(audioData);
                     } catch (IOException e) {

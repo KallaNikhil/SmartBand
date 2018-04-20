@@ -126,23 +126,23 @@ public class Tab2 extends Fragment implements View.OnClickListener{
         stopButton.setMaxWidth(buttonSize);
         stopButton.setMaxHeight(buttonSize);
 
-        startFPButton.setOnClickListener(this);
+//        startFPButton.setOnClickListener(this);
         startButton.setOnClickListener(this);
-        stopFPButton.setOnClickListener(this);
+//        stopFPButton.setOnClickListener(this);
         stopButton.setOnClickListener(this);
-        soundRecordButton.setOnClickListener(this);
-        stopSoundRecord.setOnClickListener(this);
+//        soundRecordButton.setOnClickListener(this);
+//        stopSoundRecord.setOnClickListener(this);
 
         return view;
     }
 
     public void clickStopButton(){
-//        Thread t = new Thread(){
-//            public void run(){
-//                stopButton.performClick();
-//            }
-//        };
-//        t.start();
+        MainActivity.getInstance().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                stopButton.performClick();
+            }
+        });
     }
 
     @Override
@@ -163,6 +163,7 @@ public class Tab2 extends Fragment implements View.OnClickListener{
 
             case R.id.start_button:
                 //TODO
+                MainActivity.getInstance().showDialog(MainActivity.getInstance(), "ok");
                 mListener.onButtonClick("MicReadButton");
                 startButton.setVisibility(View.GONE);
                 stopButton.setVisibility(View.VISIBLE);

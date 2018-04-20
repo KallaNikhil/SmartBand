@@ -1,71 +1,31 @@
 package in.iitd.assistech.smartband;
 
 import android.Manifest;
-import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
-import android.media.AudioFormat;
-import android.media.AudioRecord;
-import android.media.MediaRecorder;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Message;
-import android.os.PersistableBundle;
-import android.os.Vibrator;
 import android.preference.PreferenceManager;
-import android.provider.Settings;
-import android.renderscript.Sampler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.sounds.ClassifySound;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
-import static com.sounds.ClassifySound.numOutput;
-import static in.iitd.assistech.smartband.HelperFunctions.getClassifyProb;
-import static in.iitd.assistech.smartband.HelperFunctions.getDecibel;
-import static in.iitd.assistech.smartband.Tab3.getSoundListItems;
 import static in.iitd.assistech.smartband.Tab3.notificationListItems;
 import static in.iitd.assistech.smartband.Tab3.servicesListItems;
 import static in.iitd.assistech.smartband.Tab3.soundListItems;
@@ -321,6 +281,15 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         }
 
         isActive = false;
+
+        // stop sound recording in case the application gets paused
+        if(SoundProcessing.isActivityRecordingSound) {
+            if (Tab2.getInstance() != null) {
+                Tab2.getInstance().clickStopButton();
+            }else{
+                SoundProcessing.stopRecording();
+            }
+        }
     }
 
 
@@ -379,14 +348,9 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 break;
             case "StopSavingSound":
                 //TODO
-//                t = new Thread(){
-//                    public void run(){
                 SoundProcessing.stopRecording();
                 SoundProcessing.copyWaveFile(SoundProcessing.getTempFilename(),fname);
                 SoundProcessing.deleteTempFile();
-//                    }
-//                };
-//                t.start();
                 break;
             case "StartTargetFingerPrint":
                 //TODO
@@ -416,35 +380,36 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         for(int i=0; i<items.size(); i++)
             cItems[i] = items.get(i);
 
-
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Give Sound Category");
-
         ImageView wrnImg = new ImageView(MainActivity.this);
         builder.setView(wrnImg);
 
         builder.setItems(cItems, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
                 //TODO: Do something with the selection
+
                 dialog.dismiss();
-                if(stopMainActivity)
-                    finish();
             }
         });
 
         builder.setCancelable(true);
+        builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                if(stopMainActivity)
+                    MainActivity.getInstance().finish();
+            }
+        });
+
         incorrectDetDialog = builder.create();
         incorrectDetDialog.show();
-
         final Timer timer2 = new Timer();
         timer2.schedule(new TimerTask() {
             public void run() {
                 incorrectDetDialog.dismiss();
                 Log.e(TAG, "TIMER Running");
                 timer2.cancel(); //this will cancel the timer of the system
-
-                if(stopMainActivity)
-                    finish();
             }
         }, 15000); // the timer will count 15 seconds....
     }
@@ -474,8 +439,8 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         });
         builder.setNegativeButton("Wrong Detection", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int arg1) {
-                showIncorrectDetectionDialog(context, false);
                 dialog.dismiss();
+                showIncorrectDetectionDialog(context, true);
             }
         });
 

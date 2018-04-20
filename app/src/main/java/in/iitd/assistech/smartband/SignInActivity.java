@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -58,6 +59,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 //        setSupportActionBar(toolbar);
 
         findViewById(R.id.google_sign_in_button).setOnClickListener(this);
+        findViewById(R.id.email_sign_in_button).setOnClickListener(this);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -114,12 +116,19 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         Intent intent;
         switch (view.getId()){
             case R.id.google_sign_in_button:
-                signIn();
+                googleSignIn();
                 break;
-//            case R.id.email_sign_in_button:
-//                attemptLogin();
-//                break;
+            case R.id.email_sign_in_button:
+                emailSignIn();
+                break;
         }
+    }
+
+    public void emailSignIn(){
+        Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+        intent.putExtra("NAME", ((EditText)findViewById(R.id.email)).getText());
+        intent.putExtra("EMAIL", ((EditText)findViewById(R.id.email)).getText());
+        startActivity(intent);
     }
 
     /**--------Added Extra For Google Sign In------**/
@@ -145,7 +154,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
     // [END on_start_check_user]
     // [START signin]
-    private void signIn() {
+    private void googleSignIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         //TODO: Edit below method
         Log.e(TAG, "SIGN in intent start");
@@ -173,6 +182,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 // [START_EXCLUDE]
                 //TODO: updateUI(null);
                 // [END_EXCLUDE]
+                Toast.makeText(getApplicationContext(), "Could Not Retrieve data From Google\nPlease Connect to the Internet", Toast.LENGTH_SHORT).show();
             }
         } else {
             Log.e(TAG, "mCallBackManager");
