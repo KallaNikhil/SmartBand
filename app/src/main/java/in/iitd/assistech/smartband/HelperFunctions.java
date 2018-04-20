@@ -2,6 +2,7 @@ package in.iitd.assistech.smartband;
 
 
 import android.content.DialogInterface;
+import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.text.InputType;
 import android.util.Log;
@@ -9,11 +10,32 @@ import android.widget.EditText;
 
 import com.sounds.ClassifySound;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import static com.sounds.ClassifySound.numOutput;
 
 public class HelperFunctions {
+
+    public static ArrayList<String> getSoundListItems(){
+
+        ArrayList<String> soundListItems = new ArrayList<>(Arrays.asList("Vehicle Horn", "Dog Bark"));
+
+        String filepath = Environment.getExternalStorageDirectory().getPath();
+        File directory = new File(filepath,"SmartBand");
+        if (directory.exists()) {
+            File[] files = directory.listFiles();
+            if(files != null) {
+                for (int i = 0; i < files.length; i++) {
+                    soundListItems.add(files[i].getName());
+                }
+            }
+        }
+
+        return soundListItems;
+    }
 
     public static double getDecibel(short[] sound){
         double decibel;

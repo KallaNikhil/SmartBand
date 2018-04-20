@@ -25,6 +25,7 @@ import in.iitd.assistech.smartband.AndroidMultiPartEntity.ProgressListener;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -61,18 +62,26 @@ public class UploadActivity extends Activity {
 
     private ProgressBar progressBar;
     private String filePath = null;
+    private String uploadPath = null;
     private TextView txtPercentage;
     private ImageView imgPreview;
     private VideoView vidPreview;
     private Button btnUpload;
+    private Button btnUserInput;
     long totalSize = 0;
-
+    int userinput = 0;
+    /*
+        private String userinput = null;
+        private String uploadaddr = null;*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
         txtPercentage = (TextView) findViewById(R.id.txtPercentage);
         btnUpload = (Button) findViewById(R.id.btnUpload);
+        btnUpload.setEnabled(false);
+        btnUpload.setTextColor(getApplication().getResources().getColor(R.color.sb_grey));
+        btnUserInput = (Button) findViewById(R.id.btnUserInput);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         //imgPreview = (ImageView) findViewById(R.id.imgPreview);
         //vidPreview = (VideoView) findViewById(R.id.videoPreview);
@@ -105,11 +114,56 @@ public class UploadActivity extends Activity {
 
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Uploading Started", Toast.LENGTH_SHORT).show();
+
                 // uploading the file to server
                 new UploadFileToServer().execute();
+
             }
         });
+        btnUserInput.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                // uploading the file to server
+
+                ArrayList<String> soundItems = Tab3.getSoundListItems();
+                int size = soundItems.size()+3;
+
+                final CharSequence[] items = new CharSequence[size];
+                for(int i=3; i<size; i++){
+                    items[i] = soundItems.get(i-3);
+                }
+
+                items[0] = "CarHorn";
+                items[1] = "DogBark";
+                items[2] = "AmbientNoise";
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(UploadActivity.this);
+                builder.setTitle("Make your selection");
+                builder.setItems(items, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int item) {
+                        // Do something with the selection
+                        //mDoneButton.setText(items[item]);
+                        System.out.println("--------------------------------------------------------------");
+                        System.out.println(items[item]);
+                        System.out.println("--------------------------------------------------------------");
+                        userinput = item;
+                        btnUpload.setTextColor(getApplication().getResources().getColor(R.color.white));
+                        btnUpload.setEnabled(true);
+//                        Toast.makeText(getApplicationContext(),
+//                                "User has given input: " + userinput, Toast.LENGTH_LONG).show();
+                    }
+                });
+                /*builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User clicked OK button
+                    }
+                });*/
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
     }
 
     /**
@@ -170,9 +224,27 @@ public class UploadActivity extends Activity {
         @SuppressWarnings("deprecation")
         private String uploadFile() {
             String responseString = null;
+            System.out.println("-------------------------------------------------------");
+            System.out.println("Userinput : " + userinput);
+            System.out.println("-------------------------------------------------------");
+
+            if(userinput == 0){
+                uploadPath = "http://10.250.214.253/AndroidFileUpload/fileUpload1.php";
+            }
+            else if(userinput == 1){
+                uploadPath = "http://10.250.214.253/AndroidFileUpload/fileUpload2.php";
+            }
+            else if(userinput == 2){
+                uploadPath = "http://10.250.214.253/AndroidFileUpload/fileUpload3.php";
+            }
+            else if(userinput > 2)
+            {
+                uploadPath = "http://10.250.214.253/AndroidFileUpload/fileUpload4.php";
+            }
 
             HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost(Config.FILE_UPLOAD_URL);
+            //HttpPost httppost = new HttpPost(Config.FILE_UPLOAD_URL);
+            HttpPost httppost = new HttpPost(uploadPath);
 
             try {
                 AndroidMultiPartEntity entity = new AndroidMultiPartEntity(

@@ -37,4 +37,7 @@
     <string name="btnUploadToServer">Upload to Server</string>
     <string name="title_activity_upload">UploadActivity</string>
 
+    <string name="ok">OK</string>
+    <string name="userinput">User Input</string>
+
 </resources>

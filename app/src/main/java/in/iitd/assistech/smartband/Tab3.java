@@ -359,6 +359,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         });
         /**-------------------------------**/
 
+
         //------------------------------------------------------
 
         buttonStart = (Button) view.findViewById(R.id.button);
@@ -464,9 +465,9 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
             }
         });
         //------------------------------------------------------
-
         return view;
     }
+
 
     public void MediaRecorderReady(){
         mediaRecorder=new MediaRecorder();

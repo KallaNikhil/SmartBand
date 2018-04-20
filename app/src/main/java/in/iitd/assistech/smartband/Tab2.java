@@ -137,7 +137,12 @@ public class Tab2 extends Fragment implements View.OnClickListener{
     }
 
     public void clickStopButton(){
-        stopButton.performClick();
+//        Thread t = new Thread(){
+//            public void run(){
+//                stopButton.performClick();
+//            }
+//        };
+//        t.start();
     }
 
     @Override

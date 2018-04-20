@@ -23,6 +23,7 @@ import java.io.IOException;
 import static com.sounds.ClassifySound.numOutput;
 import static in.iitd.assistech.smartband.HelperFunctions.getClassifyProb;
 import static in.iitd.assistech.smartband.MainActivity.adapter;
+import static in.iitd.assistech.smartband.MainActivity.getInstance;
 import static java.lang.Thread.sleep;
 
 import com.musicg.wave.WaveTypeDetector;
@@ -333,6 +334,7 @@ public class SoundProcessing {
         // Display sound detection results if MainActivity is active
         // Else show notification
         if(MainActivity.isRunning()) {
+            Toast.makeText(MainActivity.getInstance(), resultSoundCategory, Toast.LENGTH_SHORT).show();
             MainActivity.getInstance().showDialog(MainActivity.getInstance(), resultSoundCategory);
             //press stop pause button if request is from Tab2
             if(Tab2.getInstance() != null){
