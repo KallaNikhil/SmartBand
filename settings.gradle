@@ -1,1 +1,1 @@
-include ':app', ':commons-codec-1.9', ':commons-logging-1.2', ':httpclient-4.5.2', ':httpcore-4.4.4', ':httpmime-4.5.2'
+include ':app', ':musicg-1.4.2.0'

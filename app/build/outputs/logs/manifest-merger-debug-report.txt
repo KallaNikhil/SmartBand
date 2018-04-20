@@ -1,20 +1,57 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-105:12
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-112:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-112:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-112:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-112:12
+MERGED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:17:1-31:12
+MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:21:1-50:12
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:16:1-26:12
+MERGED from [com.google.firebase:firebase-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.1.aar/3b61ee8999e6d0d8f31c14d7325a9726/AndroidManifest.xml:16:1-21:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nikhil/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/0844e4508c4c145baced368c0a0c3e68/AndroidManifest.xml:2:1-11:12
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/7b18c9729a902715470bb1538490a839/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/2cbedd38651fcd11846a5c0973012fe9/AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-auth-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-11.0.1.aar/2926f284b4956fa38a1a4156b4076c82/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.firebase:firebase-core:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.1.aar/e5b4aa5907072d5b426979a7d762bc84/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:16:1-35:12
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:16:1-29:12
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:16:1-50:12
+MERGED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.1.aar/2bd4571ceab0caa533ea80aa3725cdc0/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.1.aar/5bc857119c7a7b82c5cf92fac43f6d19/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/5b10abdacbe29c11436c0c1af1d6d5d1/AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/76de5385cb4def36875564c84ee03da1/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:multidex:1.0.2] /home/nikhil/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/600782784dbeb44ed6cc8a22c0b4650b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/b297cb0a5e87a4810c6f1ad6363fde1c/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/f1d3d091dbd5a519fbe9c98d4f03e5c7/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/1faed7ae9222aae0efb718fef3cd6d2a/AndroidManifest.xml:17:1-26:12
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/ae897fd1ed35761c03af06363d4e881d/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/customtabs-25.3.1.aar/32b071ed84d9a247f0861bf1e2bf9750/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/2d46c6f36fd919dde511c11c5d742d4d/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/119d8dd045ac3bbb950c0ef1d14b3a44/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/a930d0bc1df3dade328bd6b043f2b948/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/3abf8e07dec9a330db8922b85d3d75eb/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/19e80dcdf91e223445dcb13b9a11de0f/AndroidManifest.xml:17:1-31:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-112:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-112:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-112:12
 	package
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:3:5-42
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-112:12
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:4:5-51
-	xmlns:android
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-112:12
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ASEC_CREATE
 ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:6:5-70
 	android:name
@@ -25,16 +62,22 @@ ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidMani
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:7:22-68
 uses-permission#android.permission.INTERNET
 ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:8:5-67
-MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:20:5-66
 	android:name
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:8:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:9:5-79
-MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:19:5-78
 	android:name
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:9:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
@@ -75,42 +118,77 @@ ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidMani
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:20:22-69
 uses-sdk
 ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:21:5-22:5
-MERGED from [com.android.support:multidex:1.0.1] /home/nikhil/.android/build-cache/2448c5009ef03471fb1007fa6bc8bee763675058/output/AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:design:25.3.1] /home/nikhil/.android/build-cache/160a8172ddb84b82ab5786574f1771a3600082db/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/nikhil/.android/build-cache/cfbe060442dc793b3d7794db20a3d027c8ce7061/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.android/build-cache/19f2b54d0bd67b000165439fb28b843d902bdf86/output/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-auth-base:11.0.1] /home/nikhil/.android/build-cache/86eef9ef911a1a3961dd4047388c7ad884af6094/output/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-auth:11.0.1] /home/nikhil/.android/build-cache/7d463fea5577e55b2d0adda4f017cfdfd24b32f7/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:17:5-43
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nikhil/.android/build-cache/39f4fab3af6c08381e17bf3d1c1784784e82ad35/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:24:5-26:41
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.android/build-cache/84676a404320a57e70372b0dd27a0d9ccb6741a6/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/05eaa41f52c3be78b2eb35ce83271ef52c10f943/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/fec9b85a601c99e178f1702582c1ad6754cc9977/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.android/build-cache/bf3746f1d4b2cba1d331a321dbccb8f35e80b2bc/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.android/build-cache/0a89c10b2c7b6a159941ef2d55f568f707fb9067/output/AndroidManifest.xml:20:5-44
-MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/nikhil/.android/build-cache/8448181ea9bdfce7db7db4683e59cb3612867621/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.firebase:firebase-core:11.0.1] /home/nikhil/.android/build-cache/bee336eefea8de2f7622dc9685ca5d459c166af1/output/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/nikhil/.android/build-cache/d825ae774b0a0185aa3aa2248868af08fe69d955/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.android/build-cache/eadb12eae61670a337152a40129d70f0d6a476db/output/AndroidManifest.xml:17:5-43
-MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.android/build-cache/7d83d287bfa37d0d6b66eeaf88b375079c4c8fa3/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.android/build-cache/9f62f684979d9e2293f5916a577fc13b3ed313fb/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.android/build-cache/6073dd8cce3214304bc3dd58476fd4e62012f852/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.android/build-cache/71b3a71839ceea9483ebc9d1cd5c922ecc411d09/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.android/build-cache/fa33d642d65fdd4d1fc40b8b506d7625e795b1f3/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.android/build-cache/24afd5dbc58df6baa6792145af5b10b77926ce92/output/AndroidManifest.xml:21:5-23:58
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:21:5-22:5
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:21:5-22:5
+MERGED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:21:5-23:62
+MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/AndroidManifest.xml:21:5-23:78
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.1.aar/3b61ee8999e6d0d8f31c14d7325a9726/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.1.aar/3b61ee8999e6d0d8f31c14d7325a9726/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nikhil/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/0844e4508c4c145baced368c0a0c3e68/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nikhil/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/0844e4508c4c145baced368c0a0c3e68/AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/7b18c9729a902715470bb1538490a839/AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/7b18c9729a902715470bb1538490a839/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/2cbedd38651fcd11846a5c0973012fe9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/2cbedd38651fcd11846a5c0973012fe9/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-11.0.1.aar/2926f284b4956fa38a1a4156b4076c82/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-11.0.1.aar/2926f284b4956fa38a1a4156b4076c82/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-core:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.1.aar/e5b4aa5907072d5b426979a7d762bc84/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-core:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.1.aar/e5b4aa5907072d5b426979a7d762bc84/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.1.aar/2bd4571ceab0caa533ea80aa3725cdc0/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.1.aar/2bd4571ceab0caa533ea80aa3725cdc0/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.1.aar/5bc857119c7a7b82c5cf92fac43f6d19/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.1.aar/5bc857119c7a7b82c5cf92fac43f6d19/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/5b10abdacbe29c11436c0c1af1d6d5d1/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/5b10abdacbe29c11436c0c1af1d6d5d1/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/76de5385cb4def36875564c84ee03da1/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/76de5385cb4def36875564c84ee03da1/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:multidex:1.0.2] /home/nikhil/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/600782784dbeb44ed6cc8a22c0b4650b/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] /home/nikhil/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/600782784dbeb44ed6cc8a22c0b4650b/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/b297cb0a5e87a4810c6f1ad6363fde1c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/b297cb0a5e87a4810c6f1ad6363fde1c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/f1d3d091dbd5a519fbe9c98d4f03e5c7/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/f1d3d091dbd5a519fbe9c98d4f03e5c7/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/1faed7ae9222aae0efb718fef3cd6d2a/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/1faed7ae9222aae0efb718fef3cd6d2a/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/ae897fd1ed35761c03af06363d4e881d/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/ae897fd1ed35761c03af06363d4e881d/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/customtabs-25.3.1.aar/32b071ed84d9a247f0861bf1e2bf9750/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/customtabs-25.3.1.aar/32b071ed84d9a247f0861bf1e2bf9750/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/2d46c6f36fd919dde511c11c5d742d4d/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/2d46c6f36fd919dde511c11c5d742d4d/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/119d8dd045ac3bbb950c0ef1d14b3a44/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/119d8dd045ac3bbb950c0ef1d14b3a44/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/a930d0bc1df3dade328bd6b043f2b948/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/a930d0bc1df3dade328bd6b043f2b948/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/3abf8e07dec9a330db8922b85d3d75eb/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/3abf8e07dec9a330db8922b85d3d75eb/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/19e80dcdf91e223445dcb13b9a11de0f/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/19e80dcdf91e223445dcb13b9a11de0f/AndroidManifest.xml:21:5-23:58
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:21:5-22:5
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:21:5-22:5
 	tools:overrideLibrary
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:21:5-22:5
 	android:targetSdkVersion
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:21:5-22:5
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:21:5-22:5
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
 permission#android.permission.FLASHLIGHT
 ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:24:5-27:44
@@ -121,47 +199,73 @@ ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidMani
 	android:name
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:25:9-53
 application
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:31:5-95:19
-MERGED from [com.android.support:design:25.3.1] /home/nikhil/.android/build-cache/160a8172ddb84b82ab5786574f1771a3600082db/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.android/build-cache/19f2b54d0bd67b000165439fb28b843d902bdf86/output/AndroidManifest.xml:26:5-20
-MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:19:5-25:19
-MERGED from [com.google.firebase:firebase-auth:11.0.1] /home/nikhil/.android/build-cache/7d463fea5577e55b2d0adda4f017cfdfd24b32f7/output/AndroidManifest.xml:19:5-20:19
-MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:18:5-20:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nikhil/.android/build-cache/39f4fab3af6c08381e17bf3d1c1784784e82ad35/output/AndroidManifest.xml:9:5-20
-MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:28:5-48:19
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.android/build-cache/84676a404320a57e70372b0dd27a0d9ccb6741a6/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/05eaa41f52c3be78b2eb35ce83271ef52c10f943/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/fec9b85a601c99e178f1702582c1ad6754cc9977/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.android/build-cache/bf3746f1d4b2cba1d331a321dbccb8f35e80b2bc/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.android/build-cache/0a89c10b2c7b6a159941ef2d55f568f707fb9067/output/AndroidManifest.xml:26:5-20
-MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/nikhil/.android/build-cache/8448181ea9bdfce7db7db4683e59cb3612867621/output/AndroidManifest.xml:9:5-20
-MERGED from [com.google.firebase:firebase-core:11.0.1] /home/nikhil/.android/build-cache/bee336eefea8de2f7622dc9685ca5d459c166af1/output/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:24:5-34:19
-MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:24:5-28:19
-MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:28:5-49:19
-MERGED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:4:5-7:19
-MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/nikhil/.android/build-cache/d825ae774b0a0185aa3aa2248868af08fe69d955/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.android/build-cache/eadb12eae61670a337152a40129d70f0d6a476db/output/AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.android/build-cache/7d83d287bfa37d0d6b66eeaf88b375079c4c8fa3/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.android/build-cache/9f62f684979d9e2293f5916a577fc13b3ed313fb/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.android/build-cache/6073dd8cce3214304bc3dd58476fd4e62012f852/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.android/build-cache/71b3a71839ceea9483ebc9d1cd5c922ecc411d09/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.android/build-cache/fa33d642d65fdd4d1fc40b8b506d7625e795b1f3/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.android/build-cache/24afd5dbc58df6baa6792145af5b10b77926ce92/output/AndroidManifest.xml:29:5-20
-	android:label
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:36:9-41
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:31:5-102:19
+MERGED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:29:5-20
+MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:28:5-48:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:28:5-48:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/AndroidManifest.xml:29:5-20
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.firebase:firebase-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.1.aar/3b61ee8999e6d0d8f31c14d7325a9726/AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.1.aar/3b61ee8999e6d0d8f31c14d7325a9726/AndroidManifest.xml:19:5-20:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nikhil/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/0844e4508c4c145baced368c0a0c3e68/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nikhil/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/0844e4508c4c145baced368c0a0c3e68/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/7b18c9729a902715470bb1538490a839/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/7b18c9729a902715470bb1538490a839/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/2cbedd38651fcd11846a5c0973012fe9/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/2cbedd38651fcd11846a5c0973012fe9/AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.firebase:firebase-core:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.1.aar/e5b4aa5907072d5b426979a7d762bc84/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.1.aar/e5b4aa5907072d5b426979a7d762bc84/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.1.aar/2bd4571ceab0caa533ea80aa3725cdc0/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.1.aar/2bd4571ceab0caa533ea80aa3725cdc0/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.1.aar/5bc857119c7a7b82c5cf92fac43f6d19/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.1.aar/5bc857119c7a7b82c5cf92fac43f6d19/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/5b10abdacbe29c11436c0c1af1d6d5d1/AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/5b10abdacbe29c11436c0c1af1d6d5d1/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/76de5385cb4def36875564c84ee03da1/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/76de5385cb4def36875564c84ee03da1/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/b297cb0a5e87a4810c6f1ad6363fde1c/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/b297cb0a5e87a4810c6f1ad6363fde1c/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/f1d3d091dbd5a519fbe9c98d4f03e5c7/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/f1d3d091dbd5a519fbe9c98d4f03e5c7/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/ae897fd1ed35761c03af06363d4e881d/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/ae897fd1ed35761c03af06363d4e881d/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/customtabs-25.3.1.aar/32b071ed84d9a247f0861bf1e2bf9750/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/customtabs-25.3.1.aar/32b071ed84d9a247f0861bf1e2bf9750/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/2d46c6f36fd919dde511c11c5d742d4d/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/2d46c6f36fd919dde511c11c5d742d4d/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/119d8dd045ac3bbb950c0ef1d14b3a44/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/119d8dd045ac3bbb950c0ef1d14b3a44/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/a930d0bc1df3dade328bd6b043f2b948/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/a930d0bc1df3dade328bd6b043f2b948/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/3abf8e07dec9a330db8922b85d3d75eb/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/3abf8e07dec9a330db8922b85d3d75eb/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/19e80dcdf91e223445dcb13b9a11de0f/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/19e80dcdf91e223445dcb13b9a11de0f/AndroidManifest.xml:29:5-20
 	android:supportsRtl
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:38:9-35
+	android:label
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:36:9-41
 	android:excludeFromRecents
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:33:9-43
 	android:noHistory
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:37:9-34
-	android:allowBackup
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:32:9-35
-	android:icon
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:35:9-43
 	android:largeHeap
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:34:9-33
+	android:icon
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:35:9-43
+	android:allowBackup
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:32:9-35
 	android:theme
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:39:9-49
 meta-data#com.facebook.sdk.ApplicationId
@@ -179,249 +283,290 @@ ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidMani
 	android:name
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:45:13-41
 activity#in.iitd.assistech.smartband.SignInActivity
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:54:9-66:20
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:55:9-67:20
 	android:label
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:56:13-45
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:57:13-45
 	android:theme
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:57:13-44
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:58:13-44
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:55:13-43
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:56:13-43
 activity#in.iitd.assistech.smartband.ResultAlertDialog
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:68:9-75:20
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:69:9-76:20
 	android:screenOrientation
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:72:13-45
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:73:13-45
 	android:launchMode
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:71:13-44
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:72:13-44
 	android:configChanges
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:70:13-74
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:71:13-74
 	android:theme
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:74:13-63
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:75:13-63
 	android:taskAffinity
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:73:13-72
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:74:13-72
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:69:13-46
-activity#in.iitd.assistech.smartband.Splash
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:77:9-86:20
-	android:screenOrientation
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:79:13-49
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:70:13-46
+activity#in.iitd.assistech.smartband.UploadActivity
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:79:9-82:20
 	android:label
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:78:13-45
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:80:13-45
 	android:theme
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:80:13-44
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:81:13-44
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:77:19-41
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:79:19-49
+activity#in.iitd.assistech.smartband.Splash
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:84:9-93:20
+	android:screenOrientation
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:86:13-49
+	android:label
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:85:13-45
+	android:theme
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:87:13-44
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:84:19-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:81:13-85:29
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:88:13-92:29
 action#android.intent.action.MAIN
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:82:17-69
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:89:17-69
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:82:25-66
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:89:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:84:17-77
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:91:17-77
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:84:27-74
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:91:27-74
 service#in.iitd.assistech.smartband.BluetoothService
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:91:9-94:38
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:98:9-101:38
 	android:enabled
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:94:13-35
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:101:13-35
 	android:stopWithTask
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:93:13-41
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:100:13-41
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:92:13-45
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:99:13-45
 uses-feature#android.hardware.bluetooth_le
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:100:5-89
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:107:5-89
 	android:required
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:100:64-87
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:107:64-87
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:100:19-63
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:107:19-63
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:101:5-79
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:108:5-79
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:101:22-76
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:108:22-76
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:103:5-78
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:110:5-78
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:103:22-75
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:110:22-75
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.1] /home/nikhil/.android/build-cache/160a8172ddb84b82ab5786574f1771a3600082db/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/nikhil/.android/build-cache/cfbe060442dc793b3d7794db20a3d027c8ce7061/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.android/build-cache/19f2b54d0bd67b000165439fb28b843d902bdf86/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.android/build-cache/84676a404320a57e70372b0dd27a0d9ccb6741a6/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/05eaa41f52c3be78b2eb35ce83271ef52c10f943/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.android/build-cache/fec9b85a601c99e178f1702582c1ad6754cc9977/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.android/build-cache/bf3746f1d4b2cba1d331a321dbccb8f35e80b2bc/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.android/build-cache/0a89c10b2c7b6a159941ef2d55f568f707fb9067/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.android/build-cache/7d83d287bfa37d0d6b66eeaf88b375079c4c8fa3/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.android/build-cache/9f62f684979d9e2293f5916a577fc13b3ed313fb/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.android/build-cache/6073dd8cce3214304bc3dd58476fd4e62012f852/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.android/build-cache/71b3a71839ceea9483ebc9d1cd5c922ecc411d09/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.android/build-cache/fa33d642d65fdd4d1fc40b8b506d7625e795b1f3/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.android/build-cache/24afd5dbc58df6baa6792145af5b10b77926ce92/output/AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/2cbedd38651fcd11846a5c0973012fe9/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/2cbedd38651fcd11846a5c0973012fe9/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/76de5385cb4def36875564c84ee03da1/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/76de5385cb4def36875564c84ee03da1/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/b297cb0a5e87a4810c6f1ad6363fde1c/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/b297cb0a5e87a4810c6f1ad6363fde1c/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/f1d3d091dbd5a519fbe9c98d4f03e5c7/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/f1d3d091dbd5a519fbe9c98d4f03e5c7/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/1faed7ae9222aae0efb718fef3cd6d2a/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/1faed7ae9222aae0efb718fef3cd6d2a/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/ae897fd1ed35761c03af06363d4e881d/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/ae897fd1ed35761c03af06363d4e881d/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/customtabs-25.3.1.aar/32b071ed84d9a247f0861bf1e2bf9750/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:customtabs:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/customtabs-25.3.1.aar/32b071ed84d9a247f0861bf1e2bf9750/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/2d46c6f36fd919dde511c11c5d742d4d/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/2d46c6f36fd919dde511c11c5d742d4d/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/119d8dd045ac3bbb950c0ef1d14b3a44/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/119d8dd045ac3bbb950c0ef1d14b3a44/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/a930d0bc1df3dade328bd6b043f2b948/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/a930d0bc1df3dade328bd6b043f2b948/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/3abf8e07dec9a330db8922b85d3d75eb/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/3abf8e07dec9a330db8922b85d3d75eb/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/19e80dcdf91e223445dcb13b9a11de0f/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/19e80dcdf91e223445dcb13b9a11de0f/AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:design:25.3.1] /home/nikhil/.android/build-cache/160a8172ddb84b82ab5786574f1771a3600082db/output/AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:design:25.3.1] /home/nikhil/.android/build-cache/160a8172ddb84b82ab5786574f1771a3600082db/output/AndroidManifest.xml:26:9-47
-activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:20:9-189
-	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:20:129-162
-	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:20:163-187
-	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:20:69-128
-	android:name
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:20:19-68
-service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:24:9-184
-	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:24:64-87
-	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:24:88-182
-	android:name
-		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.android/build-cache/6cfd5ef884360271743955eaaa81aa887e327132/output/AndroidManifest.xml:24:18-63
-activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:19:9-172
-	android:exported
-		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:19:146-170
-	android:theme
-		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:19:86-145
-	android:name
-		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.android/build-cache/545fea1055dde3603ca45d9c856dd3051c025d59/output/AndroidManifest.xml:19:19-85
+		ADDED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:26:9-47
 activity#com.facebook.FacebookActivity
-ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:29:9-32:66
+ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:29:9-32:66
 	android:configChanges
-		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:31:13-96
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:31:13-96
 	android:theme
-		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:32:13-63
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:32:13-63
 	android:name
-		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:30:13-57
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:30:13-57
 activity#com.facebook.CustomTabMainActivity
-ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:33:9-71
+ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:33:9-71
 	android:name
-		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:33:19-68
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:33:19-68
 provider#com.facebook.internal.FacebookInitProvider
-ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:44:9-47:40
+ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:44:9-47:40
 	android:authorities
-		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:46:13-72
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:46:13-72
 	android:exported
-		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:47:13-37
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:47:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.android/build-cache/4d44b4cfcaacaef2b4b8ade7fd7f86daa620b650/output/AndroidManifest.xml:45:13-70
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:45:13-70
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:20:9-189
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:20:129-162
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:20:163-187
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:20:69-128
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:20:19-68
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:24:9-184
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:24:64-87
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:24:88-182
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/AndroidManifest.xml:24:18-63
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/AndroidManifest.xml:19:19-85
 uses-permission#android.permission.WAKE_LOCK
-ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:21:5-67
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:21:5-67
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:22:22-65
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:22:22-65
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:25:7-26:18
-MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:25:7-26:18
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:25:7-26:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:25:90-112
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:25:90-112
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:25:113-137
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:25:113-137
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:25:17-89
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:25:17-89
 receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
-ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:27:7-31:18
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:27:7-31:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:27:162-184
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:27:162-184
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:27:185-208
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:27:185-208
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:27:105-161
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:27:105-161
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:27:17-104
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:27:17-104
 intent-filter#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:28:11-30:27
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:28:11-30:27
 action#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:29:15-76
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:29:15-76
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:29:23-74
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:29:23-74
 service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:32:7-137
-MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.android/build-cache/98cd007cfe017941650dbcf0a79a1b77b67bcbfb/output/AndroidManifest.xml:27:7-137
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:27:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/AndroidManifest.xml:27:7-137
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:32:88-110
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:32:88-110
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:32:111-135
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:32:111-135
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:32:16-87
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:32:16-87
 service#com.google.android.gms.measurement.AppMeasurementJobService
-ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:33:7-197
+ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:33:7-197
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:33:148-170
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:33:148-170
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:33:171-195
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:33:171-195
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:33:91-147
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:33:91-147
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.android/build-cache/784421ddcd0619e2c3caaaa1f6c6dbb4c5a4fc8e/output/AndroidManifest.xml:33:16-90
+		ADDED from [com.google.firebase:firebase-analytics:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/AndroidManifest.xml:33:16-90
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:22:5-81
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:22:5-81
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:22:22-79
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:22:22-79
 permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:24:5-109
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:24:5-109
 	android:protectionLevel
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:24:72-107
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:24:72-107
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:24:17-71
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:24:17-71
+permission#in.iitd.assistech.smartband.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:24:17-71
 uses-permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:26:5-78
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:26:5-78
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:26:22-76
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:26:22-76
+uses-permission#in.iitd.assistech.smartband.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:26:22-76
 receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
-ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:30:9-35:20
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:30:9-35:20
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:30:85-108
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:30:85-108
 	android:permission
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:30:109-169
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:30:109-169
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:30:19-84
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:30:19-84
 intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:31:13-34:29
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:31:13-34:29
+intent-filter#com.google.android.c2dm.intent.RECEIVE+in.iitd.assistech.smartband
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:31:13-34:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:32:17-80
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:32:17-80
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:32:25-78
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:32:25-78
 category#${applicationId}
-ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:33:17-60
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:33:17-60
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:33:27-58
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:33:27-58
+category#in.iitd.assistech.smartband
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:33:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:33:27-58
 receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
-ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:39:9-119
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:39:9-119
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:39:93-117
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:39:93-117
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:39:19-92
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:39:19-92
 service#com.google.firebase.iid.FirebaseInstanceIdService
-ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:43:9-47:19
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:43:9-47:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:43:83-106
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:43:83-106
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:43:18-82
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:43:18-82
 intent-filter#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:44:13-46:29
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:44:13-46:29
 	android:priority
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:44:28-51
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:44:28-51
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:45:17-79
+ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:45:17-79
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.android/build-cache/9bf39cb5e5ce524d0682e5844a645a406f2cf944/output/AndroidManifest.xml:45:25-77
+		ADDED from [com.google.firebase:firebase-iid:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/AndroidManifest.xml:45:25-77
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:6:9-194
+ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.1.aar/2bd4571ceab0caa533ea80aa3725cdc0/AndroidManifest.xml:6:9-194
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:6:19-78
+		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.1.aar/2bd4571ceab0caa533ea80aa3725cdc0/AndroidManifest.xml:6:19-78
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:6:144-168
+		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.1.aar/2bd4571ceab0caa533ea80aa3725cdc0/AndroidManifest.xml:6:144-168
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:6:169-192
+		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.1.aar/2bd4571ceab0caa533ea80aa3725cdc0/AndroidManifest.xml:6:169-192
 	android:name
-		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.android/build-cache/c092fdf9072fd71cac79d9e98d6356bd6aab983e/output/AndroidManifest.xml:6:79-143
+		ADDED from [com.google.firebase:firebase-common:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.1.aar/2bd4571ceab0caa533ea80aa3725cdc0/AndroidManifest.xml:6:79-143
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.android/build-cache/eadb12eae61670a337152a40129d70f0d6a476db/output/AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/5b10abdacbe29c11436c0c1af1d6d5d1/AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.android/build-cache/eadb12eae61670a337152a40129d70f0d6a476db/output/AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/5b10abdacbe29c11436c0c1af1d6d5d1/AndroidManifest.xml:20:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.android/build-cache/eadb12eae61670a337152a40129d70f0d6a476db/output/AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:11.0.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/5b10abdacbe29c11436c0c1af1d6d5d1/AndroidManifest.xml:20:20-65

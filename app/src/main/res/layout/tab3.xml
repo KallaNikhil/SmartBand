@@ -1,200 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
-    android:background="@drawable/image1">
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mUserProfilePic"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        android:layout_marginTop="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/userName"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textColor="#fdcb2c"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mUserProfilePic"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/userEmail"
-        android:textAlignment="center"
-        android:textColor="#fed85f"
-        android:textSize="15sp"
-        android:layout_marginTop="5dp"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName"
-        />
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/myrect2"
-        android:id="@+id/notifLayout"
-        android:elevation="10dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="7dp"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEmail"
-        android:layout_marginStart="4dp">
-
-        <ExpandableListView
-            android:id="@+id/notificationListView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </ExpandableListView>
+<!--<ScrollView-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:fillViewport="true">-->
+    <!--&lt;!&ndash; Here you put the rest of your current view&ndash;&gt;-->
 
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/myrect2"
-        android:id="@+id/soundLayout"
-        android:elevation="10dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notifLayout">
-
-        <ExpandableListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/soundListView">
-
-        </ExpandableListView>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/myrect2"
-        android:id="@+id/serviceLayout"
-        android:elevation="10dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/soundLayout">
-
-        <ExpandableListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/serviceListView">
-
-        </ExpandableListView>
-
-    </RelativeLayout>
-
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="300dp">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Record"
-            android:id="@+id/button"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="37dp"
-            />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="STOP"
-            android:id="@+id/button2"
-            android:layout_alignTop="@+id/button"
-            android:layout_centerHorizontal="true"
-            />
+        android:background="@drawable/image1">
 
-        <Button
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Play"
-            android:id="@+id/button3"
-            android:layout_alignTop="@+id/button2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            />
+            android:id="@+id/mUserProfilePic"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            android:layout_marginTop="20dp"/>
 
-        <Button
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UPLOAD FILE"
-            android:id="@+id/button4"
-            android:layout_below="@+id/button2"
-            android:layout_centerHorizontal="true"
+            android:id="@+id/userName"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="#fdcb2c"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textStyle="bold"
             android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mUserProfilePic"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/userEmail"
+            android:textAlignment="center"
+            android:textColor="#fed85f"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userName"
             />
-    </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="parent">
-        <Button
-            android:id="@+id/aboutus"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="About Us"/>
-        <Button
-            android:id="@+id/howtouse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="How to Use"/>
-        <Button
-            android:id="@+id/signOutButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Out"
-            android:textColor="#09151a"/>
-        <Button
-            android:id="@+id/revokeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete User"
-            android:textColor="#09151a"/>
-        <!--<ImageView-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_weight="1"-->
-        <!--android:id="@+id/signOutButton"-->
-        <!--android:src="@drawable/sign_out_button" />-->
+            android:background="@drawable/myrect2"
+            android:id="@+id/notifLayout"
+            android:elevation="10dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="7dp"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userEmail"
+            android:layout_marginStart="4dp">
 
-        <!--<ImageView-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_weight="1"-->
-        <!--android:id="@+id/revokeButton"-->
-        <!--android:src="@drawable/revoke_button"/>-->
-    </LinearLayout>
+            <ExpandableListView
+                android:id="@+id/notificationListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </ExpandableListView>
 
-</android.support.constraint.ConstraintLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/myrect2"
+            android:id="@+id/soundLayout"
+            android:elevation="10dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notifLayout">
+
+            <ExpandableListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/soundListView">
+
+            </ExpandableListView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/myrect2"
+            android:id="@+id/serviceLayout"
+            android:elevation="10dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/soundLayout">
+
+            <ExpandableListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/serviceListView">
+
+            </ExpandableListView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="300dp"
+            android:id="@+id/ServerLayout"
+            app:layout_constraintBottom_toBottomOf="@id/serviceLayout">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Record"
+                android:id="@+id/button"
+                android:layout_alignTop="@+id/addSoundButton"
+                android:layout_alignParentLeft="true"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STOP"
+                android:id="@+id/button2"
+                android:layout_alignTop="@+id/button"
+                android:layout_centerHorizontal="true"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play"
+                android:id="@+id/button3"
+                android:layout_alignTop="@+id/button2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UPLOAD FILE"
+                android:id="@+id/button4"
+                android:layout_below="@+id/button2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/ServerLayout">
+            <Button
+                android:id="@+id/aboutus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About Us"/>
+            <Button
+                android:id="@+id/howtouse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How to Use"/>
+            <Button
+                android:id="@+id/signOutButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Out"
+                android:textColor="#09151a"/>
+            <Button
+                android:id="@+id/revokeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete User"
+                android:textColor="#09151a"/>
+            <!--<ImageView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:id="@+id/signOutButton"-->
+            <!--android:src="@drawable/sign_out_button" />-->
+
+            <!--<ImageView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:id="@+id/revokeButton"-->
+            <!--android:src="@drawable/revoke_button"/>-->
+        </LinearLayout>
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+<!--</ScrollView>-->

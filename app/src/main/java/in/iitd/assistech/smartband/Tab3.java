@@ -38,6 +38,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -93,7 +94,6 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     private String uid;
     private String name;
     private String email;
-
 
     @Override
     public void onSaveInstanceState(Bundle outState) {

@@ -10,6 +10,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.sounds.ClassifySound;
 
@@ -23,6 +24,10 @@ import static com.sounds.ClassifySound.numOutput;
 import static in.iitd.assistech.smartband.HelperFunctions.getClassifyProb;
 import static in.iitd.assistech.smartband.MainActivity.adapter;
 import static java.lang.Thread.sleep;
+
+import com.musicg.wave.WaveTypeDetector;
+import com.musicg.wave.Wave;
+import com.musicg.fingerprint.FingerprintSimilarity;
 
 /**
  * Created by nikhil on 12/4/18.
@@ -45,8 +50,8 @@ public class SoundProcessing {
 
 
     private static final int RECORDER_BPP = 16;
-    private static final String AUDIO_RECORDER_FILE_EXT_WAV = ".wav";
-    private static final String AUDIO_RECORDER_FOLDER = "SmartBand";
+    static final String AUDIO_RECORDER_FILE_EXT_WAV = ".wav";
+    static final String AUDIO_RECORDER_FOLDER = "SmartBand";
     private static final String AUDIO_RECORDER_TEMP_FILE = "record_temp.raw";
 
     private static AudioRecord recorder = null;
@@ -62,6 +67,11 @@ public class SoundProcessing {
     private static int MaxAudioRecordTime = 5000;
     private static String TAG = "Sound Processing";
     private static BluetoothAdapter mBluetoothAdapter;
+
+    private static boolean fingerPrintChecking;
+    private static long recordingStartTime;
+
+    private static String resultSoundCategory;
 
     static{
         bufferSize = AudioRecord.getMinBufferSize
@@ -93,6 +103,9 @@ public class SoundProcessing {
                 return;
             }
             Log.d(TAG, "Sound Recording started");
+
+            recordingStartTime = System.currentTimeMillis();
+            fingerPrintChecking = true;
         }
 
         int bufferSizeinBytes = 0;
@@ -154,7 +167,7 @@ public class SoundProcessing {
 
                 // remove loud sound detection Notification
                 if(BluetoothService.getInstance() != null) {
-                    BluetoothService.getInstance().removeSoundDetectionNotification();
+                    BluetoothService.getInstance().removeNotification(BluetoothService.NOTIFICATION_ID_START);
                 }
 
                 stopRecording();
@@ -164,45 +177,18 @@ public class SoundProcessing {
     }
 
     private static void readAudioAndProcess(final boolean requestFromService) {
+
+        byte audioData[] = new byte[bufferSize];
+        String filename = getTempFilename();
+        FileOutputStream os = null;
+
+        try {
+            os = new FileOutputStream(filename);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         short[] data = new short[BufferElements2Rec];
-
-        //@link https://stackoverflow.com/questions/40459490/processing-in-audiorecord-thread
-        HandlerThread myHandlerThread = new HandlerThread("my-handler-thread");
-        myHandlerThread.start();
-
-        final Handler myHandler = new Handler(myHandlerThread.getLooper(), new Handler.Callback() {
-            @Override
-            public boolean handleMessage(Message msg) {
-                Log.e(TAG, "handleMessage");
-                short[] temp_sound = (short[]) msg.obj;
-                double[] classifyProb = getClassifyProb(temp_sound);
-                for (int i = 0; i < classifyProb.length; i++) {
-                    history_prob[hist_count][i] = classifyProb[i];
-                }
-                hist_count++;
-                int numNan = 0;
-                if (hist_count == num_history) {
-                    hist_count = 0;
-                    double[] mean_classifyProb = new double[classifyProb.length];
-                    for (int i = 0; i < classifyProb.length; i++) {
-                        int num_NotNan = 0;
-                        double sum = 0;
-                        for (int j = 0; j < history_prob.length; j++) {
-                            if (history_prob[j][i] != Double.NaN) {
-                                sum += history_prob[j][i];
-                                num_NotNan++;
-                            }
-                        }
-                        mean_classifyProb[i] = sum / num_NotNan;
-                        numNan = num_history - num_NotNan;
-                    }
-                    Log.e(TAG, "Num Nan : " + numNan);
-                    if (numNan < num_history / 2)
-                        setProbOut(mean_classifyProb, requestFromService);
-                }
-                return true;
-            }
-        });
 
         int read = 0;
         while (isRecording) {
@@ -210,10 +196,83 @@ public class SoundProcessing {
             if (read > 0) {
             }
             if (AudioRecord.ERROR_INVALID_OPERATION != read) {
-                Message message = myHandler.obtainMessage();
-                message.obj = data;
-                message.arg1 = read;
-                message.sendToTarget();
+                long currentTimeDiff = System.currentTimeMillis() - recordingStartTime;
+                if (currentTimeDiff > 5000) {
+                    try {
+                        os.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    String fname = getFilename();
+                    copyWaveFile(getTempFilename(),fname);
+                    deleteTempFile();
+                    String recording = fname;
+                    String filepath = Environment.getExternalStorageDirectory().getPath();
+                    File directory = new File(filepath,AUDIO_RECORDER_FOLDER);
+                    if (directory.exists()) {
+                        File[] files = directory.listFiles();
+                        String beep;
+                        float max = 0;
+                        int maxi = -1;
+                        Log.e("Number of files::::::::", Integer.toString(files.length));
+                        for (int i = 0; i < files.length; i++)
+                        {
+                            beep = directory.getAbsolutePath() + "/" + files[i].getName();
+                            if (beep.equals(recording))
+                                continue;
+                            Log.e("Filepath::::::::::", beep);
+                            Wave waveRecording = new Wave(recording);
+                            Wave waveBeep = new Wave(beep);
+                            FingerprintSimilarity similarity = waveRecording.getFingerprintSimilarity(waveBeep);
+                            if (similarity.getSimilarity() > max) {
+                                max = similarity.getSimilarity();
+                                maxi = i;
+                            }
+                            Log.e("Similarity with "+Integer.toString(i)+"::: ", Float.toString(similarity.getSimilarity()));
+                        }
+
+                        File tempFile = new File(recording);
+                        tempFile.delete();
+                        fingerPrintChecking = false;
+
+                        if (max > 0.7) {
+                            resultSoundCategory = files[maxi].getName();
+
+                            // display answer
+//                            Toast.makeText(MainActivity.getInstance(), resultSoundCategory,Toast.LENGTH_SHORT).show();
+
+                            if(BluetoothService.getInstance() != null) {
+                                //TODO: send unique id corresponding to the detected sound category
+                                //TODO: send sound label to bluetooth device
+//                                BluetoothService.getInstance().sendSoundLabelToDevice(idx);
+
+                                BluetoothService.getInstance().removeNotification(BluetoothService.NOTIFICATION_ID_START);
+                            }
+
+                            // Display sound detection results if MainActivity is active
+                            // Else show notification
+                            if(MainActivity.isRunning()) {
+                                MainActivity.getInstance().showDialog(MainActivity.getInstance(), resultSoundCategory);
+                                //press stop pause button if request is from Tab2
+                                if(Tab2.getInstance() != null){
+                                    Tab2.getInstance().clickStopButton();
+                                }
+                            }else {
+                                BluetoothService.getInstance().showSoundResultNotification(resultSoundCategory);
+                                stopRecording();
+                            }
+                            break;
+                        }
+                    }
+
+                } else {
+                    try {
+                        os.write(audioData);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
 
@@ -226,50 +285,6 @@ public class SoundProcessing {
 
         if(check){
             startRecording(1, false);
-        }
-    }
-
-    static Handler uiHandler = new Handler(Looper.getMainLooper()){
-        @Override
-        public void handleMessage(Message msg) {
-            double[] prob_sound = (double[]) msg.obj;
-            boolean[] notifState = adapter.getInitialNotifListState();
-            adapter.editTab2Text(prob_sound, notifState);
-        }
-    };
-
-    private static void setProbOut(double[] outProb, boolean requestFromService){
-        //send msg to edit value of prob on screen
-        //Launch dialog interface;
-        if(!requestFromService) {
-            Message message = uiHandler.obtainMessage();
-            message.obj = outProb;
-            message.sendToTarget();
-        }
-        Log.e(TAG, "Prob Ambient = " + Double.toString(outProb[2]));
-        if((1.0-outProb[2])>0.6){
-            int idx = 1;
-            if(outProb[1]<outProb[0]) idx = 0;
-
-            // send sound label to bluetooth device
-            BluetoothService.getInstance().sendSoundLabelToDevice(idx);
-
-            // stop recording as we got result if the request is from service
-            if(requestFromService){
-                if(BluetoothService.getInstance() != null) {
-                    BluetoothService.getInstance().removeSoundDetectionNotification();
-                }
-                stopRecording();
-            }
-
-            // Display sound detection results if MainActivity is active
-            // Else show notification
-            if(MainActivity.isRunning()) {
-                MainActivity.getInstance().showDialog(MainActivity.getInstance(), idx, outProb);
-            }else {
-                BluetoothService.getInstance().showSoundResultNotification(idx);
-            }
-
         }
     }
 

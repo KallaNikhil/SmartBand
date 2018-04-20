@@ -1,10 +1,12 @@
 package in.iitd.assistech.smartband;
 
+import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Point;
 import android.location.Location;
@@ -59,21 +61,14 @@ public class Tab2 extends Fragment implements View.OnClickListener{
     private static final String TAG = "TAB2";
 
     private View view;
-    private TextView hornValue;
-    private TextView barkValue;
-    private TextView gunShotValue;
-    private TextView ambientValue;
     private Button startFPButton;
     private Button stopFPButton;
     private Button soundRecordButton;
     private Button stopSoundRecord;
     private ImageButton startButton;
     private ImageButton stopButton;
+    private Button addSoundButton;
     private ListView historyListView;
-    private Button bleOnButton;
-    private Button bleSendButton;
-    private Button bleOffButton;
-    TextView myLabel;
 
     // MAC address of remote Bluetooth device
     // Replace this with the address of your own module
@@ -85,40 +80,50 @@ public class Tab2 extends Fragment implements View.OnClickListener{
     // Handler for writing messages to the Bluetooth connection
     Handler writeHandler;
 
+    private boolean recording;
+    private String fileName;
+
+    static ArrayList<String> recordedSoundListItems;
+    static ArrayList<Boolean> recordedSoundSwitchState;
+
+    private static Tab2 instance;
 
     private OnTabEvent mListener;
 
     public Tab2(){
+    }
 
+    public static Tab2 getInstance(){
+        return instance;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        instance = this;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        instance = null;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.tab2, container, false);
 
-        hornValue = (TextView)view.findViewById(R.id.hornValue);
-        barkValue = (TextView)view.findViewById(R.id.barkValue);
-        gunShotValue = (TextView)view.findViewById(R.id.gunShotValue);
-        ambientValue = (TextView)view.findViewById(R.id.ambientValue);
         startFPButton = (Button)view.findViewById(R.id.startFPButton);
         stopFPButton = (Button)view.findViewById(R.id.stopFPButton);
         soundRecordButton = (Button)view.findViewById(R.id.startsoundRecord);
         stopSoundRecord = (Button)view.findViewById(R.id.stopSoundRecord);
+        addSoundButton = (Button)view.findViewById(R.id.addSoundButton);
+
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point screenSize = new Point();
         display.getRealSize(screenSize);
         int size = Math.min(screenSize.x, screenSize.y);
         int buttonSize = Math.round(size * 0.75f);
-
-        bleSendButton = (Button) view.findViewById(R.id.bleSendButton);
-        bleOnButton = (Button) view.findViewById(R.id.bleOnButton);
-        bleOffButton = (Button) view.findViewById(R.id.bleOffButton);
-        myLabel = (TextView) view.findViewById(R.id.myLabel);
 
         startButton = (ImageButton) view.findViewById(R.id.start_button);
         stopButton = (ImageButton) view.findViewById(R.id.stop_button);
@@ -135,11 +140,13 @@ public class Tab2 extends Fragment implements View.OnClickListener{
         stopButton.setOnClickListener(this);
         soundRecordButton.setOnClickListener(this);
         stopSoundRecord.setOnClickListener(this);
-        bleOffButton.setOnClickListener(this);
-        bleOnButton.setOnClickListener(this);
-        bleSendButton.setOnClickListener(this);
+        addSoundButton.setOnClickListener(this);
 
         return view;
+    }
+
+    public void clickStopButton(){
+        stopButton.performClick();
     }
 
     @Override
@@ -177,19 +184,105 @@ public class Tab2 extends Fragment implements View.OnClickListener{
             case R.id.stopSoundRecord:
                 mListener.onButtonClick("StopRecord");
                 break;
-            case R.id.bleOnButton:
-                connectButtonPressed();
-                mListener.onButtonClick("TurnBluetoothOn");
-                break;
-            case R.id.bleSendButton:
-                mListener.onButtonClick("SendBluetoothData");
-                break;
-            case R.id.bleOffButton:
-                disconnectButtonPressed();
-                mListener.onButtonClick("TurnBluetoothOff");
+            case R.id.addSoundButton:
+                addSound();
                 break;
         }
     }
+
+
+    private void addSound() {
+        if (recording) {
+            stopRecording();
+        } else {
+            startRecording();
+        }
+    }
+
+    private void startRecording() {
+        recording = true;
+        Button recordButton = (Button) view.findViewById(R.id.addSoundButton);
+        recordButton.setText("Stop Recording");
+        mListener.onButtonClick("StartSavingSound");
+    }
+
+    private void stopRecording() {
+        recording = false;
+        Button recordButton = (Button) view.findViewById(R.id.addSoundButton);
+        recordButton.setText("Record Sound");
+
+
+        final EditText input = new EditText(getActivity());
+        final AlertDialog dialog = new AlertDialog.Builder(getActivity())
+                .setView(input)
+                .setTitle("Enter a name for the sound")
+                .setPositiveButton(android.R.string.ok, null) //Set to null. We override the onclick
+                .create();
+
+        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
+
+            @Override
+            public void onShow(DialogInterface dialogInterface) {
+
+                Button button = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE);
+                button.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+                        fileName = input.getText().toString().trim();
+                        if (fileName.length() == 0)
+                            Toast.makeText(getActivity(), "Field empty", Toast.LENGTH_SHORT).show();
+                        else if (recordedSoundListItems.contains(fileName))
+                            Toast.makeText(getActivity(), "Name taken", Toast.LENGTH_SHORT).show();
+                        else {
+
+                            mListener.onButtonClick("StopSavingSound"+" "+fileName);
+                            Toast.makeText(getActivity(), fileName+" added", Toast.LENGTH_SHORT);
+                            recordedSoundListItems.add(fileName);
+                            recordedSoundSwitchState.add(true);
+                            dialog.dismiss();
+                        }
+                    }
+                });
+            }
+        });
+        dialog.show();
+
+        final AlertDialog dialog1 = new AlertDialog.Builder(getActivity())
+                .setTitle("Do you want to upload \"doorbell.wav\" to the server?")
+                .setPositiveButton(android.R.string.yes, null) //Set to null. We override the onclick
+                .setNegativeButton(android.R.string.no, null) //Set to null. We override the onclick
+                .create();
+
+        dialog1.setOnShowListener(new DialogInterface.OnShowListener() {
+
+            @Override
+            public void onShow(DialogInterface dialogInterface) {
+
+                Button button_p = ((AlertDialog) dialog1).getButton(AlertDialog.BUTTON_POSITIVE);
+                button_p.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+                        //TODO: Upload file to the server
+                        dialog1.dismiss();
+                    }
+                });
+
+                Button button_n = ((AlertDialog) dialog1).getButton(AlertDialog.BUTTON_NEGATIVE);
+                button_n.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+                        dialog1.dismiss();
+                    }
+                });
+            }
+        });
+        dialog.show();
+
+    }
+
 
     @Override
     public void onAttach(Context context) {
@@ -198,124 +291,6 @@ public class Tab2 extends Fragment implements View.OnClickListener{
             mListener = (OnTabEvent) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + " must implement OnTabEvent interface");
-        }
-    }
-
-
-    public void editValue(double[] output, boolean[] notifState){
-        String filename = "M12_bhavya_phone.csv";
-        writeToExcel(filename, output);
-        hornValue.setText(Double.toString(output[0]));
-        barkValue.setText(Double.toString(output[1]));
-//        gunShotValue.setText(Double.toString(output[]));
-        ambientValue.setText(Double.toString(output[2]));
-    }
-
-    /**
-     * Launch the Bluetooth thread.
-     */
-    public void connectButtonPressed() {
-        Log.v(TAG, "Connect button pressed.");
-
-        // Only one thread at a time
-        if (btt != null) {
-            Log.w(TAG, "Already connected!");
-            return;
-        }
-
-        // Initialize the Bluetooth thread, passing in a MAC address
-        // and a Handler that will receive incoming messages
-        btt = new BluetoothThread(address, new Handler() {
-
-            @Override
-            public void handleMessage(Message message) {
-
-                String s = (String) message.obj;
-
-                // Do something with the message
-                if (s.equals("CONNECTED")) {
-                    myLabel.setText("Connected.");
-                } else if (s.equals("DISCONNECTED")) {
-                    myLabel.setText("Disconnected.");
-                } else if (s.equals("CONNECTION FAILED")) {
-                    myLabel.setText("Connection failed!");
-                    btt = null;
-                } else {
-                    myLabel.setText(s);
-                }
-            }
-        });
-
-        // Get the handler that is used to send messages
-        writeHandler = btt.getWriteHandler();
-
-        // Run the thread
-        btt.start();
-        myLabel.setText("Connecting...");
-    }
-
-    /**
-     * Kill the Bluetooth thread.
-     */
-    public void disconnectButtonPressed() {
-        Log.v(TAG, "Disconnect button pressed.");
-
-        if(btt != null) {
-            btt.interrupt();
-            btt = null;
-        }
-    }
-
-    /**
-     * Send a message using the Bluetooth thread's write handler.
-     */
-    public void writeButtonPressed(View v) {
-        Log.v(TAG, "Write button pressed.");
-
-        String data = myLabel.getText().toString();
-
-        Message msg = Message.obtain();
-        msg.obj = data;
-        writeHandler.sendMessage(msg);
-    }
-
-
-    public void writeToExcel(String filename, double[] output){ //String detail
-        File external = Environment.getExternalStorageDirectory();
-        String sdcardPath = external.getPath() + "/SmartBand/";
-        // to this path add a new directory path
-        File file = new File(external, filename);
-        try{
-            if (!file.exists()){
-                file.createNewFile();
-            }
-            FileOutputStream fos  = getContext().openFileOutput(filename, getContext().MODE_APPEND);
-//                            Writer out = new BufferedWriter(new OutputStreamWriter(openFileOutput(file.getName(), MODE_APPEND)));
-
-            android.text.format.DateFormat df = new android.text.format.DateFormat();
-            Date date = new Date();
-
-            FileWriter filewriter = new FileWriter(sdcardPath + filename, true);
-            BufferedWriter out = new BufferedWriter(filewriter);
-//            StringBuilder sb = new StringBuilder(dateString.length());
-//            sb.append(dateString);
-//            Log.e(TAG, "Time: " + date.toString());
-
-            String data = date.toString() + ",";
-//            data += "bark, ";
-            for(int i=0; i<output.length; i++){
-                data += output[i] + ",";
-            }
-            data += "\n";
-//            data += detail + "\n";
-
-            out.write(data);
-            out.close();
-            filewriter.close();
-
-            fos.close();
-        }catch(Exception e){
-            Log.e(TAG, e.toString() + " FileOutputStream");
         }
     }
 

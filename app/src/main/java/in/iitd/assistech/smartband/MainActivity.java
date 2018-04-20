@@ -322,6 +322,20 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
     @Override
     public void onButtonClick(String text) {
+
+        String fname = "", filepath;
+        File file;
+        if (text.startsWith("StopSavingSound")) {
+            String[] splitted = text.split("\\s+");
+            filepath = Environment.getExternalStorageDirectory().getPath();
+            file = new File(filepath,SoundProcessing.AUDIO_RECORDER_FOLDER);
+            if (!file.exists()) {
+                file.mkdirs();
+            }
+            fname = file.getAbsolutePath() + "/" + splitted[1] + SoundProcessing.AUDIO_RECORDER_FILE_EXT_WAV;
+            text = "StopSavingSound";
+        }
+
         Thread t;
         switch(text){
             case "MicReadButton":
@@ -364,32 +378,22 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 };
                 t.start();
                 break;
-            case "TurnBluetoothOn":
-                Log.e(TAG, "Try to connect");
-//                connectButtonPressed();
-                break;
-            case "SendBluetoothData":
-
-                break;
-            case "TurnBluetoothOff":
-//                disconnectButtonPressed();
-                break;
         }
 
     }
 
-    public void showDialog(Context context, int idx, double[] outProb) {
+    public void showDialog(Context context, String resultSoundCategory) {
         if (myDialog != null && myDialog.isShowing()) return;
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(warnMsgs[idx]);
+        builder.setTitle(resultSoundCategory);
         ImageView wrnImg = new ImageView(MainActivity.this);
         //TODO No Text clickable button for dog bark case dialog
 //        ViewGroup.LayoutParams imgParams = wrnImg.getLayoutParams();
 //        imgParams.width = 60;
 //        imgParams.height = 60;
 //        wrnImg.setLayoutParams(imgParams);
-        wrnImg.setImageResource(warnImgs[idx]);
+//        wrnImg.setImageResource(warnImgs[idx]);
         builder.setView(wrnImg);
 //        builder.setMessage("Message");
 //        builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {

@@ -36,8 +36,8 @@ public class BluetoothService extends Service {
 
     private static final String TAG = "BluetoothService";
     private static final String DeviceName = "HC-05";
-    private static final int NOTIFICATION_ID_START = 1;
-    private static final int NOTIFICATION_ID_RESULT = 2;
+    static final int NOTIFICATION_ID_START = 1;
+    static final int NOTIFICATION_ID_RESULT = 2;
 
     /*
     * Variables to maintain time difference between successive detection of loud sounds
@@ -77,16 +77,15 @@ public class BluetoothService extends Service {
 
             if(action.equals("Correct Detection")){
                 // TODO: send data to server
+
             }
             else if(action.equals("Wrong Detection")){
                 // TODO: send data to server
 
             }
             //This is used to close the notification tray
-            Intent it = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
-            context.sendBroadcast(it);
+            removeNotification(NOTIFICATION_ID_RESULT);
         }
-
     }
 
     static{
@@ -219,7 +218,7 @@ public class BluetoothService extends Service {
         return true;
     }
 
-    public void showSoundResultNotification(int idx){
+    public void showSoundResultNotification(String resultSoundCategory){
         // Start MainActivity if the notification is clicked on
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -235,7 +234,7 @@ public class BluetoothService extends Service {
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.notif_icon)
                 .setContentTitle("Smart Band")
-                .setContentText("Sound Detected - " + idx)
+                .setContentText("Sound Detected - " + resultSoundCategory)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setContentIntent(pendingIntent)
                 .addAction(R.drawable.cross_icon, "Wrong Detection", pendingIntentAction)
@@ -250,9 +249,9 @@ public class BluetoothService extends Service {
         notificationManager.notify(NOTIFICATION_ID_RESULT, mBuilder.build());
     }
 
-    public void removeSoundDetectionNotification(){
+    public void removeNotification(int id){
         if(notificationManager != null) {
-            notificationManager.cancel(NOTIFICATION_ID_START);
+            notificationManager.cancel(id);
         }
     }
 

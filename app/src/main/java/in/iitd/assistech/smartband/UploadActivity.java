@@ -23,6 +23,9 @@ import java.io.IOException;
 
 import in.iitd.assistech.smartband.AndroidMultiPartEntity.ProgressListener;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;

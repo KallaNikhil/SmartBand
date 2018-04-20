@@ -43,144 +43,25 @@
             android:adjustViewBounds="true"/>
 
     </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/addSoundButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/rounded_corner_blue"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Add Sound"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/play_pause_layout" />
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="parent">
-
-        <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Turn On"-->
-        <!--android:id="@+id/bleOnButton"-->
-        <!--android:clickable="true"-->
-        <!--app:layout_constraintLeft_toRightOf="parent"/>-->
-
-
-        <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Send"-->
-        <!--android:id="@+id/bleSendButton"-->
-        <!--app:layout_constraintLeft_toRightOf="@+id/bleOnButton"/>-->
-
-        <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="turn off"-->
-        <!--android:id="@+id/bleOffButton"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--app:layout_constraintLeft_toRightOf="@+id/bleSendButton"/>-->
-
-        <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Label"-->
-        <!--android:id="@+id/myLabel"-->
-        <!--android:textColor="#ff0627"-->
-        <!--android:textSize="25dp"-->
-        <!--app:layout_constraintLeft_toRightOf="@+id/bleOffButton"/>-->
-
-    </android.support.constraint.ConstraintLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="parent">
-
-        <!--<RelativeLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/hornLayout"-->
-        <!--android:layout_centerHorizontal="true">-->
-        <!--<TextView-->
-        <!--android:id="@+id/hornText"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Vehicle Horn" />-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/hornValue"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Starting..."-->
-        <!--android:layout_toRightOf="@+id/hornText"-->
-        <!--android:layout_toEndOf="@+id/hornText"-->
-        <!--android:layout_marginLeft="10dp"/>-->
-        <!--</RelativeLayout>-->
-
-        <!--<RelativeLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/barkLayout"-->
-        <!--android:layout_below="@+id/hornLayout"-->
-        <!--android:layout_centerHorizontal="true">-->
-        <!--<TextView-->
-        <!--android:id="@+id/barkText"-->
-        <!--android:text="Dog Bark"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/barkValue"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Starting..."-->
-        <!--android:layout_toRightOf="@+id/barkText"-->
-        <!--android:layout_toEndOf="@+id/barkText"-->
-        <!--android:layout_marginLeft="10dp"/>-->
-        <!--</RelativeLayout>-->
-
-        <!--<RelativeLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:id="@+id/gunShotLayout"-->
-        <!--android:layout_below="@+id/barkLayout">-->
-        <!--<TextView-->
-        <!--android:id="@+id/gunShotText"-->
-        <!--android:text="Gunshot Sound"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/gunShotValue"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Starting..."-->
-        <!--android:layout_toRightOf="@+id/gunShotText"-->
-        <!--android:layout_toEndOf="@+id/gunShotText"-->
-        <!--android:layout_marginLeft="10dp"/>-->
-        <!--</RelativeLayout>-->
-
-        <!--<RelativeLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:id="@+id/ambientLayout"-->
-        <!--android:layout_below="@+id/gunShotLayout">-->
-        <!--<TextView-->
-        <!--android:id="@+id/ambientText"-->
-        <!--android:text="Ambient Sound"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/ambientValue"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Starting..."-->
-        <!--android:layout_toRightOf="@+id/ambientText"-->
-        <!--android:layout_toEndOf="@+id/ambientText"-->
-        <!--android:layout_marginLeft="10dp"/>-->
-        <!--</RelativeLayout>-->
-
-    </RelativeLayout>
 
     <Button
         android:id="@+id/startFPButton"
@@ -223,5 +104,7 @@
         app:layout_constraintRight_toLeftOf="parent"
         android:layout_marginTop="14dp" />
 
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

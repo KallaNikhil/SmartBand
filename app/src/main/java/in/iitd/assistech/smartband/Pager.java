@@ -46,10 +46,6 @@ public class Pager extends FragmentStatePagerAdapter {
         return tabCount;
     }
 
-    public void editTab2Text(double[] prob, boolean[] notifState){
-        tab2.editValue(prob, notifState);
-    }
-
     public boolean[] getInitialNotifListState(){
         if (tab3 != null){
             return tab3.getFinalNotifState();
