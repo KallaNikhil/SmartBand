@@ -81,7 +81,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     private ExpandableListView[] listViews;
     private static final int ListSize = 3;
     static final String[] notificationListItems = {"Vibration", "Sound", "Flashlight", "Flash Screen"};
-    static final ArrayList<String> soundListItems = new ArrayList<>(Arrays.asList("Vehicle Horn", "Dog Bark"));
+    static ArrayList<String> soundListItems = new ArrayList<>();
     static final String[] servicesListItems = {"BluetoothService"};
 
     static Boolean soundAdded = false;
@@ -144,9 +144,9 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         return instance;
     }
 
-    public static void getSoundListItems(ArrayList<String> soundListItems){
+    public static ArrayList<String> getSoundListItems(){
 
-        soundListItems = new ArrayList<>(Arrays.asList("Vehicle Horn", "Dog Bark"));
+        ArrayList<String> soundListItems = new ArrayList<>(Arrays.asList("Vehicle Horn", "Dog Bark"));
 
         String filepath = Environment.getExternalStorageDirectory().getPath();
         File directory = new File(filepath,"SmartBand");
@@ -158,6 +158,8 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
                 }
             }
         }
+
+        return soundListItems;
     }
 
     public void switchBluetoothServiceOn(){
@@ -302,7 +304,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         listViews[1] = (ExpandableListView) view.findViewById(R.id.soundListView);
         listViews[2] = (ExpandableListView) view.findViewById(R.id.serviceListView);
 
-        getSoundListItems(soundListItems);
+        soundListItems = getSoundListItems();
 
         if(savedInstanceState != null){
             Log.d(TAG, "check if soundListItems is in sync - present : " + soundListItems.size()+", stored : "+ savedInstanceState.getInt("soundListItemsSize", 0));

@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         SharedPreferences app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         // update soundListItems
-        Tab3.getSoundListItems(soundListItems);
+        soundListItems = Tab3.getSoundListItems();
 
         boolean[] notifState = new boolean[notificationListItems.length];
         for (int i=0; i<notificationListItems.length; i++){
@@ -373,6 +373,21 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 //                copyWaveFile(getTempFilename(),getFilename());
 //                deleteTempFile();
                 break;
+            case "StartSavingSound":
+                //TODO
+                SoundProcessing.startRecording(2, false);
+                break;
+            case "StopSavingSound":
+                //TODO
+//                t = new Thread(){
+//                    public void run(){
+                SoundProcessing.stopRecording();
+                SoundProcessing.copyWaveFile(SoundProcessing.getTempFilename(),fname);
+                SoundProcessing.deleteTempFile();
+//                    }
+//                };
+//                t.start();
+                break;
             case "StartTargetFingerPrint":
                 //TODO
                 SoundProcessing.startRecording(2, false);
@@ -395,8 +410,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     public void showIncorrectDetectionDialog(Context context, final Boolean stopMainActivity){
         if (incorrectDetDialog != null && incorrectDetDialog.isShowing()) return;
 
-        ArrayList<String> items = new ArrayList<String>();
-        Tab3.getSoundListItems(items);
+        ArrayList<String> items = Tab3.getSoundListItems();
 
         CharSequence[] cItems = new CharSequence[items.size()];
         for(int i=0; i<items.size(); i++)
