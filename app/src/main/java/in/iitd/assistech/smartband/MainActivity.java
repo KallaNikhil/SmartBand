@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     static int[] warnImgs = new int[] {R.drawable.car_horn, R.drawable.dog_bark, 0};
 
     public AlertDialog myDialog;
+    public AlertDialog incorrectDetDialog;
 
     private static boolean[] startNotifListState;
     private static boolean[] startSoundListState;
@@ -260,13 +261,16 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         super.onResume();
         SharedPreferences app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
+        // update soundListItems
+        Tab3.getSoundListItems(soundListItems);
+
         boolean[] notifState = new boolean[notificationListItems.length];
         for (int i=0; i<notificationListItems.length; i++){
             notifState[i] = app_preferences.getBoolean(notificationListItems[i], true);
         }
-        boolean[] soundState =  new boolean[soundListItems.length];
-        for (int i=0; i<soundListItems.length; i++){
-            soundState[i] = app_preferences.getBoolean(soundListItems[i], true);
+        boolean[] soundState =  new boolean[soundListItems.size()];
+        for (int i=0; i<soundListItems.size(); i++){
+            soundState[i] = app_preferences.getBoolean(soundListItems.get(i), true);
         }
 
         boolean[] serviceState =  new boolean[servicesListItems.length];
@@ -279,6 +283,11 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         startServiceListState = serviceState;
 
         isActive = true;
+
+        Boolean incorrectDetection = getIntent().getExtras().getBoolean("incorrectDetection", false);
+        if(incorrectDetection){
+            showIncorrectDetectionDialog(getApplicationContext(), true);
+        }
     }
 
     @Override
@@ -296,8 +305,8 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
         if(adapter.getInitialSoundListState() != null){
             boolean[] soundState = adapter.getInitialSoundListState();
-            for (int i=0; i<soundListItems.length; i++){
-                editor.putBoolean(soundListItems[i], soundState[i]);
+            for (int i=0; i<soundListItems.size(); i++){
+                editor.putBoolean(soundListItems.get(i), soundState[i]);
             }
             editor.commit();
         }
@@ -382,7 +391,48 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
     }
 
-    public void showDialog(Context context, String resultSoundCategory) {
+    public void showIncorrectDetectionDialog(Context context, final Boolean stopMainActivity){
+        if (incorrectDetDialog != null && incorrectDetDialog.isShowing()) return;
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Give Sound Category");
+
+        final EditText input = new EditText(context);
+
+        ImageView wrnImg = new ImageView(MainActivity.this);
+        builder.setView(wrnImg);
+        builder.setPositiveButton("cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int arg1) {
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int arg1) {
+                String soundCategory = input.getText().toString().trim();
+                //TODO: send for fingerPrinting after getting correct Sound Category
+                if(stopMainActivity){
+                    finish();
+                }
+                dialog.dismiss();
+            }
+        });
+
+        builder.setCancelable(true);
+        incorrectDetDialog = builder.create();
+        incorrectDetDialog.setView(input);
+        incorrectDetDialog.show();
+
+        final Timer timer2 = new Timer();
+        timer2.schedule(new TimerTask() {
+            public void run() {
+                incorrectDetDialog.dismiss();
+                Log.e(TAG, "TIMER Running");
+                timer2.cancel(); //this will cancel the timer of the system
+            }
+        }, 15000); // the timer will count 15 seconds....
+    }
+
+    public void showDialog(final Context context, String resultSoundCategory) {
         if (myDialog != null && myDialog.isShowing()) return;
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -407,13 +457,13 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         });
         builder.setNegativeButton("Wrong Detection", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int arg1) {
+                showIncorrectDetectionDialog(context, false);
                 dialog.dismiss();
             }
         });
 
         builder.setCancelable(true);
         myDialog = builder.create();
-//        myDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         myDialog.show();
         final Timer timer2 = new Timer();
         timer2.schedule(new TimerTask() {

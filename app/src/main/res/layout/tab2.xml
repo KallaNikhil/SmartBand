@@ -44,18 +44,6 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <Button
-        android:id="@+id/addSoundButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:background="@drawable/rounded_corner_blue"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="Add Sound"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/play_pause_layout" />
-
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

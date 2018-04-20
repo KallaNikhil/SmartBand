@@ -67,7 +67,6 @@ public class Tab2 extends Fragment implements View.OnClickListener{
     private Button stopSoundRecord;
     private ImageButton startButton;
     private ImageButton stopButton;
-    private Button addSoundButton;
     private ListView historyListView;
 
     // MAC address of remote Bluetooth device
@@ -79,12 +78,6 @@ public class Tab2 extends Fragment implements View.OnClickListener{
 
     // Handler for writing messages to the Bluetooth connection
     Handler writeHandler;
-
-    private boolean recording;
-    private String fileName;
-
-    static ArrayList<String> recordedSoundListItems;
-    static ArrayList<Boolean> recordedSoundSwitchState;
 
     private static Tab2 instance;
 
@@ -117,7 +110,6 @@ public class Tab2 extends Fragment implements View.OnClickListener{
         stopFPButton = (Button)view.findViewById(R.id.stopFPButton);
         soundRecordButton = (Button)view.findViewById(R.id.startsoundRecord);
         stopSoundRecord = (Button)view.findViewById(R.id.stopSoundRecord);
-        addSoundButton = (Button)view.findViewById(R.id.addSoundButton);
 
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point screenSize = new Point();
@@ -140,7 +132,6 @@ public class Tab2 extends Fragment implements View.OnClickListener{
         stopButton.setOnClickListener(this);
         soundRecordButton.setOnClickListener(this);
         stopSoundRecord.setOnClickListener(this);
-        addSoundButton.setOnClickListener(this);
 
         return view;
     }
@@ -184,105 +175,8 @@ public class Tab2 extends Fragment implements View.OnClickListener{
             case R.id.stopSoundRecord:
                 mListener.onButtonClick("StopRecord");
                 break;
-            case R.id.addSoundButton:
-                addSound();
-                break;
         }
     }
-
-
-    private void addSound() {
-        if (recording) {
-            stopRecording();
-        } else {
-            startRecording();
-        }
-    }
-
-    private void startRecording() {
-        recording = true;
-        Button recordButton = (Button) view.findViewById(R.id.addSoundButton);
-        recordButton.setText("Stop Recording");
-        mListener.onButtonClick("StartSavingSound");
-    }
-
-    private void stopRecording() {
-        recording = false;
-        Button recordButton = (Button) view.findViewById(R.id.addSoundButton);
-        recordButton.setText("Record Sound");
-
-
-        final EditText input = new EditText(getActivity());
-        final AlertDialog dialog = new AlertDialog.Builder(getActivity())
-                .setView(input)
-                .setTitle("Enter a name for the sound")
-                .setPositiveButton(android.R.string.ok, null) //Set to null. We override the onclick
-                .create();
-
-        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
-
-            @Override
-            public void onShow(DialogInterface dialogInterface) {
-
-                Button button = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE);
-                button.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View view) {
-                        fileName = input.getText().toString().trim();
-                        if (fileName.length() == 0)
-                            Toast.makeText(getActivity(), "Field empty", Toast.LENGTH_SHORT).show();
-                        else if (recordedSoundListItems.contains(fileName))
-                            Toast.makeText(getActivity(), "Name taken", Toast.LENGTH_SHORT).show();
-                        else {
-
-                            mListener.onButtonClick("StopSavingSound"+" "+fileName);
-                            Toast.makeText(getActivity(), fileName+" added", Toast.LENGTH_SHORT);
-                            recordedSoundListItems.add(fileName);
-                            recordedSoundSwitchState.add(true);
-                            dialog.dismiss();
-                        }
-                    }
-                });
-            }
-        });
-        dialog.show();
-
-        final AlertDialog dialog1 = new AlertDialog.Builder(getActivity())
-                .setTitle("Do you want to upload \"doorbell.wav\" to the server?")
-                .setPositiveButton(android.R.string.yes, null) //Set to null. We override the onclick
-                .setNegativeButton(android.R.string.no, null) //Set to null. We override the onclick
-                .create();
-
-        dialog1.setOnShowListener(new DialogInterface.OnShowListener() {
-
-            @Override
-            public void onShow(DialogInterface dialogInterface) {
-
-                Button button_p = ((AlertDialog) dialog1).getButton(AlertDialog.BUTTON_POSITIVE);
-                button_p.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View view) {
-                        //TODO: Upload file to the server
-                        dialog1.dismiss();
-                    }
-                });
-
-                Button button_n = ((AlertDialog) dialog1).getButton(AlertDialog.BUTTON_NEGATIVE);
-                button_n.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View view) {
-                        dialog1.dismiss();
-                    }
-                });
-            }
-        });
-        dialog.show();
-
-    }
-
 
     @Override
     public void onAttach(Context context) {

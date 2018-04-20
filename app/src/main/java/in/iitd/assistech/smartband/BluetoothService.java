@@ -80,7 +80,10 @@ public class BluetoothService extends Service {
 
             }
             else if(action.equals("Wrong Detection")){
-                // TODO: send data to server
+                // TODO: send data to server and fingerprinting
+                Intent myIntent = new Intent(context, MainActivity.class);
+                myIntent.putExtra("incorrectDetection", true); //Optional parameters
+                startActivity(myIntent);
 
             }
             //This is used to close the notification tray
@@ -219,6 +222,7 @@ public class BluetoothService extends Service {
     }
 
     public void showSoundResultNotification(String resultSoundCategory){
+
         // Start MainActivity if the notification is clicked on
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

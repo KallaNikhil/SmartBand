@@ -122,15 +122,36 @@
             android:layout_height="match_parent"
             android:layout_marginTop="300dp"
             android:id="@+id/ServerLayout"
-            app:layout_constraintBottom_toBottomOf="@id/serviceLayout">
+            app:layout_constraintTop_toBottomOf="@id/serviceLayout">
+
+            <!--<Button-->
+                <!--android:id="@+id/addSoundButton"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="70dp"-->
+                <!--android:background="@drawable/rounded_corner_blue"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:paddingRight="10dp"-->
+                <!--android:text="Add Sound"-->
+                <!--android:textSize="20sp"/>-->
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Sound"
+                android:id="@+id/addSoundButton"
+                android:layout_above="@+id/button2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Record"
                 android:id="@+id/button"
-                android:layout_alignTop="@+id/addSoundButton"
                 android:layout_alignParentLeft="true"
+                android:layout_marginTop="80dp"
                 />
 
             <Button
