@@ -136,6 +136,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
 //        Log.e(TAG, "SoundStare 0 and 1 " + soundSwitchState[0] + ", " + soundSwitchState[1]);
 
         outState.putBooleanArray("notifState", switchState);
+        outState.putInt("soundListItemsSize", soundListItems.size());
 //        outState.putBooleanArray("soundState", soundSwitchState);
     }
 
@@ -151,9 +152,10 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         File directory = new File(filepath,"SmartBand");
         if (directory.exists()) {
             File[] files = directory.listFiles();
-            for (int i = 0; i < files.length; i++)
-            {
-                soundListItems.add(files[i].getName());
+            if(files != null) {
+                for (int i = 0; i < files.length; i++) {
+                    soundListItems.add(files[i].getName());
+                }
             }
         }
     }
@@ -303,8 +305,9 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         getSoundListItems(soundListItems);
 
         if(savedInstanceState != null){
-            boolean[] switchState = savedInstanceState.getBooleanArray("notifState");
+            Log.d(TAG, "check if soundListItems is in sync - present : " + soundListItems.size()+", stored : "+ savedInstanceState.getInt("soundListItemsSize", 0));
 
+            boolean[] switchState = savedInstanceState.getBooleanArray("notifState");
             int[] cummListItemSizes = new int[ListSize];
 
             cummListItemSizes[0] = notificationListItems.length;
@@ -594,16 +597,16 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
                         else {
 
                             mListener.onButtonClick("StopSavingSound"+" "+fileName);
+
                             Toast.makeText(getActivity(), fileName+" added", Toast.LENGTH_SHORT);
                             soundListItems.add(fileName);
-                            Log.d(TAG, "Sound Added");
 
                             //update sound sound list
-                            boolean[] soundSwitchState = new boolean[soundListItems.size()+1];
+                            boolean[] soundSwitchState = new boolean[soundListItems.size()];
                             for(int i=0; i<soundListItems.size()-1; i++){
                                 soundSwitchState[i] = listAdapters[1].getCheckedState(i);
                             }
-                            soundSwitchState[soundListItems.size()] = true;
+                            soundSwitchState[soundListItems.size()-1] = true;
                             listAdapters[1] = new ExpandableListAdapter(getContext(), soundListItems.toArray(new String[soundListItems.size()]), "Sound Types", soundSwitchState);
                             listViews[1].setAdapter(listAdapters[1]);
 

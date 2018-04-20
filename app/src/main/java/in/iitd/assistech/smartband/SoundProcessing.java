@@ -222,7 +222,7 @@ public class SoundProcessing {
                     }
                     Log.e(TAG, "Num Nan : " + numNan);
                     if (!fingerPrintChecking && numNan < num_history / 2)
-                        setProbOut(mean_classifyProb, requestFromService);
+                        setProbOut(mean_classifyProb);
                 }
                 return true;
             }
@@ -269,18 +269,14 @@ public class SoundProcessing {
                             }
                             Log.e("Similarity with "+Integer.toString(i)+"::: ", Float.toString(similarity.getSimilarity()));
                         }
-
                         File tempFile = new File(recording);
                         tempFile.delete();
                         fingerPrintChecking = false;
-
                         if (max > 0.7) {
+                            //TODO: Display answer
+//                            Toast.makeText(MainActivity.getInstance(), files[maxi].getName(),Toast.LENGTH_SHORT).show();
                             resultSoundCategory = files[maxi].getName();
-
                             gotSoundCategory(resultSoundCategory);
-
-                            // display answer
-//                            Toast.makeText(MainActivity.getInstance(), resultSoundCategory,Toast.LENGTH_SHORT).show();
                             break;
                         }
                     }
@@ -311,7 +307,7 @@ public class SoundProcessing {
         }
     }
 
-    private static void setProbOut(double[] outProb, boolean requestFromService){
+    private static void setProbOut(double[] outProb){
         int idx = 0;
         //Launch dialog interface;
         Log.e(TAG, "Prob Ambient = " + Double.toString(outProb[2]));

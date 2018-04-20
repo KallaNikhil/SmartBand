@@ -65,6 +65,7 @@ import java.util.TimerTask;
 import static com.sounds.ClassifySound.numOutput;
 import static in.iitd.assistech.smartband.HelperFunctions.getClassifyProb;
 import static in.iitd.assistech.smartband.HelperFunctions.getDecibel;
+import static in.iitd.assistech.smartband.Tab3.getSoundListItems;
 import static in.iitd.assistech.smartband.Tab3.notificationListItems;
 import static in.iitd.assistech.smartband.Tab3.servicesListItems;
 import static in.iitd.assistech.smartband.Tab3.soundListItems;
@@ -394,32 +395,31 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     public void showIncorrectDetectionDialog(Context context, final Boolean stopMainActivity){
         if (incorrectDetDialog != null && incorrectDetDialog.isShowing()) return;
 
+        ArrayList<String> items = new ArrayList<String>();
+        Tab3.getSoundListItems(items);
+
+        CharSequence[] cItems = new CharSequence[items.size()];
+        for(int i=0; i<items.size(); i++)
+            cItems[i] = items.get(i);
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Give Sound Category");
 
-        final EditText input = new EditText(context);
-
         ImageView wrnImg = new ImageView(MainActivity.this);
         builder.setView(wrnImg);
-        builder.setPositiveButton("cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int arg1) {
+
+        builder.setItems(cItems, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                //TODO: Do something with the selection
                 dialog.dismiss();
-            }
-        });
-        builder.setNegativeButton("ok", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int arg1) {
-                String soundCategory = input.getText().toString().trim();
-                //TODO: send for fingerPrinting after getting correct Sound Category
-                if(stopMainActivity){
+                if(stopMainActivity)
                     finish();
-                }
-                dialog.dismiss();
             }
         });
 
         builder.setCancelable(true);
         incorrectDetDialog = builder.create();
-        incorrectDetDialog.setView(input);
         incorrectDetDialog.show();
 
         final Timer timer2 = new Timer();
@@ -428,6 +428,9 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 incorrectDetDialog.dismiss();
                 Log.e(TAG, "TIMER Running");
                 timer2.cancel(); //this will cancel the timer of the system
+
+                if(stopMainActivity)
+                    finish();
             }
         }, 15000); // the timer will count 15 seconds....
     }
