@@ -246,7 +246,11 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         isActive = true;
 
         Boolean incorrectDetection = getIntent().getExtras().getBoolean("incorrectDetection", false);
+        Log.d(TAG, "incorrect detection : "+incorrectDetection);
         if(incorrectDetection){
+            if(BluetoothService.getInstance() != null){
+                BluetoothService.getInstance().removeNotification(BluetoothService.NOTIFICATION_ID_RESULT);
+            }
             showIncorrectDetectionDialog(getApplicationContext(), true);
         }
     }

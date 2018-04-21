@@ -1,5 +1,6 @@
 package in.iitd.assistech.smartband;
 
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.app.Service;
@@ -137,9 +138,6 @@ public class BluetoothService extends Service {
         connectThread = new ConnectThread(bluetoothDevice);
         connectThread.start();
 
-        //Debug
-        showSoundResultNotification("kk");
-
         return Service.START_STICKY;
     }
 
@@ -228,37 +226,43 @@ public class BluetoothService extends Service {
     public void showSoundResultNotification(String resultSoundCategory){
 
         // Start MainActivity if the notification is clicked on
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        intent.putExtra("soundDetected", true);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+//        Intent intent = new Intent(this, MainActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+//        intent.putExtra("soundDetected", true);
+//        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         //This is the intent of PendingIntent
-        Intent intentAction = new Intent(this,ActionReceiver.class);
-        intentAction.putExtra("action", "correct");
-        PendingIntent pendingIntentActionCorrect = PendingIntent.getBroadcast(this,1,intentAction,PendingIntent.FLAG_UPDATE_CURRENT);
+        // Start MainActivity if the notification is clicked on
+//        Intent intentAction = new Intent(this, MainActivity.class);
+//        intentAction.putExtra("incorrectDetection", true);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+//        PendingIntent pendingIntentActionWrong = PendingIntent.getActivity(this, 0, intentAction, 0);
 
-        //This is the intent of PendingIntent
-        intentAction = new Intent(this,ActionReceiver.class);
-        intentAction.putExtra("action", "wrong");
-        PendingIntent pendingIntentActionWrong = PendingIntent.getBroadcast(this,1,intentAction,PendingIntent.FLAG_UPDATE_CURRENT);
+        // TODO
+        Intent intentAction2 = new Intent();
+        PendingIntent pendingIntentInaction = PendingIntent.getActivity(this, 0, intentAction2, 0);
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.notif_icon)
                 .setContentTitle("Smart Band")
                 .setContentText("Sound Detected - " + resultSoundCategory)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setContentIntent(pendingIntent)
-                .addAction(R.drawable.cross_icon, "Wrong Detection", pendingIntentActionWrong)
-                .addAction(R.drawable.common_google_signin_btn_icon_light, "Correct Detection", pendingIntentActionCorrect)
+                .setContentIntent(pendingIntentInaction)
+                .addAction(R.drawable.cross_icon, "Wrong Detection", pendingIntentInaction)
+                .addAction(R.drawable.common_google_signin_btn_icon_light, "Correct Detection", pendingIntentInaction)
                 .setAutoCancel(true)
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setVibrate(new long[] { 1000, 1000});
 
+        Notification notif = mBuilder.build();
+
+        notif.flags |= Notification.FLAG_AUTO_CANCEL;
+
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
         // notificationId is a unique int for each notification that you must define
-        notificationManager.notify(NOTIFICATION_ID_RESULT, mBuilder.build());
+        notificationManager.notify(NOTIFICATION_ID_RESULT, notif);
     }
 
     public void removeNotification(int id){

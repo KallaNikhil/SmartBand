@@ -1,62 +1,6 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nikhil/AndroidStudioProjects/SmartB/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-bn/values-bn.xml",
-            "map": [
-                {
-                    "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/res/values-bn/values-bn.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,205,337,469,565,641,715,775,851,927,1030,1129,1207,1285,1382,1496,1560,1628,1793,1872,1954,2045,2180",
-                        "endColumns": "149,131,131,95,75,73,59,75,75,102,98,77,77,96,113,63,67,164,78,81,90,134,66",
-                        "endOffsets": "200,332,464,560,636,710,770,846,922,1025,1124,1202,1280,1377,1491,1555,1623,1788,1867,1949,2040,2175,2242"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,41",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,255,387,519,615,691,765,825,901,977,1080,1179,1257,1335,1432,1546,1610,1678,1843,1922,2004,2095,4747",
-                        "endColumns": "149,131,131,95,75,73,59,75,75,102,98,77,77,96,113,63,67,164,78,81,90,134,66",
-                        "endOffsets": "250,382,514,610,686,760,820,896,972,1075,1174,1252,1330,1427,1541,1605,1673,1838,1917,1999,2090,2225,4809"
-                    }
-                },
-                {
-                    "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/5b10abdacbe29c11436c0c1af1d6d5d1/res/values-bn/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "285",
-                        "endColumns": "210",
-                        "endOffsets": "495"
-                    },
-                    "to": {
-                        "startLines": "31",
-                        "startColumns": "4",
-                        "startOffsets": "3228",
-                        "endColumns": "210",
-                        "endOffsets": "3434"
-                    }
-                },
-                {
-                    "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/res/values-bn/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "283,390,581,707,816,1012,1132,1261,1465,1572,1759,1885,2078,2253,2339,2431",
-                        "endColumns": "106,190,125,108,195,119,128,203,106,186,125,192,174,85,91,113",
-                        "endOffsets": "389,580,706,815,1011,1131,1260,1464,1571,1758,1884,2077,2252,2338,2430,2544"
-                    },
-                    "to": {
-                        "startLines": "24,25,26,27,28,29,30,32,33,34,35,36,37,38,39,40",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "2230,2341,2532,2662,2775,2971,3095,3439,3643,3754,3941,4071,4264,4443,4533,4629",
-                        "endColumns": "110,190,129,112,195,123,132,203,110,186,129,192,178,89,95,117",
-                        "endOffsets": "2336,2527,2657,2770,2966,3090,3223,3638,3749,3936,4066,4259,4438,4528,4624,4742"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-bn/values-bn.xml",
             "map": [
                 {

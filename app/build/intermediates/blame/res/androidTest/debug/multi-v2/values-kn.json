@@ -1,62 +1,6 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nikhil/AndroidStudioProjects/SmartB/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-kn/values-kn.xml",
-            "map": [
-                {
-                    "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/res/values-kn/values-kn.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,239,366,487,580,655,729,795,870,946,1046,1146,1223,1300,1395,1508,1574,1644,1796",
-                        "endColumns": "183,126,120,92,74,73,65,74,75,99,99,76,76,94,112,65,69,151,62",
-                        "endOffsets": "234,361,482,575,650,724,790,865,941,1041,1141,1218,1295,1390,1503,1569,1639,1791,1854"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,289,416,537,630,705,779,845,920,996,1096,1196,1273,1350,1445,1558,1624,1694,4421",
-                        "endColumns": "183,126,120,92,74,73,65,74,75,99,99,76,76,94,112,65,69,151,62",
-                        "endOffsets": "284,411,532,625,700,774,840,915,991,1091,1191,1268,1345,1440,1553,1619,1689,1841,4479"
-                    }
-                },
-                {
-                    "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/res/values-kn/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "283,392,594,725,831,1033,1160,1284,1493,1604,1795,1928,2132,2315,2410,2499",
-                        "endColumns": "108,201,130,105,201,126,123,208,110,190,132,203,182,94,88,109",
-                        "endOffsets": "391,593,724,830,1032,1159,1283,1492,1603,1794,1927,2131,2314,2409,2498,2608"
-                    },
-                    "to": {
-                        "startLines": "20,21,22,23,24,25,26,28,29,30,31,32,33,34,35,36",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1846,1959,2161,2296,2406,2608,2739,3072,3281,3396,3587,3724,3928,4115,4214,4307",
-                        "endColumns": "112,201,134,109,201,130,127,208,114,190,136,203,186,98,92,113",
-                        "endOffsets": "1954,2156,2291,2401,2603,2734,2862,3276,3391,3582,3719,3923,4110,4209,4302,4416"
-                    }
-                },
-                {
-                    "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/5b10abdacbe29c11436c0c1af1d6d5d1/res/values-kn/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "285",
-                        "endColumns": "204",
-                        "endOffsets": "489"
-                    },
-                    "to": {
-                        "startLines": "27",
-                        "startColumns": "4",
-                        "startOffsets": "2867",
-                        "endColumns": "204",
-                        "endOffsets": "3067"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-kn/values-kn.xml",
             "map": [
                 {

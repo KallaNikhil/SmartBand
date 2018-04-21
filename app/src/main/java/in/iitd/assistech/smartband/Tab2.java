@@ -163,7 +163,6 @@ public class Tab2 extends Fragment implements View.OnClickListener{
 
             case R.id.start_button:
                 //TODO
-                MainActivity.getInstance().showDialog(MainActivity.getInstance(), "ok");
                 mListener.onButtonClick("MicReadButton");
                 startButton.setVisibility(View.GONE);
                 stopButton.setVisibility(View.VISIBLE);
