@@ -127,7 +127,6 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corner_blue"
             android:text="Add Sound"
             android:id="@+id/addSoundButton"
             android:layout_above="@+id/button2"

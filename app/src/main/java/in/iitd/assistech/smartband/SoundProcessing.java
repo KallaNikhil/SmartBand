@@ -124,6 +124,8 @@ public class SoundProcessing {
             Log.e("Recorder state::::::::", "Recording");
             recorder.startRecording();
         }
+
+
         isRecording = true;
         if (indicator == 1) {
             recordingThread = new Thread(new Runnable() {
@@ -352,7 +354,7 @@ public class SoundProcessing {
         // Display sound detection results if MainActivity is active
         // Else show notification
         if(MainActivity.isRunning()) {
-            Toast.makeText(MainActivity.getInstance(), resultSoundCategory, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(MainActivity.getInstance(), resultSoundCategory, Toast.LENGTH_SHORT).show();
             MainActivity.getInstance().showDialog(MainActivity.getInstance(), resultSoundCategory);
             //press stop pause button if request is from Tab2
             if(Tab2.getInstance() != null){
@@ -378,12 +380,12 @@ public class SoundProcessing {
 
         int read = 0;
         if (null != os) {
+            recordingStartTime = System.currentTimeMillis();
             while (isRecording) {
                 read = recorder.read(data, 0, bufferSize);
                 if (read > 0) {
                 }
-
-                if (AudioRecord.ERROR_INVALID_OPERATION != read) {
+                if (System.currentTimeMillis() - recordingStartTime < 6000 && AudioRecord.ERROR_INVALID_OPERATION != read) {
                     try {
                         os.write(data);
                     } catch (IOException e) {
