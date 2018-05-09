@@ -1,0 +1,89 @@
+-injars /home/nikhil/AndroidStudioProjects/SmartBand/app/libs/httpcore-4.3.3.jar(**.class)
+-injars /home/nikhil/AndroidStudioProjects/SmartBand/app/libs/httpclient-4.3.6.jar(**.class)
+-injars /home/nikhil/AndroidStudioProjects/SmartBand/app/libs/commons-logging-1.2.jar(**.class)
+-injars /home/nikhil/AndroidStudioProjects/SmartBand/app/libs/musicg-1.4.2.0.jar(**.class)
+-injars /home/nikhil/AndroidStudioProjects/SmartBand/app/libs/commons-codec-1.9.jar(**.class)
+-injars /home/nikhil/AndroidStudioProjects/SmartBand/app/libs/SmartBandAPI.jar(**.class)
+-injars /home/nikhil/AndroidStudioProjects/SmartBand/app/libs/httpmime-4.3.6.jar(**.class)
+-injars /home/nikhil/AndroidStudioProjects/SmartBand/app/libs/jxl.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.1.aar/3b61ee8999e6d0d8f31c14d7325a9726/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/0844e4508c4c145baced368c0a0c3e68/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/7b18c9729a902715470bb1538490a839/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.0.0-RC1/7baec7d5132e7343100a99630a56a6584a33addc/glide-4.0.0-RC1.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/2cbedd38651fcd11846a5c0973012fe9/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-11.0.1.aar/2926f284b4956fa38a1a4156b4076c82/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.1.aar/e5b4aa5907072d5b426979a7d762bc84/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.1.aar/aa2aec5b19fbd17b46423516acaaac37/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.1.aar/f681d0364e8b3d6720fbd6d3ca936ab6/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.1.aar/9b888132251f3bb85354da46b64f956c/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.1.aar/2bd4571ceab0caa533ea80aa3725cdc0/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.1.aar/5bc857119c7a7b82c5cf92fac43f6d19/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.1.aar/5b10abdacbe29c11436c0c1af1d6d5d1/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/76de5385cb4def36875564c84ee03da1/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.6.1/e4ba98f1d4b3c80ec46392f25e094a6a2e58fcbf/commons-math3-3.6.1.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/600782784dbeb44ed6cc8a22c0b4650b/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/b297cb0a5e87a4810c6f1ad6363fde1c/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/f1d3d091dbd5a519fbe9c98d4f03e5c7/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/1faed7ae9222aae0efb718fef3cd6d2a/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/ae897fd1ed35761c03af06363d4e881d/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/customtabs-25.3.1.aar/32b071ed84d9a247f0861bf1e2bf9750/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/gifdecoder/4.0.0-RC1/c425e31eda1069f978a0e823ad50e567ab422656/gifdecoder-4.0.0-RC1.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/2d46c6f36fd919dde511c11c5d742d4d/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/119d8dd045ac3bbb950c0ef1d14b3a44/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/a930d0bc1df3dade328bd6b043f2b948/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/3abf8e07dec9a330db8922b85d3d75eb/jars/classes.jar(**.class)
+-injars /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/19e80dcdf91e223445dcb13b9a11de0f/jars/classes.jar(**.class)
+-injars /home/nikhil/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar(**.class)
+-injars /home/nikhil/Android/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar(**.class)
+-injars /home/nikhil/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.4.0/cc174c559b5177982887bf6e1b76003aebad9516/bolts-android-1.4.0.jar(**.class)
+-injars /home/nikhil/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/disklrucache/4.0.0-RC1/1b4bba8f8d3df8db064c875c043c01e9ca3cdee9/disklrucache-4.0.0-RC1.jar(**.class)
+-injars /home/nikhil/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/annotations/4.0.0-RC1/84c524dcd1a3088edd5560a8ac176eae1317f770/annotations-4.0.0-RC1.jar(**.class)
+-injars /home/nikhil/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar(**.class)
+-injars /home/nikhil/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar(**.class)
+-injars /home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/classes/debug(**.class)
+-outjars /home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/multi-dex/debug/componentClasses.jar
+
+-libraryjars /home/nikhil/Android/Sdk/build-tools/26.0.2/lib/shrinkedAndroid.jar
+
+-forceprocessing
+-dontoptimize
+-dontobfuscate
+-dontusemixedcaseclassnames
+-dontpreverify
+-dontnote **
+-dontwarn **
+-printconfiguration /home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/multi-dex/debug/components.flags
+
+
+# Referenced at /home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/manifests/full/debug/AndroidManifest.xml:57
+-keep class android.support.multidex.MultiDexApplication {
+    <init>(...);
+}
+
+-keep public class * extends android.app.Instrumentation {
+    <init>();
+}
+
+-keep public class * extends android.app.Application {
+    <init>();
+    void attachBaseContext(android.content.Context);
+}
+
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+
+-keep public class * extends java.lang.annotation.Annotation {
+    <fields>;
+    <methods>;
+}
+
+-keep class com.android.tools.ir.** {
+    <fields>;
+    <methods>;
+}

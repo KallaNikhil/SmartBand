@@ -21,6 +21,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="httpmime-4.3.6.httpmime-4.3.6" level="project" />
   </component>
 </module>

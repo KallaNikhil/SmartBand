@@ -245,7 +245,7 @@ public class SoundProcessing {
 
                     try {
                         os.close();
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
 
@@ -283,7 +283,7 @@ public class SoundProcessing {
                         fingerPrintChecking = false;
                         try {
                             os.close();
-                        } catch (IOException e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                         if (max > 0) {
@@ -305,7 +305,7 @@ public class SoundProcessing {
                     audioData = byteBuf.array();
                     try {
                         os.write(audioData);
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
@@ -388,7 +388,7 @@ public class SoundProcessing {
                 if (System.currentTimeMillis() - recordingStartTime < 6000 && AudioRecord.ERROR_INVALID_OPERATION != read) {
                     try {
                         os.write(data);
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
@@ -396,7 +396,7 @@ public class SoundProcessing {
 
             try {
                 os.close();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -478,7 +478,7 @@ public class SoundProcessing {
             out.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

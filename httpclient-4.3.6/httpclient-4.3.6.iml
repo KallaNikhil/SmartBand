@@ -21,6 +21,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="httpclient-4.3.6.httpclient-4.3.6" level="project" />
   </component>
 </module>

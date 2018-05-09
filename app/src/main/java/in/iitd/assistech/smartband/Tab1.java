@@ -33,12 +33,11 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
     public ListView sttListView;
     private ImageButton speakButton;
-//    private ImageButton ttsSendButton;
+    //    private ImageButton ttsSendButton;
     private View view;
 
     private EditText messageET;
     private ListView messagesContainer;
-    private TextView textview;
     private Button sendBtn;
     private TextToSpeech msgTTS;
     private ChatAdapter adapter;
@@ -57,8 +56,8 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         speakButton.setOnClickListener(this);
 
         // Check to see if a recognition activity is present
-        // if running on AVD virtual device it will give this message. The mic
-        // required only works on an actual android device
+// if running on AVD virtual device it will give this message. The mic
+// required only works on an actual android device
         PackageManager pm = getContext().getPackageManager();
         List activities = pm.queryIntentActivities(new Intent(
                 RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0);
@@ -117,7 +116,6 @@ public class Tab1 extends Fragment implements View.OnClickListener {
             displayMessage(chatMessage);
             msgTTS.speak(messageText, TextToSpeech.QUEUE_FLUSH, null);
         }
-
     }
 
     private void initControls() {
@@ -135,8 +133,6 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                 msgTTS.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             }
         });
-
-        textview = (TextView) view.findViewById(android.R.id.text1);
 
 //        TextView meLabel = (TextView) view.findViewById(R.id.meLbl);
 //        TextView companionLabel = (TextView) view.findViewById(R.id.friendLabel);

@@ -147,7 +147,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     public static ArrayList<String> getSoundListItems(){
 
         ArrayList<String> soundListItems = new ArrayList<>(Arrays.asList("Vehicle Horn", "Dog Bark"));
-
+//        ArrayList <String> soundListIteams = new ArrayList<>();
         String filepath = Environment.getExternalStorageDirectory().getPath();
         File directory = new File(filepath,"SmartBand");
         if (directory.exists()) {

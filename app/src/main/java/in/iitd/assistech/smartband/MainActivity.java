@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -421,7 +422,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     public void showDialog(final Context context, String resultSoundCategory) {
         if (myDialog != null && myDialog.isShowing()) return;
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(resultSoundCategory);
         ImageView wrnImg = new ImageView(MainActivity.this);
         //TODO No Text clickable button for dog bark case dialog
@@ -449,16 +450,21 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         });
 
         builder.setCancelable(true);
-        myDialog = builder.create();
-        myDialog.show();
-        final Timer timer2 = new Timer();
-        timer2.schedule(new TimerTask() {
+
+        runOnUiThread(new Runnable() {
             public void run() {
-                myDialog.dismiss();
-                Log.e(TAG, "TIMER Running");
-                timer2.cancel(); //this will cancel the timer of the system
+                myDialog = builder.create();
+                myDialog.show();
+                final Timer timer2 = new Timer();
+                timer2.schedule(new TimerTask() {
+                    public void run() {
+                        myDialog.dismiss();
+                        Log.e(TAG, "TIMER Running");
+                        timer2.cancel(); //this will cancel the timer of the system
+                    }
+                }, 15000); // the timer will count 15 seconds....
             }
-        }, 15000); // the timer will count 15 seconds....
+        });
     }
 
 
