@@ -66,33 +66,6 @@ public class BluetoothService extends Service {
         return instance != null;
     }
 
-    //Now the receiver which will receive this Intent
-    public class ActionReceiverWrong extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            // start main activity
-            Intent myIntent = new Intent(context, MainActivity.class);
-            myIntent.putExtra("incorrectDetection", true); //Optional parameters
-            startActivity(myIntent);
-
-            //This is used to close the notification tray
-            removeNotification(NOTIFICATION_ID_RESULT);
-        }
-    }
-
-    //Now the receiver which will receive this Intent
-    public class ActionReceiver extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            //TODO: Send data to server
-            Log.d(TAG, "received Msg from notification");
-            //This is used to close the notification tray
-            removeNotification(NOTIFICATION_ID_RESULT);
-        }
-    }
-
     static{
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
@@ -225,32 +198,35 @@ public class BluetoothService extends Service {
 
     public void showSoundResultNotification(String resultSoundCategory){
 
-        // Start MainActivity if the notification is clicked on
-//        Intent intent = new Intent(this, MainActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-//        intent.putExtra("soundDetected", true);
-//        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        // Create pending intent, mention the Activity which needs to be
+        //triggered when user clicks on notification
 
-        //This is the intent of PendingIntent
-        // Start MainActivity if the notification is clicked on
-//        Intent intentAction = new Intent(this, MainActivity.class);
-//        intentAction.putExtra("incorrectDetection", true);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-//        PendingIntent pendingIntentActionWrong = PendingIntent.getActivity(this, 0, intentAction, 0);
+        Intent contentIntent = new Intent(this, MyBroadcastReceiver.class);
+        contentIntent.setAction(MyBroadcastReceiver.CONTENT_ACTION);
+        contentIntent.putExtra("SoundResultCategory", resultSoundCategory);
+        PendingIntent pendingContentIntent = PendingIntent.getBroadcast(this, 0, contentIntent, 0);
 
-        // TODO
-        Intent intentAction2 = new Intent();
-        PendingIntent pendingIntentInaction = PendingIntent.getActivity(this, 0, intentAction2, 0);
+
+        // incorrect detection button presses
+        Intent incorrectButtonIntent = new Intent(this, MyBroadcastReceiver.class);
+        incorrectButtonIntent.setAction(MyBroadcastReceiver.INCORRECT_ACTION);
+        PendingIntent pendingIncorrectIntent = PendingIntent.getBroadcast(this, 0, incorrectButtonIntent, 0);
+
+        // correct detection button presses
+        Intent correctButtonIntent = new Intent(this, MyBroadcastReceiver.class);
+        correctButtonIntent.setAction(MyBroadcastReceiver.CORRECT_ACTION);
+        correctButtonIntent.putExtra("SoundResultCategory", resultSoundCategory);
+        PendingIntent correctIntent = PendingIntent.getBroadcast(this, 0, correctButtonIntent, 0);
+
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.notif_icon)
                 .setContentTitle("Smart Band")
                 .setContentText("Sound Detected - " + resultSoundCategory)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setContentIntent(pendingIntentInaction)
-                .addAction(R.drawable.cross_icon, "Wrong Detection", pendingIntentInaction)
-                .addAction(R.drawable.common_google_signin_btn_icon_light, "Correct Detection", pendingIntentInaction)
+                .setContentIntent(pendingContentIntent)
+                .addAction(R.drawable.cross_icon, "Wrong Detection", pendingIncorrectIntent)
+                .addAction(R.drawable.common_google_signin_btn_icon_light, "Correct Detection", correctIntent)
                 .setAutoCancel(true)
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setVibrate(new long[] { 1000, 1000});
@@ -314,6 +290,19 @@ public class BluetoothService extends Service {
 
         public void run() {
             dismissDialog(dialogDetectThreadStart);
+
+//            // Debug
+//            Thread t = new Thread(){
+//                public void run(){
+//                    try {
+//                        sleep(1000);
+//                    }catch (Exception ex){
+//                        Log.d(TAG, "could not sleep");
+//                    }
+//                    showSoundResultNotification("kkkk");
+//                }
+//            };
+//            t.start();
 
             while(!isInterrputed) {
 

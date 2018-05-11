@@ -30,6 +30,7 @@ import java.util.TimerTask;
 import static in.iitd.assistech.smartband.Tab3.notificationListItems;
 import static in.iitd.assistech.smartband.Tab3.servicesListItems;
 import static in.iitd.assistech.smartband.Tab3.soundListItems;
+import static java.lang.Thread.sleep;
 
 public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener,
         OnTabEvent{
@@ -246,14 +247,24 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
         isActive = true;
 
-        Boolean incorrectDetection = getIntent().getExtras().getBoolean("incorrectDetection", false);
-        Log.d(TAG, "incorrect detection : "+incorrectDetection);
+        Boolean incorrectDetection = getIntent().getExtras().getBoolean("IncorrectDetection", false);
         if(incorrectDetection){
             if(BluetoothService.getInstance() != null){
                 BluetoothService.getInstance().removeNotification(BluetoothService.NOTIFICATION_ID_RESULT);
             }
-            showIncorrectDetectionDialog(getApplicationContext(), true);
+            showIncorrectDetectionDialog(MainActivity.this, true);
         }
+
+        Boolean notifClick = getIntent().getExtras().getBoolean("DisplaySoundDetectionDialog", false);
+        if(notifClick){
+            showDialog(this, getIntent().getExtras().getString("SoundDetectionResult", "Did not get result from Notification"), notifClick);
+        }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
     }
 
     @Override
@@ -403,7 +414,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             @Override
             public void onDismiss(DialogInterface dialog) {
                 if(stopMainActivity)
-                    MainActivity.getInstance().finish();
+                    MainActivity.this.finish();
             }
         });
 
@@ -419,7 +430,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         }, 15000); // the timer will count 15 seconds....
     }
 
-    public void showDialog(final Context context, String resultSoundCategory) {
+    public void showDialog(final Context context, String resultSoundCategory, final Boolean stopMainActivity) {
         if (myDialog != null && myDialog.isShowing()) return;
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -440,12 +451,21 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         builder.setPositiveButton("Ok, Thank You!", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int arg1) {
                 dialog.dismiss();
+
             }
         });
         builder.setNegativeButton("Wrong Detection", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int arg1) {
                 dialog.dismiss();
-                showIncorrectDetectionDialog(context, false);
+                showIncorrectDetectionDialog(context, stopMainActivity);
+            }
+        });
+
+        builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                if(stopMainActivity)
+                    MainActivity.getInstance().finish();
             }
         });
 

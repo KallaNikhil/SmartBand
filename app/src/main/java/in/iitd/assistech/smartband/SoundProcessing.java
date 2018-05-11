@@ -354,7 +354,7 @@ public class SoundProcessing {
         // Else show notification
         if(MainActivity.isRunning()) {
 //            Toast.makeText(MainActivity.getInstance(), resultSoundCategory, Toast.LENGTH_SHORT).show();
-            MainActivity.getInstance().showDialog(MainActivity.getInstance(), resultSoundCategory);
+            MainActivity.getInstance().showDialog(MainActivity.getInstance(), resultSoundCategory, false);
             //press stop pause button if request is from Tab2
             if(Tab2.getInstance() != null){
                 Tab2.getInstance().clickStopButton();

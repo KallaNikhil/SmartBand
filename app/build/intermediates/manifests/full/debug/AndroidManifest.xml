@@ -70,9 +70,20 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
+        <receiver
+            android:name="in.iitd.assistech.smartband.MyBroadcastReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="in.iitd.assistech.smartband.MyBroadcastReceiver.ContentAction" />
+                <action android:name="in.iitd.assistech.smartband.MyBroadcastReceiver.IncorrectAction" />
+                <action android:name="in.iitd.assistech.smartband.MyBroadcastReceiver.CorrectAction" />
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name="in.iitd.assistech.smartband.MainActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTask"
             android:theme="@style/MainActivityTheme" >
 
             <!-- <intent-filter> -->
