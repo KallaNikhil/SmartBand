@@ -445,7 +445,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         builder.setNegativeButton("Wrong Detection", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int arg1) {
                 dialog.dismiss();
-                showIncorrectDetectionDialog(context, true);
+                showIncorrectDetectionDialog(context, false);
             }
         });
 

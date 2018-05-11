@@ -42,6 +42,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -84,8 +85,6 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     static ArrayList<String> soundListItems = new ArrayList<>();
     static final String[] servicesListItems = {"BluetoothService"};
 
-    static Boolean soundAdded = false;
-
     private CircleImageView userProfileImage;
     private TextView userName;
     private TextView userEmail;
@@ -110,34 +109,26 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
 
         Log.d(TAG, ""+soundListItems.size());
 
-        int state = notificationListItems.length + soundListItems.size() + servicesListItems.length;
-        boolean[] switchState = new boolean[state];
+        boolean[] notifSwitchState = new boolean[notificationListItems.length];
+        boolean[] soundSwitchState = new boolean[soundListItems.size()];
+        boolean[] serviceSwitchState = new boolean[servicesListItems.length];
 
-        int groupIndex = 0;
-        int childIndex = 0;
-        for(int i=0; i<state; i++){
-            if((groupIndex == 0 && childIndex == notificationListItems.length) ||
-                    (groupIndex == 1 && childIndex == soundListItems.size()) ||
-                    (groupIndex == 2 && childIndex == servicesListItems.length)){
-
-                groupIndex++;
-                childIndex = 0;
-            }
-
-            if(soundAdded && groupIndex == 1 && childIndex == soundListItems.size() - 1){
-                switchState[i] = true;
-            }else{
-                switchState[i] = listAdapters[groupIndex].getCheckedState(childIndex);
-            }
-
-            childIndex++;
+        for(int i=0; i<notificationListItems.length; i++){
+            notifSwitchState[i] = listAdapters[0].getCheckedState(i);
         }
 
-//        Log.e(TAG, "SoundStare 0 and 1 " + soundSwitchState[0] + ", " + soundSwitchState[1]);
+        for(int i=0; i<soundListItems.size(); i++){
+            soundSwitchState[i] = listAdapters[1].getCheckedState(i);
+        }
 
-        outState.putBooleanArray("notifState", switchState);
-        outState.putInt("soundListItemsSize", soundListItems.size());
-//        outState.putBooleanArray("soundState", soundSwitchState);
+        for(int i=0; i<servicesListItems.length; i++){
+            serviceSwitchState[i] = listAdapters[2].getCheckedState(i);
+        }
+
+        outState.putBooleanArray("NotificationNotifState", notifSwitchState);
+        outState.putBooleanArray("SoundNotifState", soundSwitchState);
+        outState.putStringArrayList("SoundListItems", soundListItems);
+        outState.putBooleanArray("ServiceNotifState", serviceSwitchState);
     }
 
     public static Tab3 getInstance(){
@@ -154,7 +145,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
             File[] files = directory.listFiles();
             if(files != null) {
                 for (int i = 0; i < files.length; i++) {
-                    if(!Character.isDigit(files[i].getName().charAt(0)))
+                    if(!Character.isDigit(files[i].getName().charAt(0)) && !files[i].getName().equals("record_temp.raw"))
                         soundListItems.add(files[i].getName());
                 }
             }
@@ -310,17 +301,21 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         if(savedInstanceState != null){
             Log.d(TAG, "check if soundListItems is in sync - present : " + soundListItems.size()+", stored : "+ savedInstanceState.getInt("soundListItemsSize", 0));
 
-            boolean[] switchState = savedInstanceState.getBooleanArray("notifState");
-            int[] cummListItemSizes = new int[ListSize];
+            boolean[] notifSwitchState = savedInstanceState.getBooleanArray("NotificationNotifState");
+            boolean[] serviceSwitchState = savedInstanceState.getBooleanArray("ServiceNotifState");
 
-            cummListItemSizes[0] = notificationListItems.length;
-            boolean[] notifSwitchState = Arrays.copyOfRange(switchState,0, cummListItemSizes[0]);
+            boolean[] soundSwitchState = new boolean[soundListItems.size()];
+            boolean[] soundSwitchStateSaved = savedInstanceState.getBooleanArray("SoundNotifState");
 
-            cummListItemSizes[1] = cummListItemSizes[0] + soundListItems.size();
-            boolean[] soundSwitchState = Arrays.copyOfRange(switchState, cummListItemSizes[0], cummListItemSizes[1]);
-
-            cummListItemSizes[2] = cummListItemSizes[1] + servicesListItems.length;
-            boolean[] serviceSwitchState = Arrays.copyOfRange(switchState, cummListItemSizes[1], cummListItemSizes[2]);
+            List<String> soundStrings = savedInstanceState.getStringArrayList("SoundListItems");
+            for(int i=0; i<soundListItems.size(); i++){
+                int index = soundStrings.indexOf(soundListItems.get(i));
+                if(index < soundListItems.size()){
+                    soundSwitchState[i] = soundSwitchStateSaved[index];
+                }else{
+                    soundSwitchState[i] = true;
+                }
+            }
 
             // check if service is still running
             if(serviceSwitchState[0] && !BluetoothService.isInstanceCreated()){
@@ -605,20 +600,27 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
                         else if (soundListItems.contains(fileName))
                             Toast.makeText(getActivity(), "Name taken", Toast.LENGTH_SHORT).show();
                         else {
+                            File file = new File(SoundProcessing.getTempFilename());
 
-                            mListener.onButtonClick("StopSavingSound"+" "+fileName);
+                            if(file.length() < 2000000){
+                                mListener.onButtonClick("StopSavingSound"+" "+fileName);
 
-                            Toast.makeText(getActivity(), fileName+" added", Toast.LENGTH_SHORT);
-                            soundListItems.add(fileName);
+                                Toast.makeText(getActivity(), fileName+" added", Toast.LENGTH_SHORT).show();
+                                soundListItems.add(fileName);
 
-                            //update sound sound list
-                            boolean[] soundSwitchState = new boolean[soundListItems.size()];
-                            for(int i=0; i<soundListItems.size()-1; i++){
-                                soundSwitchState[i] = listAdapters[1].getCheckedState(i);
+                                //update sound sound list
+                                boolean[] soundSwitchState = new boolean[soundListItems.size()];
+                                for(int i=0; i<soundListItems.size()-1; i++){
+                                    soundSwitchState[i] = listAdapters[1].getCheckedState(i);
+                                }
+                                soundSwitchState[soundListItems.size()-1] = true;
+                                listAdapters[1] = new ExpandableListAdapter(getContext(), soundListItems.toArray(new String[soundListItems.size()]), "Sound Types", soundSwitchState);
+                                listViews[1].setAdapter(listAdapters[1]);
+
+                            }else{
+                                file.delete();
+                                Toast.makeText(getActivity(), "File size too Large.\nTry Again!", Toast.LENGTH_SHORT).show();
                             }
-                            soundSwitchState[soundListItems.size()-1] = true;
-                            listAdapters[1] = new ExpandableListAdapter(getContext(), soundListItems.toArray(new String[soundListItems.size()]), "Sound Types", soundSwitchState);
-                            listViews[1].setAdapter(listAdapters[1]);
 
                             dialog.dismiss();
                         }
