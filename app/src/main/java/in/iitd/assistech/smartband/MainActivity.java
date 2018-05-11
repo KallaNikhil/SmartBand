@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             );
         }
 
-        //TODO: @Link https://github.com/OmarAflak/Bluetooth-Library
+        //
 
     }
 

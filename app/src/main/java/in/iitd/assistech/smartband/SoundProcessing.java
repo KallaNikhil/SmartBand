@@ -255,7 +255,7 @@ public class SoundProcessing {
                     String recording = fname;
                     String filepath = Environment.getExternalStorageDirectory().getPath();
                     File directory = new File(filepath,AUDIO_RECORDER_FOLDER);
-                    if (directory.exists()) {
+                    if (directory.exists() && directory.listFiles() != null) {
                         File[] files = directory.listFiles();
                         String beep;
                         float max = 0;
@@ -280,7 +280,6 @@ public class SoundProcessing {
                         FingerprintSimilarity similarity = waveRecording.getFingerprintSimilarity(waveRecording);
                         File tempFile = new File(recording);
                         tempFile.delete();
-                        fingerPrintChecking = false;
                         try {
                             os.close();
                         } catch (Exception e) {
@@ -294,7 +293,7 @@ public class SoundProcessing {
                             break;
                         }
                     }
-
+                    fingerPrintChecking = false;
                 } else if (fingerPrintChecking) {
                     ByteBuffer byteBuf = ByteBuffer.allocate(2*data.length);
                     int i = 0;

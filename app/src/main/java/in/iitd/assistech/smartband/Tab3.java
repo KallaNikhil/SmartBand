@@ -154,7 +154,8 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
             File[] files = directory.listFiles();
             if(files != null) {
                 for (int i = 0; i < files.length; i++) {
-                    soundListItems.add(files[i].getName());
+                    if(!Character.isDigit(files[i].getName().charAt(0)))
+                        soundListItems.add(files[i].getName());
                 }
             }
         }
@@ -320,6 +321,12 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
 
             cummListItemSizes[2] = cummListItemSizes[1] + servicesListItems.length;
             boolean[] serviceSwitchState = Arrays.copyOfRange(switchState, cummListItemSizes[1], cummListItemSizes[2]);
+
+            // check if service is still running
+            if(serviceSwitchState[0] && !BluetoothService.isInstanceCreated()){
+                serviceSwitchState[0] = false;
+                Toast.makeText(MainActivity.getInstance(), "Bluetooth Service Destroyed due to unexpected reasons", Toast.LENGTH_SHORT).show();
+            }
 
             try{
                 listAdapters[0] = new ExpandableListAdapter(getContext(), notificationListItems, "Notification", notifSwitchState);
