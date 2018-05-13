@@ -1,15 +1,15 @@
 [
     {
-        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_com_facebook_tooltip_blue_bottomnub.png.flat",
-        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/res/drawable-xhdpi-v4/com_facebook_tooltip_blue_bottomnub.png"
+        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
-        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
-        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_com_facebook_tooltip_blue_bottomnub.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/res/drawable-xhdpi-v4/com_facebook_tooltip_blue_bottomnub.png"
     },
     {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark.xml.flat",
@@ -24,16 +24,16 @@
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/res/drawable-hdpi-v4/messenger_bubble_large_blue.png"
     },
     {
-        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable_messenger_button_blue_bg_round.xml.flat",
-        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/res/drawable/messenger_button_blue_bg_round.xml"
+        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/color_switch_thumb_material_light.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/color/switch_thumb_material_light.xml"
     },
     {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/drawable-xxxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/color_switch_thumb_material_light.xml.flat",
-        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/color/switch_thumb_material_light.xml"
+        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable_messenger_button_blue_bg_round.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/res/drawable/messenger_button_blue_bg_round.xml"
     },
     {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -68,12 +68,12 @@
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/layout_abc_dialog_title_material.xml.flat",
-        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/layout/abc_dialog_title_material.xml"
-    },
-    {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/layout_design_layout_snackbar.xml.flat",
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/res/layout/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/layout_abc_dialog_title_material.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/layout/abc_dialog_title_material.xml"
     },
     {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/layout_tab3.xml.flat",
@@ -104,12 +104,12 @@
         "source": "/home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/res/drawable/image20.jpeg"
     },
     {
-        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/layout_abc_action_menu_layout.xml.flat",
-        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/layout/abc_action_menu_layout.xml"
-    },
-    {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable_com_facebook_auth_dialog_cancel_background.xml.flat",
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/res/drawable/com_facebook_auth_dialog_cancel_background.xml"
+    },
+    {
+        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/layout_abc_action_menu_layout.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/layout/abc_action_menu_layout.xml"
     },
     {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
@@ -168,12 +168,12 @@
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/res/layout/design_bottom_sheet_dialog.xml"
     },
     {
-        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/layout_activity_sign_in.xml.flat",
-        "source": "/home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/res/layout/activity_sign_in.xml"
-    },
-    {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/color-v23_abc_tint_spinner.xml.flat",
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/layout_activity_sign_in.xml.flat",
+        "source": "/home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/res/layout/activity_sign_in.xml"
     },
     {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/layout_list_item_chat_message.xml.flat",
@@ -196,12 +196,12 @@
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/res/layout/messenger_button_send_white_round.xml"
     },
     {
-        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable_out_message_bg.9.png.flat",
-        "source": "/home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/res/drawable/out_message_bg.9.png"
-    },
-    {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_light.xml.flat",
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/res/drawable/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable_out_message_bg.9.png.flat",
+        "source": "/home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/res/drawable/out_message_bg.9.png"
     },
     {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/layout_notification_template_media.xml.flat",
@@ -228,12 +228,12 @@
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_com_facebook_tooltip_blue_xout.png.flat",
-        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/res/drawable-xhdpi-v4/com_facebook_tooltip_blue_xout.png"
-    },
-    {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light.xml.flat",
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.1.aar/cd29239cc0b50da354bda906039aa50d/res/drawable/common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_com_facebook_tooltip_blue_xout.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/res/drawable-xhdpi-v4/com_facebook_tooltip_blue_xout.png"
     },
     {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable_car_horn.png.flat",

@@ -18,17 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.List;
-
-import static java.lang.Thread.sleep;
 
 public class ExpandableListAdapterButton extends BaseExpandableListAdapter {
-
-//    private Context _context;
-//    private List<String> _listDataHeader; // header titles
-    // child data in format of header title, child title
-//    private HashMap<String, List<String>> _listDataChild;
 
     String[] names;
     String header;
@@ -56,15 +47,22 @@ public class ExpandableListAdapterButton extends BaseExpandableListAdapter {
         view = inflter.inflate(R.layout.notif_list_row_button, null);
         final TextView notifTextView = (TextView) view.findViewById(R.id.notif_row_text);
         final Button notifButton = (Button) view.findViewById(R.id.notif_row_button);
+        final TextView textView = (TextView) view.findViewById(R.id.notif_row_text);
         notifTextView.setText(names[childPosition]);
 
         notifButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(header.equals("SoundTypes")) {
                     // Code here executes on main thread after user presses button
-                    String soundName = ((Button) (v.findViewById(R.id.notif_row_button))).getText().toString();
-                    String fname = Environment.getExternalStorageDirectory().getPath() + "/" + soundName + SoundProcessing.AUDIO_RECORDER_FILE_EXT_WAV;
-                    File file = new File(fname, SoundProcessing.AUDIO_RECORDER_FOLDER);
+                    String soundName = textView.getText().toString();
+                    String filepath = Environment.getExternalStorageDirectory().getPath();
+                    File file = new File(filepath,SoundProcessing.AUDIO_RECORDER_FOLDER);
+                    if (!file.exists()) {
+                        file.mkdirs();
+                    }
+                    String fname = file.getAbsolutePath() + "/" + soundName;
+                    file = new File(fname);
+                    Log.d(TAG, "Sound Deleted : " + file.getAbsolutePath());
                     if(file.exists()){
                         file.delete();
                         Toast.makeText(context, "Sound Deleted", Toast.LENGTH_SHORT).show();
