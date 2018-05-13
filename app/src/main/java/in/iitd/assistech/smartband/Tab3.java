@@ -320,7 +320,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
             // check if service is still running
             if(serviceSwitchState[0] && !BluetoothService.isInstanceCreated()){
                 serviceSwitchState[0] = false;
-                Toast.makeText(MainActivity.getInstance(), "Bluetooth Service Destroyed due to unexpected reasons", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.getInstance(), "Bluetooth Service Destroyed.You can start it again in Tab3.", Toast.LENGTH_SHORT).show();
             }
 
             try{

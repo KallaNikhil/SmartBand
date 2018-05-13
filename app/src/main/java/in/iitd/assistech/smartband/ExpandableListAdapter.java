@@ -106,7 +106,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                         }else {
                             // if stop did not work as expected
                             setBack = true;
-                            value = "Error value not changed";
+                            value = "Sorry for inconvenience.Go to Tab1 and Try again";
                         }
 
                     }
