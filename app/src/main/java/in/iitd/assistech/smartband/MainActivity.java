@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     public AlertDialog incorrectDetDialog;
 
     private static boolean[] startNotifListState;
-    private static boolean[] startSoundListState;
     private static boolean[] startServiceListState;
 
     /*
@@ -224,16 +223,9 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         super.onResume();
         SharedPreferences app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        // update soundListItems
-        soundListItems = Tab3.getSoundListItems();
-
         boolean[] notifState = new boolean[notificationListItems.length];
         for (int i=0; i<notificationListItems.length; i++){
             notifState[i] = app_preferences.getBoolean(notificationListItems[i], true);
-        }
-        boolean[] soundState =  new boolean[soundListItems.size()];
-        for (int i=0; i<soundListItems.size(); i++){
-            soundState[i] = app_preferences.getBoolean(soundListItems.get(i), true);
         }
 
         boolean[] serviceState =  new boolean[servicesListItems.length];
@@ -242,7 +234,6 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         }
 
         startNotifListState = notifState;
-        startSoundListState = soundState;
         startServiceListState = serviceState;
 
         isActive = true;
@@ -276,14 +267,6 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             boolean[] notifState = adapter.getInitialNotifListState();
             for (int i=0; i<notificationListItems.length; i++){
                 editor.putBoolean(notificationListItems[i], notifState[i]);
-            }
-            editor.commit();
-        }
-
-        if(adapter.getInitialSoundListState() != null){
-            boolean[] soundState = adapter.getInitialSoundListState();
-            for (int i=0; i<soundListItems.size(); i++){
-                editor.putBoolean(soundListItems.get(i), soundState[i]);
             }
             editor.commit();
         }
@@ -505,10 +488,6 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
     static boolean[] getStartNotifListState(){
         return startNotifListState;
-    }
-
-    static boolean[] getStartSoundListState(){
-        return startSoundListState;
     }
 
     static boolean[] getStartServiceListState(){

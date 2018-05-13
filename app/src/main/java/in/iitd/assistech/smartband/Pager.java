@@ -53,13 +53,6 @@ public class Pager extends FragmentStatePagerAdapter {
         return null;
     }
 
-    public boolean[] getInitialSoundListState(){
-        if (tab3 != null){
-            return tab3.getFinalSoundState();
-        }
-        return null;
-    }
-
     public boolean[] getInitialServiceListState(){
         if (tab3 != null){
             return tab3.getFinalServiceState();

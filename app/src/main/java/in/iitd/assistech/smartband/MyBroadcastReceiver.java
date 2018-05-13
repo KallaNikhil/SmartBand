@@ -27,18 +27,18 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
         }
 
         if(CONTENT_ACTION.equals(action)) {
-//            Log.v(TAG,"Pressed Content");
-//
-//            String soundCategory = intent.getExtras().getString("SoundResultCategory","No Result");
-//            Log.d(TAG, soundCategory);
-//            if(!MainActivity.isRunning()) {
-//                Intent contentIntent = new Intent(context, MainActivity.class);
-//                contentIntent.putExtra("DisplaySoundDetectionDialog", true);
-//                contentIntent.putExtra("SoundDetectionResult", soundCategory);
-//                context.startActivity(contentIntent);
-//            }else{
-//                MainActivity.getInstance().showDialog(MainActivity.getInstance(), soundCategory, false);
-//            }
+            Log.v(TAG,"Pressed Content");
+
+            String soundCategory = intent.getExtras().getString("SoundResultCategory","No Result");
+            Log.d(TAG, soundCategory);
+            if(!MainActivity.isRunning()) {
+                Intent contentIntent = new Intent(context, MainActivity.class);
+                contentIntent.putExtra("DisplaySoundDetectionDialog", true);
+                contentIntent.putExtra("SoundDetectionResult", soundCategory);
+                context.startActivity(contentIntent);
+            }else{
+                MainActivity.getInstance().showDialog(MainActivity.getInstance(), soundCategory, false);
+            }
 
         } else if(INCORRECT_ACTION.equals(action)) {
             Log.v(TAG,"Pressed NO");

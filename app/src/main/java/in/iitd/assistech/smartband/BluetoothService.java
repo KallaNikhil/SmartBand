@@ -291,18 +291,18 @@ public class BluetoothService extends Service {
         public void run() {
             dismissDialog(dialogDetectThreadStart);
 
-//            // Debug
-//            Thread t = new Thread(){
-//                public void run(){
-//                    try {
-//                        sleep(1000);
-//                    }catch (Exception ex){
-//                        Log.d(TAG, "could not sleep");
-//                    }
-//                    showSoundResultNotification("kkkk");
-//                }
-//            };
-//            t.start();
+            // Debug
+            Thread t = new Thread(){
+                public void run(){
+                    try {
+                        sleep(1000);
+                    }catch (Exception ex){
+                        Log.d(TAG, "could not sleep");
+                    }
+                    showSoundResultNotification("kkkk");
+                }
+            };
+            t.start();
 
             while(!isInterrputed) {
 

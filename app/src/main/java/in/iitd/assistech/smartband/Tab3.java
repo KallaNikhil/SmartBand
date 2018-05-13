@@ -21,6 +21,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
@@ -75,12 +76,13 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     /*
     * In List the order is as follows
     * 0 - Notifications
-    * 1 - Sound types
-    * 2 - Services
+    * 1 - Services
     * */
     private ExpandableListAdapter[] listAdapters;
+    private ExpandableListAdapterButton soundListAdapter;
     private ExpandableListView[] listViews;
-    private static final int ListSize = 3;
+    private ExpandableListView soundListView;
+    private static final int ListSize = 2;
     static final String[] notificationListItems = {"Vibration", "Sound", "Flashlight", "Flash Screen"};
     static ArrayList<String> soundListItems = new ArrayList<>();
     static final String[] servicesListItems = {"BluetoothService"};
@@ -110,24 +112,17 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         Log.d(TAG, ""+soundListItems.size());
 
         boolean[] notifSwitchState = new boolean[notificationListItems.length];
-        boolean[] soundSwitchState = new boolean[soundListItems.size()];
         boolean[] serviceSwitchState = new boolean[servicesListItems.length];
 
         for(int i=0; i<notificationListItems.length; i++){
             notifSwitchState[i] = listAdapters[0].getCheckedState(i);
         }
 
-        for(int i=0; i<soundListItems.size(); i++){
-            soundSwitchState[i] = listAdapters[1].getCheckedState(i);
-        }
-
         for(int i=0; i<servicesListItems.length; i++){
-            serviceSwitchState[i] = listAdapters[2].getCheckedState(i);
+            serviceSwitchState[i] = listAdapters[1].getCheckedState(i);
         }
 
         outState.putBooleanArray("NotificationNotifState", notifSwitchState);
-        outState.putBooleanArray("SoundNotifState", soundSwitchState);
-        outState.putStringArrayList("SoundListItems", soundListItems);
         outState.putBooleanArray("ServiceNotifState", serviceSwitchState);
     }
 
@@ -293,29 +288,18 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         listAdapters = new ExpandableListAdapter[ListSize];
 
         listViews[0] = (ExpandableListView) view.findViewById(R.id.notificationListView);
-        listViews[1] = (ExpandableListView) view.findViewById(R.id.soundListView);
-        listViews[2] = (ExpandableListView) view.findViewById(R.id.serviceListView);
+        listViews[1] = (ExpandableListView) view.findViewById(R.id.serviceListView);
+        soundListView = (ExpandableListView) view.findViewById(R.id.soundListView);
 
         soundListItems = getSoundListItems();
+        soundListAdapter = new ExpandableListAdapterButton(getContext(), soundListItems.toArray(new String[soundListItems.size()]), "SoundTypes");
+        soundListView.setAdapter(soundListAdapter);
 
         if(savedInstanceState != null){
             Log.d(TAG, "check if soundListItems is in sync - present : " + soundListItems.size()+", stored : "+ savedInstanceState.getInt("soundListItemsSize", 0));
 
             boolean[] notifSwitchState = savedInstanceState.getBooleanArray("NotificationNotifState");
             boolean[] serviceSwitchState = savedInstanceState.getBooleanArray("ServiceNotifState");
-
-            boolean[] soundSwitchState = new boolean[soundListItems.size()];
-            boolean[] soundSwitchStateSaved = savedInstanceState.getBooleanArray("SoundNotifState");
-
-            List<String> soundStrings = savedInstanceState.getStringArrayList("SoundListItems");
-            for(int i=0; i<soundListItems.size(); i++){
-                int index = soundStrings.indexOf(soundListItems.get(i));
-                if(index < soundListItems.size()){
-                    soundSwitchState[i] = soundSwitchStateSaved[index];
-                }else{
-                    soundSwitchState[i] = true;
-                }
-            }
 
             // check if service is still running
             if(serviceSwitchState[0] && !BluetoothService.isInstanceCreated()){
@@ -325,8 +309,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
 
             try{
                 listAdapters[0] = new ExpandableListAdapter(getContext(), notificationListItems, "Notification", notifSwitchState);
-                listAdapters[1] = new ExpandableListAdapter(getContext(), soundListItems.toArray(new String[soundListItems.size()]), "Sound Types", soundSwitchState);
-                listAdapters[2] = new ExpandableListAdapter(getContext(), servicesListItems, "Service Types", serviceSwitchState);
+                listAdapters[1] = new ExpandableListAdapter(getContext(), servicesListItems, "Service Types", serviceSwitchState);
 
                 for(int i=0; i<ListSize; i++){
                     listViews[i].setAdapter(listAdapters[i]);
@@ -338,12 +321,10 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
             }
         } else{
             boolean[] startNotifState = MainActivity.getStartNotifListState();
-            boolean[] startSoundState = MainActivity.getStartSoundListState();
             boolean[] startServiceState = MainActivity.getStartServiceListState();
 
             listAdapters[0] = new ExpandableListAdapter(getContext(), notificationListItems, "Notification", startNotifState);
-            listAdapters[1] = new ExpandableListAdapter(getContext(), soundListItems.toArray(new String[soundListItems.size()]), "Sound Types", startSoundState);
-            listAdapters[2] = new ExpandableListAdapter(getContext(), servicesListItems, "Service Types", startServiceState);
+            listAdapters[1] = new ExpandableListAdapter(getContext(), servicesListItems, "Service Types", startServiceState);
 
             for(int i=0; i<ListSize; i++){
                 listViews[i].setAdapter(listAdapters[i]);
@@ -467,7 +448,58 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
             }
         });
         //------------------------------------------------------
+
+        replaceScrollProcess((ExpandableListView) view.findViewById(R.id.soundListView));
+        replaceScrollProcess((ExpandableListView) view.findViewById(R.id.serviceListView));
+        replaceScrollProcess((ExpandableListView) view.findViewById(R.id.notificationListView));
+
         return view;
+    }
+
+    public void replaceScrollProcess(ExpandableListView listView){
+        // your listview inside scrollview
+        setExpandableListViewHeight(listView, -1);
+        listView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v, int position, long id) {
+                setExpandableListViewHeight(parent, position);
+                return false;
+            }
+        });
+    }
+
+    private void setExpandableListViewHeight(ExpandableListView listView, int group) {
+        BaseExpandableListAdapter listAdapter = (BaseExpandableListAdapter) listView.getExpandableListAdapter();
+        if (listAdapter == null) {
+            return;
+        }
+
+        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
+        int totalHeight = 0;
+        View view = null;
+        for (int i = 0; i < listAdapter.getGroupCount(); i++) {
+            view = listAdapter.getGroupView(i, false, view, listView);
+            if (i == 0) {
+                view.setLayoutParams(new ViewGroup.LayoutParams(desiredWidth, ViewGroup.LayoutParams.WRAP_CONTENT));
+            }
+            view.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
+            totalHeight += view.getMeasuredHeight();
+            if(((listView.isGroupExpanded(i)) && (i != group)) || ((!listView.isGroupExpanded(i)) && (i == group))) {
+                View listItem = null;
+                for (int j = 0; j < listAdapter.getChildrenCount(i); j++) {
+                    listItem = listAdapter.getChildView(i, j, false, listItem, listView);
+                    listItem.setLayoutParams(new ViewGroup.LayoutParams(desiredWidth, View.MeasureSpec.UNSPECIFIED));
+                    listItem.measure(
+                            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                    totalHeight += listItem.getMeasuredHeight();
+                }
+            }
+        }
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getGroupCount() - 1));
+        listView.setLayoutParams(params);
+        listView.requestLayout();
     }
 
 
@@ -607,16 +639,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
 
                                 Toast.makeText(getActivity(), fileName+" added", Toast.LENGTH_SHORT).show();
                                 soundListItems.add(fileName);
-
-                                //update sound sound list
-                                boolean[] soundSwitchState = new boolean[soundListItems.size()];
-                                for(int i=0; i<soundListItems.size()-1; i++){
-                                    soundSwitchState[i] = listAdapters[1].getCheckedState(i);
-                                }
-                                soundSwitchState[soundListItems.size()-1] = true;
-                                listAdapters[1] = new ExpandableListAdapter(getContext(), soundListItems.toArray(new String[soundListItems.size()]), "Sound Types", soundSwitchState);
-                                listViews[1].setAdapter(listAdapters[1]);
-
+                                updateSoundList(soundListItems);
                             }else{
                                 file.delete();
                                 Toast.makeText(getActivity(), "File size too Large.\nTry Again!", Toast.LENGTH_SHORT).show();
@@ -779,21 +802,18 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
         return notifSwitchState;
     }
 
-    public boolean[] getFinalSoundState(){
-        boolean[] soundSwitchState = new boolean[soundListItems.size()];
-        for (int i=0; i<soundListItems.size(); i++){
-            soundSwitchState[i] = listAdapters[1].getCheckedState(i);
-        }
-        return soundSwitchState;
-    }
-
     public boolean[] getFinalServiceState(){
         boolean[] serviceSwitchState = new boolean[servicesListItems.length];
         for (int i=0; i<servicesListItems.length; i++){
-            serviceSwitchState[i] = listAdapters[2].getCheckedState(i);
+            serviceSwitchState[i] = listAdapters[1].getCheckedState(i);
         }
         return serviceSwitchState;
     }
 
+    public void updateSoundList(ArrayList<String> SoundListItems){
+        soundListItems = getSoundListItems();
+        soundListAdapter = new ExpandableListAdapterButton(getContext(), SoundListItems.toArray(new String[SoundListItems.size()]), "SoundTypes");
+        soundListView.setAdapter(soundListAdapter);
+    }
 
 }

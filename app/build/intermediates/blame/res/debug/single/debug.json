@@ -612,6 +612,10 @@
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/layout_notif_list_row_button.xml.flat",
+        "source": "/home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/res/layout/notif_list_row_button.xml"
+    },
+    {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/drawable-ldrtl-xxhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -1840,12 +1844,12 @@
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/color/abc_tint_spinner.xml"
     },
     {
-        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-watch-v20_common_google_signin_btn_text_light_normal.xml.flat",
-        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/res/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml"
-    },
-    {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable-watch-v20_common_google_signin_btn_text_light_normal.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.0.1.aar/1c1582ba7313882175e28dc619baed8d/res/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml"
     },
     {
         "merged": "/home/nikhil/AndroidStudioProjects/SmartBand/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
