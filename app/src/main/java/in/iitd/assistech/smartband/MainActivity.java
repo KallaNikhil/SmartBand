@@ -243,12 +243,16 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             if(BluetoothService.getInstance() != null){
                 BluetoothService.getInstance().removeNotification(BluetoothService.NOTIFICATION_ID_RESULT);
             }
+            getIntent().removeExtra("IncorrectDetection");
             showIncorrectDetectionDialog(MainActivity.this, true);
         }
 
         Boolean notifClick = getIntent().getExtras().getBoolean("DisplaySoundDetectionDialog", false);
         if(notifClick){
-            showDialog(this, getIntent().getExtras().getString("SoundDetectionResult", "Did not get result from Notification"), notifClick);
+            String soundName = getIntent().getExtras().getString("SoundDetectionResult", "Did not get result from Notification");
+            getIntent().removeExtra("DisplaySoundDetectionDialog");
+            getIntent().removeExtra("SoundDetectionResult");
+            showDialog(this, soundName, notifClick);
         }
     }
 

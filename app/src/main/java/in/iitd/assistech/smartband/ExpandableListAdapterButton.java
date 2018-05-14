@@ -1,19 +1,17 @@
 package in.iitd.assistech.smartband;
 
-import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.Switch;
+import android.widget.ExpandableListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +34,10 @@ public class ExpandableListAdapterButton extends BaseExpandableListAdapter {
         inflter = (LayoutInflater.from(context));
     }
 
+    public void updateData(String[] names){
+        this.names = names;
+    }
+
     @Override
     public boolean hasStableIds() {
         return false;
@@ -48,6 +50,7 @@ public class ExpandableListAdapterButton extends BaseExpandableListAdapter {
         final TextView notifTextView = (TextView) view.findViewById(R.id.notif_row_text);
         final Button notifButton = (Button) view.findViewById(R.id.notif_row_button);
         final TextView textView = (TextView) view.findViewById(R.id.notif_row_text);
+
         notifTextView.setText(names[childPosition]);
 
         notifButton.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +58,10 @@ public class ExpandableListAdapterButton extends BaseExpandableListAdapter {
                 if(header.equals("SoundTypes")) {
                     // Code here executes on main thread after user presses button
                     String soundName = textView.getText().toString();
+                    if(Tab3.soundListItemsBasic.contains(soundName)){
+                        Toast.makeText(context, "This Sound is Basic\nCannot Be Deleted", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     String filepath = Environment.getExternalStorageDirectory().getPath();
                     File file = new File(filepath,SoundProcessing.AUDIO_RECORDER_FOLDER);
                     if (!file.exists()) {

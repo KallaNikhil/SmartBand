@@ -1,16 +1,12 @@
 package in.iitd.assistech.smartband;
 
 import android.app.AlertDialog;
-import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
@@ -19,14 +15,11 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 
-//import com.bumptech.glide.Glide;
 import com.bumptech.glide.Glide;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.Auth;
@@ -43,7 +36,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -84,8 +76,9 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     private ExpandableListView soundListView;
     private static final int ListSize = 2;
     static final String[] notificationListItems = {"Vibration", "Sound", "Flashlight", "Flash Screen"};
-    static ArrayList<String> soundListItems = new ArrayList<>();
     static final String[] servicesListItems = {"BluetoothService"};
+    static ArrayList<String> soundListItems = new ArrayList<>();
+    static ArrayList<String> soundListItemsBasic = new ArrayList<>(Arrays.asList("Vehicle Horn", "Dog Bark"));
 
     private CircleImageView userProfileImage;
     private TextView userName;
@@ -132,8 +125,7 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
 
     public static ArrayList<String> getSoundListItems(){
 
-        ArrayList<String> soundListItems = new ArrayList<>(Arrays.asList("Vehicle Horn", "Dog Bark"));
-//        ArrayList <String> soundListIteams = new ArrayList<>();
+        ArrayList<String> soundListItems = new ArrayList<>(soundListItemsBasic);
         String filepath = Environment.getExternalStorageDirectory().getPath();
         File directory = new File(filepath,"SmartBand");
         if (directory.exists()) {
@@ -811,9 +803,8 @@ public class Tab3 extends Fragment implements View.OnClickListener, GoogleApiCli
     }
 
     public void updateSoundList(ArrayList<String> SoundListItems){
-        soundListItems = getSoundListItems();
-        soundListAdapter = new ExpandableListAdapterButton(getContext(), SoundListItems.toArray(new String[SoundListItems.size()]), "SoundTypes");
-        soundListView.setAdapter(soundListAdapter);
+        soundListAdapter.updateData(SoundListItems.toArray(new String[SoundListItems.size()]));
+        soundListAdapter.notifyDataSetChanged();
     }
 
 }

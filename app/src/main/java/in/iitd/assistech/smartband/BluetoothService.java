@@ -7,8 +7,6 @@ import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.os.IBinder;
@@ -16,7 +14,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -291,7 +288,7 @@ public class BluetoothService extends Service {
         public void run() {
             dismissDialog(dialogDetectThreadStart);
 
-//            // Debug
+//            // Debug - to test sound detection notifications
 //            Thread t = new Thread(){
 //                public void run(){
 //                    try {
