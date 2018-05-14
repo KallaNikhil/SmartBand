@@ -3,11 +3,13 @@ package in.iitd.assistech.smartband;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.Image;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -155,7 +157,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == VOICE_RECOGNITION_REQUEST_CODE && resultCode == RESULT_OK) {
-
+            Log.d("Tab1","Got Voice Detection Result");
             ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
             String voiceText = matches.get(0);
             ChatMessage chatMessage = new ChatMessage();
@@ -166,6 +168,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
             displayMessage(chatMessage);
         }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override

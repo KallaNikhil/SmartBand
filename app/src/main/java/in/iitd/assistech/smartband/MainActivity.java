@@ -238,21 +238,23 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
         isActive = true;
 
-        Boolean incorrectDetection = getIntent().getExtras().getBoolean("IncorrectDetection", false);
-        if(incorrectDetection){
-            if(BluetoothService.getInstance() != null){
-                BluetoothService.getInstance().removeNotification(BluetoothService.NOTIFICATION_ID_RESULT);
+        if(getIntent().getExtras()!= null) {
+            Boolean incorrectDetection = getIntent().getExtras().getBoolean("IncorrectDetection", false);
+            if (incorrectDetection) {
+                if (BluetoothService.getInstance() != null) {
+                    BluetoothService.getInstance().removeNotification(BluetoothService.NOTIFICATION_ID_RESULT);
+                }
+                getIntent().removeExtra("IncorrectDetection");
+                showIncorrectDetectionDialog(MainActivity.this, true);
             }
-            getIntent().removeExtra("IncorrectDetection");
-            showIncorrectDetectionDialog(MainActivity.this, true);
-        }
 
-        Boolean notifClick = getIntent().getExtras().getBoolean("DisplaySoundDetectionDialog", false);
-        if(notifClick){
-            String soundName = getIntent().getExtras().getString("SoundDetectionResult", "Did not get result from Notification");
-            getIntent().removeExtra("DisplaySoundDetectionDialog");
-            getIntent().removeExtra("SoundDetectionResult");
-            showDialog(this, soundName, notifClick);
+            Boolean notifClick = getIntent().getExtras().getBoolean("DisplaySoundDetectionDialog", false);
+            if (notifClick) {
+                String soundName = getIntent().getExtras().getString("SoundDetectionResult", "Did not get result from Notification");
+                getIntent().removeExtra("DisplaySoundDetectionDialog");
+                getIntent().removeExtra("SoundDetectionResult");
+                showDialog(this, soundName, notifClick);
+            }
         }
     }
 

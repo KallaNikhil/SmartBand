@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-121:12
-INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-121:12
-INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-121:12
-INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-121:12
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-120:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-120:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-120:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-120:12
 MERGED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:17:1-31:12
 MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:21:1-50:12
 MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/AndroidManifest.xml:17:1-31:12
@@ -33,22 +33,22 @@ MERGED from [com.android.support:support-core-ui:25.3.1] /home/nikhil/.gradle/ca
 MERGED from [com.android.support:support-media-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/a930d0bc1df3dade328bd6b043f2b948/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-core-utils:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/3abf8e07dec9a330db8922b85d3d75eb/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/19e80dcdf91e223445dcb13b9a11de0f/AndroidManifest.xml:17:1-31:12
-INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-121:12
-INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-121:12
-INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-121:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-120:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-120:12
+INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-120:12
 	package
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:3:5-42
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-121:12
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-120:12
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:4:5-51
 	android:versionCode
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-121:12
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:1-120:12
 		INJECTED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:2:11-69
@@ -199,7 +199,7 @@ ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidMani
 	android:name
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:25:9-53
 application
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:31:5-111:19
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:31:5-110:19
 MERGED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:29:5-20
 MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] /home/nikhil/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.23.0.aar/a30a95138cea313ec09748313c68b9fb/AndroidManifest.xml:28:5-48:19
@@ -304,6 +304,16 @@ ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidMani
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:56:13-53
 	android:name
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:53:13-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:58:14-61:30
+action#android.intent.action.MAIN
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:59:14-66
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:59:22-63
+category#android.intent.category.LAUNCHER
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:60:14-74
+	android:name
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:60:24-71
 activity#in.iitd.assistech.smartband.SignInActivity
 ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:64:9-76:20
 	android:label
@@ -335,7 +345,7 @@ ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidMani
 	android:name
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:88:19-49
 activity#in.iitd.assistech.smartband.Splash
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:93:9-102:20
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:93:9-101:20
 	android:screenOrientation
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:95:13-49
 	android:label
@@ -344,38 +354,28 @@ ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidMani
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:96:13-44
 	android:name
 		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:93:19-41
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:97:13-101:29
-action#android.intent.action.MAIN
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:98:17-69
-	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:98:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:100:17-77
-	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:100:27-74
 service#in.iitd.assistech.smartband.BluetoothService
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:107:9-110:38
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:106:9-109:38
 	android:enabled
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:110:13-35
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:109:13-35
 	android:stopWithTask
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:109:13-41
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:108:13-41
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:108:13-45
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:107:13-45
 uses-feature#android.hardware.bluetooth_le
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:116:5-89
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:115:5-89
 	android:required
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:116:64-87
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:115:64-87
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:116:19-63
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:115:19-63
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:117:5-79
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:116:5-79
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:117:22-76
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:116:22-76
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:119:5-78
+ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:118:5-78
 	android:name
-		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:119:22-75
+		ADDED from /home/nikhil/AndroidStudioProjects/SmartBand/app/src/main/AndroidManifest.xml:118:22-75
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/147819d096c6a8815e51fa1cd2df54c6/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:appcompat-v7:25.3.1] /home/nikhil/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/4ed9685351a5285bba514a64be37df7e/AndroidManifest.xml:25:5-27:34
